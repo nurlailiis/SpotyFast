@@ -1,0 +1,83 @@
+.navbar{
+	background-color: #5b90e5;
+	color: white ;
+}
+.navbar-brand{
+	color: white !important;
+}
+.user{
+	color: white;
+}
+.user:hover{
+	background-color: white !important;
+	color: #5b90e5;
+}
+.user:focus{
+	background-color: white !important;
+	color: #5b90e5;
+}
+.user:active{
+	background-color: white !important;
+	color: #5b90e5;
+}
+.dropdown-menu{
+	margin-top: -2px;
+	background-color: white;
+	border: 1px solid #5b90e5;
+}
+.dropdown-menu li a{
+	color: #5b90e5 !important;
+}
+.dropdown-menu li a:hover{
+	background-color: #5b90e5;
+	color: white !important;
+}
+@media screen and (min-width: 992px){
+	.dropdon-menu{
+		color: #5b90e5;
+		display: none;
+	}
+	.dropdown:hover .dropdown-menu{
+		display: block;
+	}
+}
+.dropdown:hover .user{
+    background-color: white;
+	color: #5b90e5;
+}
+.nav li a{
+	color: white;
+}
+.nav li a:hover{
+	background-color: #5b90e5;
+	color: white;
+}
+
+.nav li a:active{
+	background-color: #5b90e5;
+	color: white;
+}
+
+.sidebar li a{
+	color: #5b90e5;
+}
+.navbar-toggle{
+	border: none;
+}
+.icon-bar{
+	background-color: white !important;
+}
+.navbar-toggle:hover{
+	background-color: white !important;
+}
+
+.navbar-toggle:hover .icon-bar{
+	background-color: #5b90e5 !important;
+}
+.navbar-toggle:focus{
+	background-color: white !important;
+}
+
+.navbar-toggle:focus .icon-bar{
+	background-color: #5b90e5 !important;
+}
