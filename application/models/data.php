@@ -41,7 +41,7 @@ class data extends CI_Model
 	}
 
 	function insertData($table, $data){
-		return $this->db->insert($table, $data);
+		return $this->db->insert($table, $data );
 	}
 
 	function createJadwal($table, $data){
@@ -49,7 +49,7 @@ class data extends CI_Model
 	}
 
 	public function addData($data) {
-		$this->db->insert('user', $data);
+		return $this->db->insert('user', $data);
 	} 
 
 	function readData($where){

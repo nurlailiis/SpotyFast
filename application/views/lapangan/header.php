@@ -44,7 +44,7 @@
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('user/login'); ?>">Login</a>
+              <a class="nav-link" href="<?php echo base_url('lapangan/login'); ?>">Login</a>
               <ul class="dropdown-menu">
               <li><a href="<?php echo base_url('marketplace/product/pasminah'); ?>">Pasminah</a></li>
               <li><a href="<?php echo base_url('marketplace/product/kotak'); ?>">Kotak</a></li>

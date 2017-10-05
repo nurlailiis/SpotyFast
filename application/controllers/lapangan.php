@@ -80,55 +80,94 @@ class Lapangan extends CI_Controller {
 		$this->data->createJadwal($data, 'jadwal');
 		redirect('lapangan/sewajadwal');
 	}
-	function login(){
+	
+	public function login(){
 		if($this->session->has_userdata('username')){
-			$data = $this->data->read('lapangan')->result_array();
-			$lapangan['lapangan'] = $data;
+			redirect('lapangan/index');
+		}else{
+			$data = $this->data->read('user')->result_array();
+			$user['user'] = $data;
 			$this->load->view('lapangan/header');
-			$this->load->view('lapangan/home', $lapangan);
+			$this->load->view('lapangan/login_view', $user);
 			$this->load->view('lapangan/footer');
 		}
-		else{
-			$this->load->view('lapangan/header');
-			$this->load->view('lapangan/login');
-			$this->load->view('lapangan/footer');	
-		}
 	}
-	function cek_login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$read = $this->data->readWhere('user', $username, 'id_user')->result_array();
-		$hashed_password = $this->data->login($password);
-		foreach($read as $r){
-			$user = $r['id_user'];
+	public function cek_login(){
+
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $read = $this->data->readData($username);
+        $hashed_password = $this->data->login($password);
+        foreach ($read as $r) {
+            $user = $r['id_user'];
 			$pass = $r['password_user'];
 			$nama = $r['nama_user'];
 			$sewa_user = $r['sewa_user'];
-		}
-		if ($username==$user) {
-			if ($password==$pass) {
-				$data = array(
-			        'username'  => $user,
+        }	
+        
+        $hashed_password = $this->data->login($password);
+        if ($username==$user) {
+            if ($password==$pass) {
+                $data = array(
+                    'username'  => $user,
 			        'email'     => $email,
 			        'nama' 		=> $nama,
-			        'path' 		=> $path, 
-				);
-				$this->session->set_userdata($data);
-				redirect(base_url('lapangan/index'));
-			}
-			else{
-				redirect(base_url('lapangan/login'));
-			}
-		}
-		else{
-			redirect(base_url('lapangan/login'));
-		}
-	}
-	function signup(){
+			        'path' 		=> $path,
+                );
+                $this->session->set_userdata($data);
+                redirect(base_url('lapangan/index'));
+            }
+            else{
+                redirect(base_url('lapangan/login_view'));
+            }
+        }
+        else{
+            redirect(base_url('lapangan/login_view'));
+        }
+ 	}
+ 	public function signup(){
+		$data = $this->data->read('user')->result_array();
+		$user['user'] = $data;
 		$this->load->view('lapangan/header');
-		$this->load->view('lapangan/signup');
+		$this->load->view('lapangan/signup_view', $user);
 		$this->load->view('lapangan/footer');
 	}
+ 	public function new_user_registration() {
+		$id_user = $this->input->post('id_user', 'trim|required');
+		$nama_user = $this->input->post('nama_user', 'trim|required');
+		$password_user = $this->input->post('password_user', 'trim|required');
+		$sewa_user = $this->input->post('sewa_user', 'trim|required');
+		$data = array (
+			'id_user' => $id_user,
+			'nama_user' => $nama_user,
+			'password_user' => $password_user,
+			'sewa_user' => $sewa_user
+		);
+		$this->data->addData($data);
+		redirect('lapangan/login');
+	}
+	public function daftar(){
+		$id_user = $this->input->post('id_user');
+		$nama_user = $this->input->post('nama_user');
+		$sewa_user = $this->input->post('sewa_user');
+		$password_user = $this->input->post('password_user');
+		$read = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();
+		//$hashed_pass = $this->data->rahasia($password);
+		if ($read>0) {
+			$this->session->set_flashdata('username_auth', 'Maaf, Username yang anda pilih sudah digunakan orang lain');
+			redirect('lapangan/signup');
+		}
+		else{
+				$data = array(
+			    'id_user'  => $id_user,
+			    'nama_user'=> $nama_user,
+			    'password_user' => $password_user, 
+			    'sewa_user' => $sewa_user, 
+			);
+				$insert = $this->data->insertData('user', $data);
+				redirect('lapangan/login_view');
+				}
+		}
 	function logout(){
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));

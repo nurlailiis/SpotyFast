@@ -26,13 +26,18 @@ class User extends CI_Controller {
     }
 
 	public function login(){
-		$this->session->has_userdata('username');
+		if($this->session->has_userdata('username')){
 			$data = $this->data->read('user')->result_array();
 			$user['user'] = $data;
-			$this->load->view('user/header');
-			$this->load->view('user/login_view');
-			$this->load->view('user/footer');
-		
+			$this->load->view('lapangan/header');
+			$this->load->view('lapangan/home', $user);
+			$this->load->view('lapangan/footer');
+		}
+		else{
+			$this->load->view('lapangan/header');
+			$this->load->view('lapangan/login_view', $user);
+			$this->load->view('lapangan/footer');	
+		}
 	}
 
 	public function cek_login(){
@@ -81,7 +86,7 @@ class User extends CI_Controller {
 		'password_user' => $password_user);
 			
 		$insert = $this->data->addData($data);
-		redirect('user/login');
+		redirect('lapangan/login');
 	}
 
 	function logout(){
