@@ -59,8 +59,11 @@ class admin extends CI_Controller {
         }
     }
     public function cetaksewa(){
-
-        
+        $data = $this->data->read('jadwal')->result_array();
+        $jadwal['jadwal'] = $data;
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/cetaksewa', $jadwal);
+        $this->load->view('admin/footer');
     }
 
     public function cek_login(){
@@ -221,7 +224,7 @@ class admin extends CI_Controller {
     }
 
     function deleteDataLapangan($id){  
-        $where = array('no' => $id ); 
+        $where = array('id_lapangan' => $id ); 
         $res = $this->data->deleteData($where);  
         redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
