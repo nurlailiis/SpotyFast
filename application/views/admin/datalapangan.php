@@ -39,7 +39,7 @@
                                     <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>"></td>
                                     <td class="center">
                                         <a class="btn btn-primary btn-outline" href="<?php echo base_url()."index.php/admin/editData/".$d['id_lapangan']?>">Update</a>
-                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteData/".$d['id_lapangan']?>">Hapus</a>
+                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteDataLapangan/".$d['id_lapangan']?>">Hapus</a>
                                     </td>
                                 </tr>
                             <?php } ?>

@@ -60,9 +60,9 @@
                                    <td><?php echo $g['jam'] ?></td>
                                    <td><?php echo $g['lama_sewa'] ?></td>
                                    <td><?php if($g['status']==0) {
-                                           echo '<a class="btn btn-secondary btn-outline" >Ngutang</a>';
+                                           echo '<a class="btn btn-outline" style="color: white; background: pink;">Ngutang</a>';
                                        }else{
-                                            echo '<a class="btn btn-success btn-outline" >Dibayar</a>';
+                                            echo '<a class="btn btn-success btn-outline" style="color: white; background: green;" >Dibayar</a>';
                                        }
 
                                    ?></td>
@@ -70,7 +70,12 @@
                                         <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteData/".$g['no']?>">Hapus</a>
                                     </td>
                                      <td class="center">
-                                        <a class="btn btn-primary btn-outline" href="<?php echo base_url()."index.php/admin/editData/".$g['no']?>">Cetak</a>
+                                          <button class="btn btn-outline" onclick="myFunction()" style="color: white; background: blue">Cetak</button>
+                                          <script>
+                                          function myFunction() {
+                                              window.print();
+                                          }
+                                          </script></a>
                                     </td>
                                 </tr>
                             <?php } ?>

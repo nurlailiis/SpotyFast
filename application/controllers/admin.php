@@ -58,7 +58,8 @@ class admin extends CI_Controller {
             redirect(base_url('admin/login'));
         }
     }
-    public function inputsewa(){
+    public function cetaksewa(){
+
         
     }
 
@@ -147,13 +148,11 @@ class admin extends CI_Controller {
 
     function editData($id){
         $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
-
             $image= $update[0]['gambar_lapangan'];
             $id_lapangan = $update[0]['id_lapangan'];
             $nama = $update[0]['nama_lapangan'];
             $detail = $update[0]['detail_lapangan'];
             $tarifmhs = $update[0]['tarif_mahasiswa'];
-            
             $tarifnon = $update[0]['tarif_nonits'];
             $data = array(
                 'id_lapangan' => $id_lapangan,
@@ -178,15 +177,11 @@ class admin extends CI_Controller {
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
             echo print_r(array('error' => $this->upload->display_errors()));    
-            //redirect(base_url());
         }
         else{
-            //$url = base_url().$config['upload_path'].$this->upload->admin_model('file_name');
+            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
             $id = $_POST['id'];
             $where = array('id_lapangan' => $id);
-
-            $url=$this->upload->data();
-            $image= $url['file_name'];
             $id = $this->input->post('id');
             $nama = $this->input->post('nama');
             $detail = $this->input->post('detail');
@@ -198,7 +193,7 @@ class admin extends CI_Controller {
                 'detail_lapangan' => $detail,
                 'tarif_mahasiswa' => $tarifmhs,
                 'tarif_nonits' => $tarifnon,
-                'gambar_lapangan' => $image,  
+                'gambar_lapangan' => $url,  
                 );
             $this->data->updateData('lapangan', $data, $where);
             redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
@@ -223,6 +218,12 @@ class admin extends CI_Controller {
         $where = array('no' => $id ); 
         $res = $this->data->deleteData($where);  
         redirect($uri = base_url('index.php/admin/datapenyewaan'), $method = 'auto', $code = NULL);
+    }
+
+    function deleteDataLapangan($id){  
+        $where = array('no' => $id ); 
+        $res = $this->data->deleteData($where);  
+        redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
 
 }
