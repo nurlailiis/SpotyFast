@@ -225,7 +225,7 @@ class admin extends CI_Controller {
 
     function deleteDataLapangan($id){  
         $where = array('id_lapangan' => $id ); 
-        $res = $this->data->deleteData($where);  
+        $res = $this->data->deleteDataLapangan($where);  
         redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
 
