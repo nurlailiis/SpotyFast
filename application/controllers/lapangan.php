@@ -6,7 +6,7 @@ class Lapangan extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('data');
-                $this->load->helper('url');
+        $this->load->helper('url');
 	}
  
 	public function index($page = 'home'){		
@@ -180,7 +180,7 @@ class Lapangan extends CI_Controller {
 				redirect('lapangan/login_view');
 				}
 		}
-	function logout(){
+	public function logout(){
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));
 	}

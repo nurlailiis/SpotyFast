@@ -10,10 +10,10 @@
             <br>
             <fieldset>
               <div class="form-group has-success" style="width:200px" >
-                <input class="form-control" placeholder="Username" name="username" type="username" margin-left="20px" autofocus>
+                <input class="form-control" placeholder="Username" name="username" type="username" margin-left="20px" autofocus required>
               </div>
               <div align="middle" class="form-group has-success" style="width:200px">
-                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
               </div>
               <br>
               <input style="width:200px" style="width: 100%" type="submit" value="MASUK" class="btn btn-success btn-outline" name=""> </a>
