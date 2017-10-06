@@ -74,5 +74,12 @@ class data extends CI_Model
 		$res=$this->db->update($table, $data, $where);
 		return $res;
 	}
+	function get_lapangan(){
+		$this->db->select('*');
+ 		$this->db->from('lapangan');
+ 		$query = $this->db->get();
+ 		return $query->result();
+    }
+
 }
  ?>
