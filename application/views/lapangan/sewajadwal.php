@@ -32,7 +32,7 @@
                                    <td><?php echo $g['nama_lapangan'] ?></td>
                                    <td><?php echo $g['tanggal'] ?></td>
                                    <td><?php echo $g['jam'] ?></td>
-                                   <td><?php echo $g['lama_sewa'] ?></td>
+                                   <td><?php echo $g['lama_sewa'] ?> Jam</td>
                                    <td><?php if($g['status']==0) {
                                            echo '<a class="btn btn-secondary btn-outline" >Ngutang</a>';
                                        }else{
