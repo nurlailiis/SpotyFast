@@ -23,12 +23,6 @@
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Mahasiswa" name="tarifmhs"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Non ITS" name="tarifnon"></p>
                                 <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar"></p>
-                                <p class="col-md-6"><select name="kategori" class="form-control">
-                                    <option selected="" disabled="">--Category--</option>
-                                    <option>Lapangan A</option>
-                                    <option>Lapangan B</option>
-                                    <option>Lapangan C</option>
-                                </select></p>
                                 <br>
                                 <p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning" name=""></p>
                         <?php echo form_close(); ?>
