@@ -6,7 +6,7 @@ class admin extends CI_Controller {
     function __construct(){
         parent::__construct();      
         $this->load->model('data');
-                $this->load->helper('url');
+        $this->load->helper('url');
     }
  
     public function index(){        
@@ -150,7 +150,7 @@ class admin extends CI_Controller {
     }
 
     function editData($id){
-        $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
+            $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
             $image= $update[0]['gambar_lapangan'];
             $id_lapangan = $update[0]['id_lapangan'];
             $nama = $update[0]['nama_lapangan'];

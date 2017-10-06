@@ -71,7 +71,7 @@
                                     </td>
                                      <td class="center">
                                           <button class="btn btn-outline" onclick="myFunction()" style="color: white; background: blue">Cetak</button>
-                                          <a class="btn btn-outline" onclick="myFunction()" href="<?php echo base_url()."index.php/admin/cetaksewa/".$g['no']?>" style="color: white; background: blue">Cetak</a>
+                                          <a class="btn btn-outline" href="<?php echo base_url()."index.php/admin/cetaksewa/".$g['no']?>" style="color: white; background: blue">Cetak</a>
                                           <script>
                                           function myFunction() {
                                               window.print();

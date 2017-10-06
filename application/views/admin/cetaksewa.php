@@ -29,7 +29,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($datalapangan as $d) {?>
+                            <?php foreach ($jadwal as $d) {?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $d['id_lapangan'] ?></td>
                                     <td><?php echo $d['nama_lapangan'] ?></td>
