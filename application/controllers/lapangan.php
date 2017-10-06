@@ -9,47 +9,53 @@ class Lapangan extends CI_Controller {
                 $this->load->helper('url');
 	}
  
-	public function index(){		
+	public function index($page = 'home'){		
 		$data = $this->data->read('lapangan')->result_array();
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/home', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
 
-	public function home(){
+	public function home($page = 'home'){
 		$data = $this->data->read('lapangan')->result_array();
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/home', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
 	
-	public function sewajadwal(){
+	public function sewajadwal($page = 'sewajadwal'){
 		if ($this->session->has_userdata('username')) {
 			$data = $this->data->selectJadwal()->result_array();
 			$tampil['sewajadwal'] = $data;
-			$this->load->view('lapangan/header');
+			$tampil['page'] = $page;
+			$this->load->view('lapangan/header', $tampil);
 			$this->load->view('lapangan/sewajadwal', $tampil);
 			$this->load->view('lapangan/footer');		
 		}
 		else{
-			redirect(base_url('user/login'));
+			redirect(base_url('lapangan/login'));
 		}
 	}
-	public function detail($id){
+	public function detail($id, $page="detail"){
 		$data = $this->data->readWhere('lapangan', $id, 'id_lapangan')->result_array();
+		$where = array('id_lapangan' => $id);
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/detail', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
-	public function inputsewa(){
+	public function inputsewa($page = "inputsewa"){
 		if ($this->session->has_userdata('username')) {
 			$lapangan['kode'] = time();
 			$data = $this->data->read('lapangan')->result_array();
 			$lapangan['lapangan'] = $data;
-			$this->load->view('lapangan/header');
+			$lapangan['page'] = $page;
+			$this->load->view('lapangan/header', $lapangan);
 			$this->load->view('lapangan/inputsewa', $lapangan);
 			$this->load->view('lapangan/footer');		
 		}
@@ -81,13 +87,14 @@ class Lapangan extends CI_Controller {
 		redirect('lapangan/sewajadwal');
 	}
 	
-	public function login(){
+	public function login($page = 'login'){
 		if($this->session->has_userdata('username')){
 			redirect('lapangan/index');
 		}else{
 			$data = $this->data->read('user')->result_array();
 			$user['user'] = $data;
-			$this->load->view('lapangan/header');
+			$user['page'] = $page;
+			$this->load->view('lapangan/header', $user);
 			$this->load->view('lapangan/login_view', $user);
 			$this->load->view('lapangan/footer');
 		}
@@ -125,10 +132,11 @@ class Lapangan extends CI_Controller {
             redirect(base_url('lapangan/login_view'));
         }
  	}
- 	public function signup(){
+ 	public function signup($page = "signup"){
 		$data = $this->data->read('user')->result_array();
 		$user['user'] = $data;
-		$this->load->view('lapangan/header');
+		$user['page'] = $page;
+		$this->load->view('lapangan/header', $user);
 		$this->load->view('lapangan/signup_view', $user);
 		$this->load->view('lapangan/footer');
 	}

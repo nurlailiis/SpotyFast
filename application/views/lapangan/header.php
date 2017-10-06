@@ -5,10 +5,10 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Futsal fasor ITS, tempat untuk menyewa lapangan futsal dengan cepat.">
+    <meta name="author" content="Mohamad David | Nur laili | Aisyah paramastri">
 
-    <title>Futsal Fasor ITS</title>
+    <title>Futsal Fasor ITS | <?php echo $page ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,19 +43,20 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('lapangan/login'); ?>">Login</a>
+            <li class="nav-item <?php if($page =='login') {echo 'active';} ?>dropdown">
+            <?php 
+              if($this->session->has_userdata('username')){
+              echo '
+              <a href="'.base_url('lapangan/logout').'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$this->session->userdata('nama').'<span class="caret"></span></a>
               <ul class="dropdown-menu">
-              <li><a href="<?php echo base_url('marketplace/product/pasminah'); ?>">Pasminah</a></li>
-              <li><a href="<?php echo base_url('marketplace/product/kotak'); ?>">Kotak</a></li>
-            </ul>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="<?php //echo base_url('user/signup'); ?>">SignUp</a>
-            </li>  -->
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('user/logout'); ?>">Logout</a>
-            </li>
+                <li><a href="'.base_url('lapangan/logout').'">Logout</a></li>
+              </ul>
+              ';
+            }else{
+               echo '<a href="'.base_url('lapangan/login').'">Login</a>';
+            }
+             ?>
+            </li>         
           </ul>
         </div>
       </div>
