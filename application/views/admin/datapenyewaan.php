@@ -60,11 +60,10 @@
                                    <td><?php echo $g['jam'] ?></td>
                                    <td><?php echo $g['lama_sewa'] ?></td>
                                    <td><?php if($g['status']==0) {
-                                           echo '<a class="btn btn-outline" style="color: white; background: pink;">Ngutang</a>';
+                                           echo '<a class="btn btn-cancel" style="color: white; background: pink" href="'.base_url('admin/validasi/'.$g['no']).'">Ngutang</a>';
                                        }else{
                                             echo '<a class="btn btn-success btn-outline" style="color: white; background: green;" >Dibayar</a>';
                                        }
-
                                    ?></td>
                                    <td class="center">
                                         <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteData/".$g['no']?>">Hapus</a>

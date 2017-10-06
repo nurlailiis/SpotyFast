@@ -117,20 +117,23 @@ class Lapangan extends CI_Controller {
         if ($username==$user) {
             if ($password==$pass) {
                 $data = array(
-                    'username'  => $user,
-			        'email'     => $email,
-			        'nama' 		=> $nama,
-			        'path' 		=> $path,
+                    'username'  	=> $user,
+                    'password_user'	=> $pass,			      
+			        'nama' 			=> $nama,
+			        'sewa_user'		=> $sewa_user,
+
                 );
                 $this->session->set_userdata($data);
-                redirect(base_url('lapangan/index'));
+        		redirect(base_url('lapangan/index'));
             }
             else{
-                redirect(base_url('lapangan/login_view'));
+            	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+                redirect(base_url('lapangan/login'));
             }
         }
         else{
-            redirect(base_url('lapangan/login_view'));
+        	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+            redirect(base_url('lapangan/login'));
         }
  	}
  	public function signup($page = "signup"){
