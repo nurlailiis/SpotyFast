@@ -41,7 +41,7 @@ class data extends CI_Model
 	}
 
 	function insertData($table, $data){
-		return $this->db->insert($table, $data);
+		return $this->db->insert($table, $data );
 	}
 
 	function createJadwal($table, $data){
@@ -49,7 +49,7 @@ class data extends CI_Model
 	}
 
 	public function addData($data) {
-		$this->db->insert('user', $data);
+		return $this->db->insert('user', $data);
 	} 
 
 	function readData($where){
@@ -74,5 +74,12 @@ class data extends CI_Model
 		$res=$this->db->update($table, $data, $where);
 		return $res;
 	}
+	function get_lapangan(){
+		$this->db->select('*');
+ 		$this->db->from('lapangan');
+ 		$query = $this->db->get();
+ 		return $query->result();
+    }
+
 }
  ?>

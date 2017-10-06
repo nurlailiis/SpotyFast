@@ -34,23 +34,23 @@
     <center>
         <h1>SIGN UP</h1>
     </center>
-    <form action="<?php echo base_url(). 'user/new_user_registration'; ?>" method="post">
+    <form action="<?php echo base_url(). 'lapangan/new_user_registration'; ?>" method="post">
         <table style="margin:20px auto;">
             <tr>
-                <td>Name : </td>
-                <td><input type="text" name="name" required></td>
+                <td>Id : </td>
+                <td><input type="text" name="id_user" required></td>
             </tr>
             <tr>
-                <td>Username : </td>
-                <td><input type="text" name="username" required ></td>
-            </tr>
-            <tr>
-                <td>Email : </td>
-                <td><input type="text" name="email" required ></td>
+                <td>Nama : </td>
+                <td><input type="text" name="nama_user" required ></td>
             </tr>
             <tr>
                 <td>Password : </td>
-                <td><input type="password" name="password" required></td>
+                <td><input type="password" name="password_user" required ></td>
+            </tr>
+            <tr>
+                <td>Sewa User : </td>
+                <td><input type="password" name="sewa_user" required></td>
             </tr>
             <tr>
                 <td></td>

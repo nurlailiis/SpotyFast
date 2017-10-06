@@ -31,7 +31,7 @@
 				<td>Kategori</td>
 				<td>:</td>
 				<td>
-					<select name="kategori" class="form-control" required>
+					<select name="kategori" class="form-control" required>				
 						<option>Mahasiswa</option>
 						<option>Non ITS</option>
 					</select>
@@ -47,9 +47,10 @@
 				<td>:</td>
 				<td>
 					<select name="nama_lapangan" class="form-control" required>
-						<option>Lapangan A</option>
-						<option>Lapangan B</option>
-						<option>Lapangan C</option>
+						<option  value="">--Pilih Nama Lapangan--</option>                    
+            			<?php foreach($lapangan as $row) { ?>
+                		<option value="<?php echo $row['nama_lapangan'];?>"><?php echo $row['nama_lapangan'];?></option>
+            			<?php } ?>
 					</select>
 				</td>
 			</tr>

@@ -9,47 +9,55 @@ class Lapangan extends CI_Controller {
                 $this->load->helper('url');
 	}
  
-	public function index(){		
+	public function index($page = 'home'){		
 		$data = $this->data->read('lapangan')->result_array();
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/home', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
 
-	public function home(){
+	public function home($page = 'home'){
 		$data = $this->data->read('lapangan')->result_array();
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/home', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
 	
-	public function sewajadwal(){
+	public function sewajadwal($page = 'sewajadwal'){
 		if ($this->session->has_userdata('username')) {
 			$data = $this->data->selectJadwal()->result_array();
 			$tampil['sewajadwal'] = $data;
-			$this->load->view('lapangan/header');
+			$tampil['page'] = $page;
+			$this->load->view('lapangan/header', $tampil);
 			$this->load->view('lapangan/sewajadwal', $tampil);
 			$this->load->view('lapangan/footer');		
 		}
 		else{
-			redirect(base_url('user/login'));
+			redirect(base_url('lapangan/login'));
 		}
 	}
-	public function detail($id){
+	public function detail($id, $page="detail"){
 		$data = $this->data->readWhere('lapangan', $id, 'id_lapangan')->result_array();
+		$where = array('id_lapangan' => $id);
 		$lapangan['lapangan'] = $data;
-		$this->load->view('lapangan/header');
+		$lapangan['page'] = $page;
+		$this->load->view('lapangan/header', $lapangan);
 		$this->load->view('lapangan/detail', $lapangan);
 		$this->load->view('lapangan/footer');
 	}
-	public function inputsewa(){
+	public function inputsewa($page = "inputsewa"){
 		if ($this->session->has_userdata('username')) {
+			$data=array('nama_lapangan'=> $this->data->get_lapangan());  
 			$lapangan['kode'] = time();
-			$data = $this->data->read('lapangan')->result_array();
+			$tampil = $this->data->read('lapangan')->result_array();
 			$lapangan['lapangan'] = $data;
-			$this->load->view('lapangan/header');
+			$lapangan['lapangan'] = $tampil;
+			$lapangan['page'] = $page;
+			$this->load->view('lapangan/header', $lapangan);
 			$this->load->view('lapangan/inputsewa', $lapangan);
 			$this->load->view('lapangan/footer');		
 		}
@@ -80,57 +88,102 @@ class Lapangan extends CI_Controller {
 		$this->data->createJadwal($data, 'jadwal');
 		redirect('lapangan/sewajadwal');
 	}
-	function login(){
+	
+	public function login($page = 'login'){
 		if($this->session->has_userdata('username')){
-			$data = $this->data->read('lapangan')->result_array();
-			$lapangan['lapangan'] = $data;
-			$this->load->view('lapangan/header');
-			$this->load->view('lapangan/home', $lapangan);
+			redirect('lapangan/index');
+		}else{
+			$data = $this->data->read('user')->result_array();
+			$user['user'] = $data;
+			$user['page'] = $page;
+			$this->load->view('lapangan/header', $user);
+			$this->load->view('lapangan/login_view', $user);
 			$this->load->view('lapangan/footer');
 		}
-		else{
-			$this->load->view('lapangan/header');
-			$this->load->view('lapangan/login');
-			$this->load->view('lapangan/footer');	
-		}
 	}
-	function cek_login(){
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$read = $this->data->readWhere('user', $username, 'id_user')->result_array();
-		$hashed_password = $this->data->login($password);
-		foreach($read as $r){
-			$user = $r['id_user'];
+	public function cek_login(){
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $read = $this->data->readData($username);
+        $hashed_password = $this->data->login($password);
+        foreach ($read as $r) {
+            $user = $r['id_user'];
 			$pass = $r['password_user'];
 			$nama = $r['nama_user'];
 			$sewa_user = $r['sewa_user'];
-		}
-		if ($username==$user) {
-			if ($password==$pass) {
-				$data = array(
-			        'username'  => $user,
-			        'email'     => $email,
-			        'nama' 		=> $nama,
-			        'path' 		=> $path, 
-				);
-				$this->session->set_userdata($data);
-				redirect(base_url('lapangan/index'));
-			}
-			else{
-				redirect(base_url('lapangan/login'));
-			}
-		}
-		else{
-			redirect(base_url('lapangan/login'));
-		}
-	}
-	function signup(){
-		$this->load->view('lapangan/header');
-		$this->load->view('lapangan/signup');
+        }	
+        
+        $hashed_password = $this->data->login($password);
+        if ($username==$user) {
+            if ($password==$pass) {
+                $data = array(
+                    'username'  	=> $user,
+                    'password_user'	=> $pass,			      
+			        'nama' 			=> $nama,
+			        'sewa_user'		=> $sewa_user,
+
+                );
+                $this->session->set_userdata($data);
+        		redirect(base_url('lapangan/index'));
+            }
+            else{
+            	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+                redirect(base_url('lapangan/login'));
+            }
+        }
+        else{
+        	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+            redirect(base_url('lapangan/login'));
+        }
+ 	}
+ 	public function signup($page = "signup"){
+		$data = $this->data->read('user')->result_array();
+		$user['user'] = $data;
+		$user['page'] = $page;
+		$this->load->view('lapangan/header', $user);
+		$this->load->view('lapangan/signup_view', $user);
 		$this->load->view('lapangan/footer');
 	}
+ 	public function new_user_registration() {
+		$id_user = $this->input->post('id_user', 'trim|required');
+		$nama_user = $this->input->post('nama_user', 'trim|required');
+		$password_user = $this->input->post('password_user', 'trim|required');
+		$sewa_user = $this->input->post('sewa_user', 'trim|required');
+		$data = array (
+			'id_user' => $id_user,
+			'nama_user' => $nama_user,
+			'password_user' => $password_user,
+			'sewa_user' => $sewa_user
+		);
+		$this->data->addData($data);
+		redirect('lapangan/login');
+	}
+	public function daftar(){
+		$id_user = $this->input->post('id_user');
+		$nama_user = $this->input->post('nama_user');
+		$sewa_user = $this->input->post('sewa_user');
+		$password_user = $this->input->post('password_user');
+		$read = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();
+		//$hashed_pass = $this->data->rahasia($password);
+		if ($read>0) {
+			$this->session->set_flashdata('username_auth', 'Maaf, Username yang anda pilih sudah digunakan orang lain');
+			redirect('lapangan/signup');
+		}
+		else{
+				$data = array(
+			    'id_user'  => $id_user,
+			    'nama_user'=> $nama_user,
+			    'password_user' => $password_user, 
+			    'sewa_user' => $sewa_user, 
+			);
+				$insert = $this->data->insertData('user', $data);
+				redirect('lapangan/login_view');
+				}
+		}
 	function logout(){
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));
 	}
+
+
 }

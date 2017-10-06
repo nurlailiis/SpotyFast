@@ -5,7 +5,7 @@
         <div>
           <div class="main_home wow fadeInUp" data-wow-duration="700ms" align="center">
             <h1>LOGIN</h1>
-            <?php echo form_open('user/cek_login'); ?>
+            <?php echo form_open('lapangan/cek_login'); ?>
             <br>
             <br>
             <fieldset>
@@ -19,7 +19,7 @@
               <input style="width:200px" style="width: 100%" type="submit" value="MASUK" class="btn btn-success btn-outline" name=""> </a>
             </fieldset>
             <br>
-            <a href="<?php echo base_url('user/signup');?>" input style="width:200px" style="width: 100%" type="submit" value="SIGNUP" class="btn btn-success btn-outline" name=""> SIGNUP</a>
+            <a href="<?php echo base_url('lapangan/signup');?>" input style="width:200px" style="width: 100%" type="submit" value="SIGNUP" class="btn btn-success btn-outline" name=""> SIGNUP</a>
           </form>
         </div>
       </div>
