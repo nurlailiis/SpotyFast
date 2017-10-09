@@ -120,14 +120,14 @@ class admin extends CI_Controller {
     function tambahLapangan(){
         $config['upload_path']          = './assets/lapangan/image/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 10000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
+        $config['max_size']             = 100000;
+        $config['max_width']            = 10000;
+        $config['max_height']           = 10000;
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
             echo print_r(array('error' => $this->upload->display_errors()));    
-            redirect(base_url('admin/lapangan'));
+            // redirect(base_url('admin/inputlapangan'));
         }
         else{
             $url = base_url().$config['upload_path'].$this->upload->data('file_name');
