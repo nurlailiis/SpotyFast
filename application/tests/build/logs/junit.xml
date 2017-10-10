@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CodeIgniter Application Test Suite" tests="3" assertions="3" failures="1" errors="0" time="0.149858">
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="3" assertions="3" failures="1" errors="0" time="0.149858">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="5" assertions="1" time="0.078365">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_index
+Failed asserting that '&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="description" content=""&gt;
+    &lt;meta name="author" content=""&gt;
+
+    &lt;title&gt;Panel Admin Futsal Fasor ITS&lt;/title&gt;
+
+    &lt;!-- Bootstrap Core CSS --&gt;
+    &lt;link href="http://localhost/GIT/assets/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+    &lt;!-- Custom CSS --&gt;
+    &lt;link href="http://localhost/GIT/assets/admin/js/sb-admin.css" rel="stylesheet"&gt;
+
+    &lt;!-- Morris Charts CSS --&gt;
+    &lt;link href="http://localhost/GIT/assets/admin/css/plugins/morris.css" rel="stylesheet"&gt;
+
+    &lt;!-- Custom Fonts --&gt;
+    &lt;link href="http://localhost/GIT/assets/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"&gt;
+
+&lt;/head&gt;&lt;body&gt;
+    &lt;div style="margin-top: 100px;" class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-md-4 col-md-offset-4"&gt;
+                &lt;center&gt;&lt;h1&gt;PANEL ADMIN FUTSAL FASOR ITS&lt;/h1&gt;&lt;/center&gt;
+                &lt;div class="login-panel panel panel-green"&gt;
+                    &lt;div class="panel-heading"&gt;
+                        &lt;h3 class="panel-title"&gt;Login&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;div class="panel-body"&gt;
+                        &lt;form action="http://localhost/GIT/admin/cek_login" method="post" accept-charset="utf-8"&gt;
+                            &lt;fieldset&gt;
+                                &lt;div class="form-group has-success"&gt;
+                                    &lt;input class="form-control" placeholder="Username" name="username" type="username" autofocus&gt;
+                                &lt;/div&gt;
+                                &lt;div class="form-group has-success"&gt;
+                                    &lt;input class="form-control" placeholder="Password" name="password" type="password" value=""&gt;
+                                &lt;/div&gt;
+                                &lt;input style="width: 100%" type="submit" value="LOGIN" class="btn btn-success btn-outline" name=""&gt;
+                            &lt;/fieldset&gt;
+                        &lt;/form&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script src="http://localhost/GIT/js/jquery.js"&gt;&lt;/script&gt;
+
+    &lt;!-- Bootstrap Core JavaScript --&gt;
+    &lt;script src="http://localhost/GIT/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- Morris Charts JavaScript --&gt;
+    &lt;script src="http://localhost/GIT/js/plugins/morris/raphael.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/js/plugins/morris/morris.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/js/plugins/morris/morris-data.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;    &lt;footer&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-lg-12 col-md-3 mx-auto"&gt;
+            &lt;ul class="list-inline text-center"&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-twitter fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-facebook fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-github fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p class="copyright text-muted" style="text-align: center;"&gt;Panel Admin Futsal Fasor ITS&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;!-- Bootstrap core JavaScript --&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/jquery/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/popper/popper.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- Custom scripts for this template --&gt;
+    &lt;script src="http://localhost/GIT/assets/js/clean-blog.min.js"&gt;&lt;/script&gt;
+
+  &lt;/body&gt;
+
+&lt;/html&gt;
+' contains "admin/header".
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:8
+</failure>
+      </testcase>
+      <testcase name="test_method_404" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="11" assertions="1" time="0.045262"/>
+      <testcase name="test_APPPATH" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="17" assertions="1" time="0.026231"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
