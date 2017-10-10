@@ -6,6 +6,7 @@ class Welcome_test extends TestCase
 	{
 		$output = $this->request('GET', 'admin/index');
 		$this->assertContains('admin/header', $output);
+                
 	}
 
 	public function test_method_404()

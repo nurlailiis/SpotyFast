@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2017 at 03:54 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Oct 10, 2017 at 01:37 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -88,9 +88,7 @@ CREATE TABLE `lapangan` (
 --
 
 INSERT INTO `lapangan` (`id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan`) VALUES
-('1001', 'Lapangan A', 'Lapangan A Indoor futsal ini memiliki luas 16m x 26m, didirikan dengan menadapatkan bantuan oleh PT. Pertamina dan diresmikan oleh Bapak Rektor ITS langsung pada masa itu.', '120000', '150000', 'http://localhost/FPKPPL/assets/img/lapangan/lap1.jpg'),
-('1002', 'Lapangan B', 'Lapangan halusss...', '100000', '120000', 'http://localhost/FPKPPL/./assets/lapangan/image/yaa_asyiqolmusthofa.JPG'),
-('1003', 'Lapangan C', 'Lapangan Bagus', '150000', '180000', 'http://localhost/FPKPPL/./assets/lapangan/image/lap2.jpg');
+('1004', 'Lapangan A', 'Lapangan Futsal Fasor ITS', '80000', '100000', 'http://localhost/GIT/./assets/lapangan/image/2015-11-30_07_53_10_11.jpg');
 
 -- --------------------------------------------------------
 
