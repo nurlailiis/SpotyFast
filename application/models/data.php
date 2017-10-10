@@ -41,7 +41,7 @@ class data extends CI_Model
 	}
 
 	function insertData($table, $data){
-		return $this->db->insert($table, $data );
+		$this->db->insert($table, $data );
 	}
 
 	function createJadwal($table, $data){
