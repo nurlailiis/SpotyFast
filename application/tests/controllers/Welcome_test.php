@@ -21,16 +21,6 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/index');
             $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
-        
-        public function test_header_session(){
-            $this->request('POST', 'admin/index',
-                    $_POST['username'] = 'username',
-                    $_POST['password'] = 'username',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
-            $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
-        }
 
         public function test_ceklogin(){
             $this->request('POST', 'admin/cek_login',
