@@ -85,8 +85,12 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/tambahLapangan');
             $this->assertContains('<th>NO</th>', $output);
         }
+<<<<<<< HEAD
        
 
+=======
+        
+>>>>>>> 3789d3b34ceebcd2351c0ba9b0c1826e8121a3b2
         public function test_editData(){
             $output = $this->request('GET', 'admin/editData');
             $this->assertContains('<h6>Edit</h6>', $output);
@@ -94,7 +98,38 @@ class Welcome_test extends TestCase
         
         public function test_do_editData(){
             $output = $this->request('GET', 'admin/do_editData');
+<<<<<<< HEAD
             $this->assertContains('<h6>Edit</h6>', $output);
+=======
+            $this->assertContains('<h6>Add</h6>', $output);
+        }
+        
+        public function test_datalapangan(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $output = $this->request('GET', 'admin/datalapangan');
+            $this->assertContains('<h6>Data</h6>', $output);
+        }
+        
+        public function test_not_datalapangan(){
+            $output = $this->request('GET', 'admin/datalapangan');
+            $this->assertContains('<strong>Dashboard</strong>', $output); 
+        }
+        
+        public function test_deleteData(){
+            $output = $this->request('GET', 'admin/deleteData');
+            $this->assertRedirect('index.php/admin/datapenyewaan');
+        }
+        
+        public function test_deleteDataLapangan(){
+            $output = $this->request('GET', 'admin/deleteDataLapangan');
+            $this->assertRedirect('index.php/admin/datalapangan');
+>>>>>>> 3789d3b34ceebcd2351c0ba9b0c1826e8121a3b2
         }
 
         public function test_method_404()

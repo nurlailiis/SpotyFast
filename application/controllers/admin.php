@@ -33,13 +33,13 @@ class admin extends CI_Controller {
         $this->load->view('admin/footer');
     }
      
-    public function cetaksewa(){
-        $data = $this->data->read('jadwal')->result_array();
-        $jadwal['jadwal'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/cetaksewa', $jadwal);
-        $this->load->view('admin/footer');
-    }
+//    public function cetaksewa(){
+//        $data = $this->data->read('jadwal')->result_array();
+//        $jadwal['jadwal'] = $data;
+//        $this->load->view('admin/headermasuk');
+//        $this->load->view('admin/cetaksewa', $jadwal);
+//        $this->load->view('admin/footer');
+//    }
 
     public function cek_login(){
    
@@ -73,7 +73,7 @@ class admin extends CI_Controller {
     }
 
     function logout(){
-        $this->session->session_destroy();
+        $this->session->sess_destroy();
         redirect(base_url('index.php/admin'));
     }
 

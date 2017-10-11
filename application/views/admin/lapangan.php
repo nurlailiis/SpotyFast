@@ -15,6 +15,7 @@
                         <div class="panel-heading">
                             Tambah Lapangan Futsal Fasor ITS
                         </div>
+                        <h6>Add</h6>
                         <div class="panel-body">
                         <?php echo form_open_multipart(base_url('index.php/admin/tambahLapangan')); ?>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Id Lapangan" name="id"></p>

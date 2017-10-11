@@ -15,6 +15,7 @@
                         <div class="panel-heading">
                             Edit Data Penyewaan Futsal Fasor ITS
                         </div>
+                        <h6>Edit</h6>
                         <div class="panel-body">
                         <?php echo form_open_multipart(base_url('index.php/admin/do_editData')); ?>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Id lapangan" name="id" value="<?php echo $id_lapangan ?>"></p>

@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CodeIgniter Application Test Suite" tests="18" assertions="19" failures="2" errors="2" time="2.353841">
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="18" assertions="19" failures="2" errors="2" time="2.353841">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.145695"/>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.121778"/>
+      <testcase name="test_ceklogin_admin_not_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.118750"/>
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="40" assertions="1" time="0.131243"/>
+      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="45" assertions="2" time="0.143557"/>
+      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="57" assertions="2" time="0.167508"/>
+      <testcase name="test_not_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="69" assertions="0" time="0.140286">
+        <error type="PHPUnit_Framework_Exception">Welcome_test::test_not_inputlapangan
+PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:71
+</error>
+      </testcase>
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="74" assertions="1" time="0.126821"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="79" assertions="1" time="0.122594"/>
+      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="84" assertions="1" time="0.125136">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_tambahlapangan
+Failed asserting that 'Array
+(
+    [error] =&gt; &lt;p&gt;You did not select a file to upload.&lt;/p&gt;
+)
+1' contains "&lt;th&gt;NO&lt;/th&gt;".
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:86
+</failure>
+      </testcase>
+      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="89" assertions="1" time="0.136608"/>
+      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="94" assertions="1" time="0.115409">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_do_editData
+Failed asserting that 'Array
+(
+    [error] =&gt; &lt;p&gt;You did not select a file to upload.&lt;/p&gt;
+)
+1' contains "&lt;h6&gt;Add&lt;/h6&gt;".
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:96
+</failure>
+      </testcase>
+      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="99" assertions="2" time="0.200724"/>
+      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="111" assertions="0" time="0.104416">
+        <error type="PHPUnit_Framework_Exception">Welcome_test::test_not_datalapangan
+PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:113
+</error>
+      </testcase>
+      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="116" assertions="1" time="0.113146"/>
+      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="121" assertions="1" time="0.122963"/>
+      <testcase name="test_method_404" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="126" assertions="1" time="0.101208"/>
+      <testcase name="test_dashboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="132" assertions="1" time="0.115999"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
+>>>>>>> 3789d3b34ceebcd2351c0ba9b0c1826e8121a3b2
