@@ -55,8 +55,20 @@ class Welcome_test extends TestCase
         }
         
         public function test_inputlapangan() {
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/inputlapangan');
             $this->assertContains('<h6>Add</h6>', $output);   
+        }
+        
+        public function test_not_inputlapangan(){
+            $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<strong>Dashboard</strong>', $output); 
         }
         
         public function test_dahboard(){
