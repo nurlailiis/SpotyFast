@@ -28,9 +28,9 @@ class data extends CI_Model
 		);
 	}
 
-	function readDataAdmin2($where){
-		$query = $this->db->query('select * from admin where username_admin ="' .$where.'" ');
-		return $query->result_array();
+	function readDataAdmin2($table,$where){
+		//return $this->db->query('select * from admin where username_admin ="' .$where.'" ');
+                return $this->db->get_where($table,$where);
 	}
 
 	function login($password){

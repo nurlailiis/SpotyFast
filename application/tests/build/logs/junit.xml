@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="5" assertions="3" failures="1" errors="1" time="0.418739">
-    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="5" assertions="3" failures="1" errors="1" time="0.418739">
-      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="20" assertions="1" time="0.111651"/>
-      <testcase name="test_method_404" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="26" assertions="1" time="0.080577"/>
-      <testcase name="test_APPPATH" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="32" assertions="1" time="0.087875"/>
-      <testcase name="test_index_not_logged_in_admin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="44" assertions="0" time="0.095130">
-        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_index_not_logged_in_admin
-redirect() is not called.
+  <testsuite name="CodeIgniter Application Test Suite" tests="9" assertions="9" failures="1" errors="0" time="1.216430">
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="9" assertions="9" failures="1" errors="0" time="1.216430">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.126874"/>
+      <testcase name="test_header_session" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.154662">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_header_session
+Failed asserting that null matches expected 'nurlailiis'.
 
-C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
-C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:48
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:32
 </failure>
       </testcase>
-      <testcase name="test_getBarang" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="54" assertions="0" time="0.043506">
-        <error type="LogicException">Welcome_test::test_getBarang
-LogicException: No such property: obj1
-
-C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:58
-C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:55
-</error>
-      </testcase>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="36" assertions="1" time="0.130830"/>
+      <testcase name="test_ceklogin_admin_not_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="46" assertions="1" time="0.137134"/>
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="51" assertions="1" time="0.135538"/>
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="62" assertions="1" time="0.170696"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="67" assertions="1" time="0.120937"/>
+      <testcase name="test_method_404" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="72" assertions="1" time="0.102636"/>
+      <testcase name="test_dashboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="78" assertions="1" time="0.137123"/>
     </testsuite>
   </testsuite>
 </testsuites>

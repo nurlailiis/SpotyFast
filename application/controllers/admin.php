@@ -25,20 +25,6 @@ class admin extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function home(){
-        $data = $this->data->read('admin')->result_array();
-        $admin['admin'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/dashboard', $admin);
-        $this->load->view('admin/footer');
-    }
-    public function inputJadwal(){
-            $data = $this->data->inputLapangan()->result_array();
-            $tampil['inputLapangan'] = $data;
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/sewajadwal', $tampil);
-            $this->load->view('admin/footer');       
-    }
     public function datapenyewaan(){
         $data = $this->data->read('jadwal')->result_array();
         $jadwal['jadwal'] = $data;
@@ -46,18 +32,7 @@ class admin extends CI_Controller {
         $this->load->view('admin/datapenyewaan', $jadwal);
         $this->load->view('admin/footer');
     }
-    public function sewajadwal(){
-        if ($this->session->has_userdata('username')) {
-            $data = $this->data->selectJadwal()->result_array();
-            $tampil['sewajadwal'] = $data;
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/datapenyewaan', $jadwal);
-            $this->load->view('admin/footer');     
-        }
-        else{
-            redirect(base_url('admin/login'));
-        }
-    }
+     
     public function cetaksewa(){
         $data = $this->data->read('jadwal')->result_array();
         $jadwal['jadwal'] = $data;
@@ -67,31 +42,28 @@ class admin extends CI_Controller {
     }
 
     public function cek_login(){
-
+   
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $read = $this->data->readDataAdmin2($username);
-        foreach ($read as $r) {
-            $user = $r['username_admin'];
-            $pass = $r['password_admin'];
-        }
-        
-        $hashed_password = $this->data->login($password);
-        if ($username==$user) {
-            if ($password==$pass) {
+        $where1 = array('username_admin' => $username,
+                        'password_admin' => $password);
+        $x = $this->data->readDataAdmin2('admin',$where1)->num_rows();
+        //$hashed_password = $this->data->login($password);
+        if ($x>0) {
                 $data = array(
-                    'username'  => $user,
+                    'username'  => $username,
                 );
                 $this->session->set_userdata($data);
                 redirect(base_url('index.php/admin/login'));
             }
             else{
-                redirect(base_url('index.php/admin'));
+                $this->index();
+                echo '<script languange="javascript">';
+                echo 'alert("Login Gagal");';
+                echo 'window.history.go(-1);';
+                echo '</script>';
+                redirect(base_url('index.php/admin/index'));
             }
-        }
-        else{
-            redirect(base_url('index.php/admin'));
-        }
     }
 
     function login(){
@@ -101,7 +73,7 @@ class admin extends CI_Controller {
     }
 
     function logout(){
-        $this->session->sess_destroy();
+        $this->session->session_destroy();
         redirect(base_url('index.php/admin'));
     }
 
@@ -114,7 +86,6 @@ class admin extends CI_Controller {
         else{
             redirect(base_url('index.php/admin/login'));
         }
-
     }
 
     function tambahLapangan(){
