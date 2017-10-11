@@ -21,7 +21,7 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/index');
             $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
-
+        
         public function test_ceklogin(){
             $this->request('POST', 'admin/cek_login',
                     [
@@ -66,11 +66,6 @@ class Welcome_test extends TestCase
             $this->assertContains('<h6>Add</h6>', $output);   
         }
         
-        public function test_not_inputlapangan(){
-            $output = $this->request('GET', 'admin/inputlapangan');
-            $this->assertContains('<strong>Dashboard</strong>', $output); 
-        }
-        
         public function test_dahboard(){
             $output = $this->request('GET', 'admin/dashboard');
             $this->assertContains('<strong>Data Lapangan</strong>', $output);
@@ -85,23 +80,10 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/tambahLapangan');
             $this->assertContains('<th>NO</th>', $output);
         }
-<<<<<<< HEAD
-       
-
-=======
         
->>>>>>> 3789d3b34ceebcd2351c0ba9b0c1826e8121a3b2
         public function test_editData(){
             $output = $this->request('GET', 'admin/editData');
             $this->assertContains('<h6>Edit</h6>', $output);
-        }
-        
-        public function test_do_editData(){
-            $output = $this->request('GET', 'admin/do_editData');
-<<<<<<< HEAD
-            $this->assertContains('<h6>Edit</h6>', $output);
-=======
-            $this->assertContains('<h6>Add</h6>', $output);
         }
         
         public function test_datalapangan(){
@@ -116,7 +98,7 @@ class Welcome_test extends TestCase
             $this->assertContains('<h6>Data</h6>', $output);
         }
         
-        public function test_not_datalapangan(){
+         public function test_not_datalapangan(){
             $output = $this->request('GET', 'admin/datalapangan');
             $this->assertContains('<strong>Dashboard</strong>', $output); 
         }
@@ -125,34 +107,5 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/deleteData');
             $this->assertRedirect('index.php/admin/datapenyewaan');
         }
-        
-        public function test_deleteDataLapangan(){
-            $output = $this->request('GET', 'admin/deleteDataLapangan');
-            $this->assertRedirect('index.php/admin/datalapangan');
->>>>>>> 3789d3b34ceebcd2351c0ba9b0c1826e8121a3b2
-        }
-
-        public function test_method_404()
-	{
-		$this->request('GET', 'welcome/method_not_exist');
-		$this->assertResponseCode(404);
-	}
-        
-        public function test_dashboard()
-	{
-		$output = $this->request('GET', 'admin/index');
-		$this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
-	}
-
-//	public function test_APPPATH()
-//	{
-//		$actual = realpath(APPPATH);
-//		$expected = realpath(__DIR__ . '/../..');
-//		$this->assertEquals(
-//			$expected,
-//			$actual,
-//			'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-//		);
-//	}
-        
+      
 }
