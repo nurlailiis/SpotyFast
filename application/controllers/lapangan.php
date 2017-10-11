@@ -18,14 +18,6 @@ class Lapangan extends CI_Controller {
 		$this->load->view('lapangan/footer');
 	}
 
-	public function home($page = 'home'){
-		$data = $this->data->read('lapangan')->result_array();
-		$lapangan['lapangan'] = $data;
-		$lapangan['page'] = $page;
-		$this->load->view('lapangan/header', $lapangan);
-		$this->load->view('lapangan/home', $lapangan);
-		$this->load->view('lapangan/footer');
-	}
 	
 	public function sewajadwal($page = 'sewajadwal'){
 		if ($this->session->has_userdata('username')) {

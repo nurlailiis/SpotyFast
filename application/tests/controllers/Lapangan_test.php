@@ -21,6 +21,11 @@ class Lapangan_test extends TestCase
             $output = $this->request('GET', 'lapangan/index');
             $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
+        
+         public function test_home() {
+            $output = $this->request('GET', 'lapangan/home');
+            $this->assertContains('<h6>Lapangan</h6>', $output);
+        }
 
         public function test_ceklogin(){
             $this->request('POST', 'admin/cek_login',

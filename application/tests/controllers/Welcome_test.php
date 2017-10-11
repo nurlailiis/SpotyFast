@@ -42,11 +42,34 @@ class Welcome_test extends TestCase
             $this->assertContains('<strong>Dashboard</strong>', $output);
         }
 
-//      public function test_logout(){
-//            $this->request('GET', 'admin/logout');
-//            $this->warningOff();
-//            $this->assertRedirect('index.php/admin/index');
-//        }
+        public function test_logout(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $this->request('GET', 'admin/logout');
+            $this->assertRedirect('index.php/admin');
+        }
+        
+        public function test_inputlapangan() {
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<h6>Add</h6>', $output);   
+        }
+        
+        public function test_not_inputlapangan(){
+            $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<strong>Dashboard</strong>', $output); 
+        }
         
         public function test_dahboard(){
             $output = $this->request('GET', 'admin/dashboard');
@@ -58,6 +81,22 @@ class Welcome_test extends TestCase
             $this->assertContains('<th>NO</th>', $output);
         }
         
+        public function test_tambahlapangan(){
+            $output = $this->request('GET', 'admin/tambahLapangan');
+            $this->assertContains('<th>NO</th>', $output);
+        }
+       
+
+        public function test_editData(){
+            $output = $this->request('GET', 'admin/editData');
+            $this->assertContains('<h6>Edit</h6>', $output);
+        }
+        
+        public function test_do_editData(){
+            $output = $this->request('GET', 'admin/do_editData');
+            $this->assertContains('<h6>Edit</h6>', $output);
+        }
+
         public function test_method_404()
 	{
 		$this->request('GET', 'welcome/method_not_exist');
