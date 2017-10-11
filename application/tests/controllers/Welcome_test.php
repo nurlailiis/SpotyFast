@@ -21,16 +21,6 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/index');
             $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
-        
-        public function test_header_session(){
-            $this->request('POST', 'admin/index',
-                    $_POST['username'] = 'username',
-                    $_POST['password'] = 'username',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
-            $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
-        }
 
         public function test_ceklogin(){
             $this->request('POST', 'admin/cek_login',
@@ -52,11 +42,22 @@ class Welcome_test extends TestCase
             $this->assertContains('<strong>Dashboard</strong>', $output);
         }
 
-//      public function test_logout(){
-//            $this->request('GET', 'admin/logout');
-//            $this->warningOff();
-//            $this->assertRedirect('index.php/admin/index');
-//        }
+        public function test_logout(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $this->request('GET', 'admin/logout');
+            $this->assertRedirect('index.php/admin');
+        }
+        
+        public function test_inputlapangan() {
+            $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<h6>Add</h6>', $output);   
+        }
         
         public function test_dahboard(){
             $output = $this->request('GET', 'admin/dashboard');
