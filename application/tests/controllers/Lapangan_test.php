@@ -81,19 +81,14 @@ class Lapangan_test extends TestCase
             $this->assertRedirect('lapangan/sewajadwal');
         }
 
-
-
-
-
-
         public function test_ceklogin(){
-            $this->request('POST', 'admin/cek_login',
+            $this->request('POST', 'lapangan/cek_login',
                     [
-                        'username' => 'nurlailiis',
+                        'username' => 'arakhrn',
                         'password' => '1234',
                     ]
                     );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $this->assertEquals('arakhrn', $_SESSION['username']);
         }
         
         public function test_ceklogin_admin_not_login(){
@@ -103,7 +98,24 @@ class Lapangan_test extends TestCase
         
         public function test_login(){
             $output = $this->request('GET', 'admin/login');
-            $this->assertContains('<strong>Dashboard</strong>', $output);
+            $this->assertContains('<h1>LOGIN</h1>', $output);
+        }
+        
+        public function test_signup() {
+            $output = $this->request('GET', 'lapangan/signup');
+            $this->assertContains('<h1>SIGN UP</h1>', $output);
+        }
+        
+        public function test_logout(){
+            $this->request('POST', 'lapangan/cek_login',
+                    [
+                        'username' => 'arakhrn',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('arakhrn', $_SESSION['username']);
+            $this->request('GET', 'lapangan/logout');
+            $this->assertRedirect('index.php/lapangan');
         }
 
 //      public function test_logout(){

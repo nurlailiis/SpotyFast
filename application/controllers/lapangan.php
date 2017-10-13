@@ -150,28 +150,7 @@ class Lapangan extends CI_Controller {
 		$this->data->addData($data);
 		redirect('lapangan/login');
 	}
-	public function daftar(){
-		$id_user = $this->input->post('id_user');
-		$nama_user = $this->input->post('nama_user');
-		$sewa_user = $this->input->post('sewa_user');
-		$password_user = $this->input->post('password_user');
-		$read = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();
-		//$hashed_pass = $this->data->rahasia($password);
-		if ($read>0) {
-			$this->session->set_flashdata('username_auth', 'Maaf, Username yang anda pilih sudah digunakan orang lain');
-			redirect('lapangan/signup');
-		}
-		else{
-				$data = array(
-			    'id_user'  => $id_user,
-			    'nama_user'=> $nama_user,
-			    'password_user' => $password_user, 
-			    'sewa_user' => $sewa_user, 
-			);
-				$insert = $this->data->insertData('user', $data);
-				redirect('lapangan/login_view');
-				}
-		}
+	
 	public function logout(){
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));
