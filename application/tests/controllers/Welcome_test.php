@@ -107,5 +107,25 @@ class Welcome_test extends TestCase
             $output = $this->request('GET', 'admin/deleteData');
             $this->assertRedirect('index.php/admin/datapenyewaan');
         }
-      
+       
+        public function test_deleteDataLapangan(){
+            $output = $this->request('GET', 'admin/deleteDataLapangan');
+            $this->assertRedirect('index.php/admin/datalapangan');
+        }
+        
+        public function test_validasi(){
+            $output = $this->request('GET', 'admin/validasi');
+            $this->assertRedirect('index.php/admin/datapenyewaan');
+        }
+        
+        public function test_no_validasi(){
+            $output = $this->request('GET', 'admin/validasi');
+            $this->assertRedirect('index.php/admin/datapenyewaan');
+        }
+        
+        public function test_do_editData(){
+            $output = $this->request('GET', 'admin/do_editData');
+            $this->assertContains('<h6>Add</h6>');
+            
+        }
 }

@@ -202,11 +202,7 @@ class admin extends CI_Controller {
     public function validasi($id){
         $where = array('no' => $id);
         $data ["status"] = 1;
-        if($this->data->updateData('jadwal', $data, $where)){
-            redirect('admin/datapenyewaan');
-        }else{
-            redirect('admin/datapenyewaan');
-        }
+        $this->data->updateData('jadwal', $data, $where);
     }
 
 }
