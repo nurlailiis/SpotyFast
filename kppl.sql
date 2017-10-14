@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2017 at 01:37 PM
+-- Generation Time: Oct 14, 2017 at 06:33 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -36,9 +36,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username_admin`, `password_admin`) VALUES
-('arakhrn', '1234'),
-('mohamad', '1234'),
-('nurlailiis', '1234');
+('arakhrn', '81dc9bdb52d04dc20036dbd8313ed055'),
+('maman', '123'),
+('mohamad', '81dc9bdb52d04dc20036dbd8313ed055'),
+('nurlailiis', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,25 @@ INSERT INTO `jadwal` (`no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapanga
 ('1', 'David', 'Mahasiswa', '5215100069', 'Lapangan A', '2017-09-13', '14:00:00', 1, 1),
 ('2', 'ara', 'Mahasiswa', '5215100000', 'Lapangan B', '2017-09-07', '17:00:00', 2, 0),
 ('1506941920', 'Nur laili', 'Mahasiswa', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 0),
-('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 0);
+('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
+('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -100,15 +119,17 @@ CREATE TABLE `user` (
   `id_user` varchar(20) NOT NULL,
   `nama_user` varchar(50) NOT NULL,
   `password_user` varchar(130) NOT NULL,
-  `sewa_user` varchar(20) NOT NULL
+  `no_telp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `sewa_user`) VALUES
+INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `no_telp`) VALUES
 ('arakhrn', 'ara', '1234', 'coba'),
+('modavidck', 'mohamad david', '5663bec6b51338020c7ebc0d8d65b7689d19abed', '085338436164'),
+('nurlailiis', 'sakd', 'khads', 'jask'),
 ('nurlailis', 'tukiyem', '1234', 'coba 1');
 
 --
