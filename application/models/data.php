@@ -27,11 +27,6 @@ class data extends CI_Model
 		return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
 		);
 	}
-
-//	function readDataAdmin2($table,$where){
-//		//return $this->db->query('select * from admin where username_admin ="' .$where.'" ');
-//                return $this->db->get_where($table,$where);
-//	}
         
         function readDataAdmin2($where){
             $username = strtolower($where);

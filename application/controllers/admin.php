@@ -32,14 +32,6 @@ class admin extends CI_Controller {
         $this->load->view('admin/datapenyewaan', $jadwal);
         $this->load->view('admin/footer');
     }
-     
-//    public function cetaksewa(){
-//        $data = $this->data->read('jadwal')->result_array();
-//        $jadwal['jadwal'] = $data;
-//        $this->load->view('admin/headermasuk');
-//        $this->load->view('admin/cetaksewa', $jadwal);
-//        $this->load->view('admin/footer');
-//    }
     
     public function cek_login()
     {
@@ -57,7 +49,7 @@ class admin extends CI_Controller {
         } 
         else
         {
-            $this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+            $this->session->set_flashdata('pesan', 'Maaf username atau password yang anda masukkan salah');
             var_dump($this->session->flashdata('pesan'));
             redirect('index.php/admin/index?fail=true');
         }
@@ -133,9 +125,9 @@ class admin extends CI_Controller {
                 'tarif_nonits' => $tarifnon,
                 'gambar_lapangan' => $image, 
                 );
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/editData', $data);
-        $this->load->view('admin/footer');
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/editData', $data);
+            $this->load->view('admin/footer');
     }
 
     function do_editData(){
@@ -147,6 +139,7 @@ class admin extends CI_Controller {
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
+            $this->session->has_userdata('username');
             echo print_r(array('error' => $this->upload->display_errors()));    
         }
         else{
@@ -196,10 +189,20 @@ class admin extends CI_Controller {
         $res = $this->data->deleteDataLapangan($where);  
         redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
+    
     public function validasi($id){
         $where = array('no' => $id);
         $data ["status"] = 1;
         $this->data->updateData('jadwal', $data, $where);
     }
+    
+         
+//    public function cetaksewa(){
+//        $data = $this->data->read('jadwal')->result_array();
+//        $jadwal['jadwal'] = $data;
+//        $this->load->view('admin/headermasuk');
+//        $this->load->view('admin/cetaksewa', $jadwal);
+//        $this->load->view('admin/footer');
+//    }
 
 }

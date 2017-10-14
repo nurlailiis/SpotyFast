@@ -18,6 +18,7 @@
                                 </div>
                                 <input style="width: 100%" type="submit" value="LOGIN" class="btn btn-success btn-outline" name="">
                             </fieldset>
+                        <h5 style="color: red"><?php echo $this->session->flashdata('pesan'); ?></h5> 
                         </form>
                     </div>
                 </div>

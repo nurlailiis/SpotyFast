@@ -43,7 +43,27 @@ class Welcome_test extends TestCase
                 'username' => 'nurlailiis',
                 'password' => '',
             ]);
-        $this->assertRedirect('admin/fail');
+        $this->assertRedirect('index.php/admin/index/fail');
+        $this->assertFalse( isset($_SESSION['username']) );
+        }
+        
+        public function test_ceklogin_admin_not_login_nousername(){
+        $this->request('POST', 'admin/cek_login',
+            [
+                'username' => '',
+                'password' => '1234',
+            ]);
+        $this->assertRedirect('index.php/admin/index/fail');
+        $this->assertFalse( isset($_SESSION['username']) );
+        }
+        
+        public function test_ceklogin_admin_not_login_unmatch(){
+        $this->request('POST', 'admin/cek_login',
+            [
+                'username' => 'nurlailiis',
+                'password' => 'unmatch',
+            ]);
+        $this->assertRedirect('index.php/admin/index/fail');
         $this->assertFalse( isset($_SESSION['username']) );
         }
         
@@ -72,6 +92,11 @@ class Welcome_test extends TestCase
                     ]
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<h6>Add</h6>', $output);   
+        }
+        
+        public function test_no_inputlapangan() {
             $output = $this->request('GET', 'admin/inputlapangan');
             $this->assertContains('<h6>Add</h6>', $output);   
         }
@@ -114,6 +139,13 @@ class Welcome_test extends TestCase
         }
         
         public function test_deleteData(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/deleteData');
             $this->assertRedirect('index.php/admin/datapenyewaan');
         }
@@ -134,8 +166,20 @@ class Welcome_test extends TestCase
         }
         
         public function test_do_editData(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/do_editData');
-            $this->assertContains('<h6>Add</h6>');
-            
+            $this->assertContains('<h6>Edit</h6>');
+        }
+        
+        public function test_do_editData_failed(){
+            $output = $this->request('GET', 'admin/do_editData');
+            $this->assertContains('<h6>Edit</h6>');
+            $this->assertRedirect('index.php/admin/inputlapangan');
         }
 }
