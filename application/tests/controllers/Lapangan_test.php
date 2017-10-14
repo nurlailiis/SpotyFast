@@ -65,21 +65,7 @@ class Lapangan_test extends TestCase
             
             $output = $this->request('GET', 'lapangan/inputsewa');                                                      
             $this->assertRedirect(base_url('lapangan/login'));            
-        }
-        public function test_createsewa(){           
-            $this->request('POST', 'lapangan/createsewa',
-            [
-                'no' => 1507272828 ,
-                'nama' => 'Ibu risma',
-                'kategori' => 'Non ITS',
-                'nomer_identitas' => '673276424797',
-                'nama_lapangan' => 'Lapangan A',
-                'tanggal' => 2017-10-18,
-                'jam' => '16:00:00',
-                'lama_sewa' => 2
-            ]);
-            $this->assertRedirect('lapangan/sewajadwal');
-        }
+        }       
 
         public function test_ceklogin(){
             $this->request('POST', 'lapangan/cek_login',

@@ -1,23 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="40" assertions="48" failures="11" errors="4" time="5.435382">
-    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="18" assertions="27" failures="4" errors="0" time="2.245857">
-      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.105116"/>
-      <testcase name="test_home" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="1" time="0.079133">
+  <testsuite name="CodeIgniter Application Test Suite" tests="40" assertions="46" failures="13" errors="4" time="6.534660">
+    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="18" assertions="25" failures="6" errors="0" time="3.464778">
+      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.407497"/>
+      <testcase name="test_home" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="1" time="0.317420">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_home
 Failed asserting that 'Lapangan/home is not found' contains "&lt;meta charset="utf-8"&gt;".
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:31
 </failure>
       </testcase>
-      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="35" assertions="3" time="0.101437"/>
-      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="43" assertions="1" time="0.080359"/>
-      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="49" assertions="3" time="0.143042"/>
-      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="55" assertions="3" time="0.118144"/>
-      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="63" assertions="1" time="0.138324"/>
-      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="69" assertions="1" time="0.154568"/>
-      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="84" assertions="1" time="0.124049"/>
-      <testcase name="test_ceklogin_admin_not_login" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="94" assertions="1" time="0.117361">
+      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="35" assertions="2" time="0.193320">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_sewajadwal
+Failed asserting that '&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+  &lt;head&gt;
+
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+    &lt;meta name="description" content="Futsal fasor ITS, tempat untuk menyewa lapangan futsal dengan cepat."&gt;
+    &lt;meta name="author" content="Mohamad David | Nur laili | Aisyah paramastri"&gt;
+
+    &lt;title&gt;Futsal Fasor ITS | sewajadwal&lt;/title&gt;
+
+    &lt;!-- Bootstrap core CSS --&gt;
+    &lt;link href="http://localhost/GIT/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+    &lt;!-- Custom fonts for this template --&gt;
+    &lt;link href="http://localhost/GIT/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"&gt;
+    &lt;link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'&gt;
+    &lt;link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'&gt;
+
+    &lt;!-- Custom styles for this template --&gt;
+    &lt;link href="http://localhost/GIT/assets/css/clean-blog.min.css" rel="stylesheet"&gt;
+    &lt;link href="http://localhost/GIT/assets/css/img.css" rel="stylesheet"&gt;
+    &lt;link href="http://localhost/GIT/assets/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link href="http://localhost/GIT/assets/css/bootstrap.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+    &lt;!-- Navigation --&gt;
+    &lt;nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"&gt;
+      &lt;div class="container"&gt;
+        &lt;a class="navbar-brand" href="http://localhost/GIT/"&gt;Futsal Fasor&lt;/a&gt;
+        &lt;button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"&gt;
+          Menu
+          &lt;i class="fa fa-bars"&gt;&lt;/i&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarResponsive"&gt;
+          &lt;ul class="navbar-nav ml-auto"&gt;
+            &lt;li class="nav-item"&gt;
+              &lt;a class="nav-link" href="http://localhost/GIT/lapangan/home"&gt;Home&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item"&gt;
+              &lt;a class="nav-link" href="http://localhost/GIT/lapangan/sewajadwal"&gt;Sewa Jadwal&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="nav-item dropdown"&gt;
+            
+              &lt;a href="http://localhost/GIT/lapangan/logout" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"&gt;&lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+              &lt;ul class="dropdown-menu"&gt;
+                &lt;li&gt;&lt;a href="http://localhost/GIT/lapangan/logout"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+                          &lt;/li&gt;         
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;!-- Page Header --&gt;
+    &lt;header class="masthead" style="background-image: url('http://localhost/GIT/assets/img/futsal wall.png')"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-lg-8 col-md-10 mx-auto"&gt;
+            &lt;div class="site-heading"&gt;
+              &lt;h1&gt;Futsal Fasor ITS&lt;/h1&gt;
+              &lt;span class="subheading"&gt;Fasilitas futsal dengan berbagai macam jenis lapangan&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+                &lt;div class="col-lg-12"&gt;
+                    &lt;div class="panel panel-default"&gt;
+                        &lt;div class="panel-heading"&gt;
+                          Tabel Sewa Jadwal
+                        &lt;/div&gt;
+                        &lt;hr&gt;
+                        &lt;div class="panel-body"&gt;
+                        &lt;div class="table-responsive"&gt;
+                            &lt;table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example"&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th&gt;No&lt;/th&gt;
+                                    &lt;th&gt;Nama&lt;/th&gt;
+                                    &lt;th&gt;Kategori&lt;/th&gt;
+                                    &lt;th&gt;Nomer Identitas&lt;/th&gt;
+                                    &lt;th&gt;Nama Lapangan&lt;/th&gt;
+                                    &lt;th&gt;Tanggal Sewa&lt;/th&gt;
+                                    &lt;th&gt;Jam&lt;/th&gt;
+                                    &lt;th&gt;Lama Sewa&lt;/th&gt;                                    
+                                    &lt;th&gt;Status&lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                                                           &lt;tr class="odd gradeX"&gt;
+                                   &lt;td&gt;1&lt;/td&gt;
+                                   &lt;td&gt;David&lt;/td&gt;
+                                   &lt;td&gt;Mahasiswa&lt;/td&gt;
+                                   &lt;td&gt;5215100069&lt;/td&gt;
+                                   &lt;td&gt;Lapangan A&lt;/td&gt;
+                                   &lt;td&gt;2017-09-13&lt;/td&gt;
+                                   &lt;td&gt;14:00:00&lt;/td&gt;
+                                   &lt;td&gt;1 Jam&lt;/td&gt;
+                                   &lt;td&gt;&lt;a class="btn btn-success btn-outline" &gt;Dibayar&lt;/a&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                                            &lt;tr class="odd gradeX"&gt;
+                                   &lt;td&gt;2&lt;/td&gt;
+                                   &lt;td&gt;ara&lt;/td&gt;
+                                   &lt;td&gt;Mahasiswa&lt;/td&gt;
+                                   &lt;td&gt;5215100000&lt;/td&gt;
+                                   &lt;td&gt;Lapangan B&lt;/td&gt;
+                                   &lt;td&gt;2017-09-07&lt;/td&gt;
+                                   &lt;td&gt;17:00:00&lt;/td&gt;
+                                   &lt;td&gt;2 Jam&lt;/td&gt;
+                                   &lt;td&gt;&lt;a class="btn btn-secondary btn-outline" &gt;Ngutang&lt;/a&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                                        &lt;/tbody&gt;
+                        &lt;/table&gt;
+                        &lt;p class="col-md-12"&gt;
+                          &lt;a class="btn btn-primary" href="http://localhost/GIT/lapangan/inputsewa"&gt;Sewa&lt;/a&gt; 
+                        &lt;/p&gt;                        
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+&lt;/div&gt;
+                &lt;footer&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-lg-8 col-md-10 mx-auto"&gt;
+            &lt;ul class="list-inline text-center"&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-twitter fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-facebook fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+              &lt;li class="list-inline-item"&gt;
+                &lt;a href="#"&gt;
+                  &lt;span class="fa-stack fa-lg"&gt;
+                    &lt;i class="fa fa-circle fa-stack-2x"&gt;&lt;/i&gt;
+                    &lt;i class="fa fa-github fa-stack-1x fa-inverse"&gt;&lt;/i&gt;
+                  &lt;/span&gt;
+                &lt;/a&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p class="copyright text-muted"&gt;Copyright &amp;copy; laili ara david&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;!-- Bootstrap core JavaScript --&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/jquery/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/popper/popper.min.js"&gt;&lt;/script&gt;
+    &lt;script src="http://localhost/GIT/assets/vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+    &lt;!-- Custom scripts for this template --&gt;
+    &lt;script src="http://localhost/GIT/assets/js/clean-blog.min.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+' contains "&lt;td&gt;Ibu risma&lt;/td&gt;".
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:40
+</failure>
+      </testcase>
+      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="43" assertions="1" time="0.146818"/>
+      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="49" assertions="3" time="0.123880"/>
+      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="55" assertions="3" time="0.117369"/>
+      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="63" assertions="1" time="0.080637"/>
+      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="69" assertions="1" time="0.252665"/>
+      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="84" assertions="1" time="0.815299">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_ceklogin
+Failed asserting that null matches expected 'arakhrn'.
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:91
+</failure>
+      </testcase>
+      <testcase name="test_ceklogin_admin_not_login" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="94" assertions="1" time="0.146917">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_ceklogin_admin_not_login
 URL to redirect is not Redirect to http://localhost/GIT/index.php/admin/index but Redirect to http://localhost/GIT/index.php/admin/index?fail=true.
 Failed asserting that two strings are identical.
@@ -31,7 +216,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
 C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:96
 </failure>
       </testcase>
-      <testcase name="test_login" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="99" assertions="1" time="0.133942">
+      <testcase name="test_login" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="99" assertions="1" time="0.120247">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_login
 Failed asserting that '&lt;html lang="en"&gt;
 
@@ -285,31 +470,24 @@ Failed asserting that '&lt;html lang="en"&gt;
 C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:101
 </failure>
       </testcase>
-      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="104" assertions="1" time="0.152513"/>
-      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="109" assertions="2" time="0.199280">
+      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="104" assertions="1" time="0.113832"/>
+      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="109" assertions="1" time="0.090435">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_logout
-URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan but Redirect to http://localhost/GIT/lapangan/login.
-Failed asserting that two strings are identical.
---- Expected
-+++ Actual
-@@ @@
--Redirect to http://localhost/GIT/index.php/lapangan
-+Redirect to http://localhost/GIT/lapangan/login
+Failed asserting that null matches expected 'arakhrn'.
 
-C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
-C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:118
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:116
 </failure>
       </testcase>
-      <testcase name="test_dahboard" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="127" assertions="1" time="0.148175"/>
-      <testcase name="test_datapenyewaan" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="132" assertions="1" time="0.195916"/>
-      <testcase name="test_method_404" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="137" assertions="1" time="0.085955"/>
-      <testcase name="test_dashboard" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="143" assertions="1" time="0.114486"/>
-      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="148" assertions="1" time="0.054057"/>
+      <testcase name="test_dahboard" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="127" assertions="1" time="0.090314"/>
+      <testcase name="test_datapenyewaan" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="132" assertions="1" time="0.105209"/>
+      <testcase name="test_method_404" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="137" assertions="1" time="0.102704"/>
+      <testcase name="test_dashboard" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="143" assertions="1" time="0.185684"/>
+      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="148" assertions="1" time="0.054531"/>
     </testsuite>
-    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="21" failures="7" errors="4" time="3.189525">
-      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.126676"/>
-      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.113006"/>
-      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.116658">
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="21" failures="7" errors="4" time="3.069882">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.129910"/>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.134525"/>
+      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.132544">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_ceklogin_admin_not_login_kosongsemua
 URL to redirect is not Redirect to http://localhost/GIT/index.php/admin/index but Redirect to http://localhost/GIT/index.php/admin/index?fail=true.
 Failed asserting that two strings are identical.
@@ -323,7 +501,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:37
 </failure>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="40" assertions="1" time="0.137330">
+      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="40" assertions="1" time="0.117976">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_ceklogin_admin_not_login_nopassword
 URL to redirect is not Redirect to http://localhost/GIT/index.php/admin/index/fail but Redirect to http://localhost/GIT/index.php/admin/index?fail=true.
 Failed asserting that two strings are identical.
@@ -337,7 +515,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:46
 </failure>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="50" assertions="1" time="0.123294">
+      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="50" assertions="1" time="0.112424">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_ceklogin_admin_not_login_nousername
 URL to redirect is not Redirect to http://localhost/GIT/index.php/admin/index/fail but Redirect to http://localhost/GIT/index.php/admin/index?fail=true.
 Failed asserting that two strings are identical.
@@ -351,7 +529,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:56
 </failure>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="60" assertions="1" time="0.124409">
+      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="60" assertions="1" time="0.101613">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_ceklogin_admin_not_login_unmatch
 URL to redirect is not Redirect to http://localhost/GIT/index.php/admin/index/fail but Redirect to http://localhost/GIT/index.php/admin/index?fail=true.
 Failed asserting that two strings are identical.
@@ -365,19 +543,19 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:66
 </failure>
       </testcase>
-      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="70" assertions="1" time="0.123360"/>
-      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="75" assertions="2" time="0.158228"/>
-      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="87" assertions="2" time="0.166728"/>
-      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="99" assertions="0" time="0.108699">
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="70" assertions="1" time="0.109068"/>
+      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="75" assertions="2" time="0.142732"/>
+      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="87" assertions="2" time="0.176303"/>
+      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="99" assertions="0" time="0.157128">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_no_inputlapangan
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:101
 </error>
       </testcase>
-      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="104" assertions="1" time="0.133141"/>
-      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="109" assertions="1" time="0.166301"/>
-      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="114" assertions="1" time="0.116239">
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="104" assertions="1" time="0.116069"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="109" assertions="1" time="0.114002"/>
+      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="114" assertions="1" time="0.123369">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_tambahlapangan
 Failed asserting that 'Array
 (
@@ -388,18 +566,18 @@ Failed asserting that 'Array
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:116
 </failure>
       </testcase>
-      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="119" assertions="1" time="0.160671"/>
-      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="124" assertions="2" time="0.259071"/>
-      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="136" assertions="0" time="0.132326">
+      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="119" assertions="1" time="0.160126"/>
+      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="124" assertions="2" time="0.235933"/>
+      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="136" assertions="0" time="0.105551">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_not_datalapangan
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:138
 </error>
       </testcase>
-      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="2" time="0.267106"/>
-      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="153" assertions="1" time="0.115676"/>
-      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="158" assertions="0" time="0.116215">
+      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="2" time="0.166663"/>
+      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="153" assertions="1" time="0.160285"/>
+      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="158" assertions="0" time="0.143735">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_validasi
 redirect() is not called.
 
@@ -407,7 +585,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:160
 </failure>
       </testcase>
-      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="163" assertions="0" time="0.128804">
+      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="163" assertions="0" time="0.125300">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_no_validasi
 redirect() is not called.
 
@@ -415,14 +593,14 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:165
 </failure>
       </testcase>
-      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="168" assertions="1" time="0.177504">
+      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="168" assertions="1" time="0.159612">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_do_editData
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:177
 </error>
       </testcase>
-      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="180" assertions="0" time="0.118083">
+      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="180" assertions="0" time="0.145014">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_do_editData_failed
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
