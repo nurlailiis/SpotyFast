@@ -28,19 +28,18 @@ class data extends CI_Model
 		);
 	}
         
-        function readDataAdmin2($where){
+    function readDataAdmin2($where){
             $username = strtolower($where);
             $query = $this->db->get_where('admin', [ 'username_admin' => $username ]);
             return $query->row();
-        }
+    }
         
-        function login($password){
+	public function enkripsi($password){
 		$key = $this->config->item('encryption_key');
-	    $salt1 = hash('sha512', $key . $password);
-	    $salt2 = hash('sha512', $password . $key);
-	    return hash('sha512', $salt1 . $password . $salt2);
+	    $salt1 = hash('sha1', $key . $password);
+	    $salt2 = hash('sha1', $password . $key);
+	    return hash('sha1', $salt1 . $password . $salt2);	
 	}
-
 	function insertData($table, $data){
 		$this->db->insert($table, $data );
 	}

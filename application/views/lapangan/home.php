@@ -1,6 +1,6 @@
+<?php echo $this->session->userdata('success') ?>
 <div class="container">
   <div class="row">
-    <h6>Lapangan</h6>
     <?php foreach ($lapangan as $l){?>
       <div class="col-md-4">
         <div class="card" style="width: 20rem;">

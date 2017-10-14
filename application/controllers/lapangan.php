@@ -96,38 +96,55 @@ class Lapangan extends CI_Controller {
 	public function cek_login(){
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $read = $this->data->readData($username);
-        $hashed_password = $this->data->login($password);
+        $read = $this->data->readWhere('user', $username, 'id_user')->result_array();
+        $enkripsi = $this->data->enkripsi($password);
         foreach ($read as $r) {
             $user = $r['id_user'];
 			$pass = $r['password_user'];
 			$nama = $r['nama_user'];
 			$sewa_user = $r['sewa_user'];
-        }	
-        
-        $hashed_password = $this->data->login($password);
+        }
+
+        $enkripsi = $this->data->enkripsi($password);	       
         if ($username==$user) {
-            if ($password==$pass) {
+            if ($enkripsi==$pass) {
+            	$enkripsi = $this->data->enkripsi($password);
                 $data = array(
-                    'username'  	=> $user,
-                    'password_user'	=> $pass,			      
-			        'nama' 			=> $nama,
-			        'sewa_user'		=> $sewa_user,
+                    'username'  	=> $user,                    
+                    'nama'          => $nama,
+                    'sewa_user'		=> $sewa_user
 
                 );
                 $this->session->set_userdata($data);
-        		redirect(base_url('lapangan/index'));
+                $this->session->set_flashdata('success', '
+        			<div class="alert alert-success alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Berhasil!</strong> Selamat datang '.$nama.'  
+					</div>
+        		');
+        		redirect('lapangan/index');
             }
             else{
-            	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
-                redirect(base_url('lapangan/login'));
+            	$this->session->set_flashdata('pesan', '
+        			<div class="alert alert-danger alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Maaf</strong> Password anda salah.
+					</div>
+        		');
+                redirect('lapangan/login');
             }
         }
         else{
-        	$this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+        	$this->session->set_flashdata('pesan', '
+        			<div class="alert alert-danger alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Maaf</strong> Username anda belum terdaftar.
+					</div>
+        		');
             redirect(base_url('lapangan/login'));
         }
  	}
+	
  	public function signup($page = "signup"){
 		$data = $this->data->read('user')->result_array();
 		$user['user'] = $data;
@@ -136,21 +153,28 @@ class Lapangan extends CI_Controller {
 		$this->load->view('lapangan/signup_view', $user);
 		$this->load->view('lapangan/footer');
 	}
- 	public function new_user_registration() {
-		$id_user = $this->input->post('id_user', 'trim|required');
-		$nama_user = $this->input->post('nama_user', 'trim|required');
-		$password_user = $this->input->post('password_user', 'trim|required');
-		$sewa_user = $this->input->post('sewa_user', 'trim|required');
-		$data = array (
+ 	public function tambah_user(){
+		$id_user = $this->input->post('id_user');
+		$nama_user = $this->input->post('nama_user');
+		$password_user = $this->input->post('password_user');
+		$sewa_user = $this->input->post('sewa_user');
+		$cek_user = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();	
+		$enkripsi = $this->data->enkripsi($password_user);
+		if($cek_user>0){
+			$this->session->set_flashdata('user_available', 'Maaf, Username yang anda pilih sudah digunakan orang lain');
+			redirect('lapangan/signup');
+		}else{
+			$data = array(
 			'id_user' => $id_user,
 			'nama_user' => $nama_user,
-			'password_user' => $password_user,
+			'password_user' => $enkripsi,
 			'sewa_user' => $sewa_user
 		);
 		$this->data->addData($data);
+		$this->session->set_flashdata('berhasil', 'Selamat, akun anda telah terdaftar. Silahkan lakukan login kembali');
 		redirect('lapangan/login');
-	}
-	
+		}		
+	}	
 	public function logout(){
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));

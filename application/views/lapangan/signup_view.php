@@ -34,7 +34,8 @@
     <center>
         <h1>SIGN UP</h1>
     </center>
-    <form action="<?php echo base_url(). 'lapangan/new_user_registration'; ?>" method="post">
+    <form action="<?php echo base_url(). 'lapangan/tambah_user'; ?>" method="post">
+    <p style="color:red"><?php echo $this->session->flashdata('user_available')?></p>
         <table style="margin:20px auto;">
             <tr>
                 <td>Id : </td>
