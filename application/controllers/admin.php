@@ -40,30 +40,27 @@ class admin extends CI_Controller {
 //        $this->load->view('admin/cetaksewa', $jadwal);
 //        $this->load->view('admin/footer');
 //    }
-
-    public function cek_login(){
-   
+    
+    public function cek_login()
+    {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $where1 = array('username_admin' => $username,
-                        'password_admin' => $password);
-        $x = $this->data->readDataAdmin2('admin',$where1)->num_rows();
-        //$hashed_password = $this->data->login($password);
-        if ($x>0) {
-                $data = array(
-                    'username'  => $username,
-                );
-                $this->session->set_userdata($data);
-                redirect(base_url('index.php/admin/login'));
-            }
-            else{
-                $this->index();
-                echo '<script languange="javascript">';
-                echo 'alert("Login Gagal");';
-                echo 'window.history.go(-1);';
-                echo '</script>';
-                redirect(base_url('index.php/admin/index'));
-            }
+        $user = $this->data->readDataAdmin2($username);
+        $pass1 = md5($password);
+        $pass2 = $user->password_admin;
+        if ( isset($user) AND $pass1 == $pass2 ) {
+            $data = array(
+                'username'=>$user->username_admin
+            );
+            $this->session->set_userdata($data);
+            redirect('index.php/admin/login');
+        } 
+        else
+        {
+            $this->session->set_flashdata('pesan', 'Maaf username atau password salah');
+            var_dump($this->session->flashdata('pesan'));
+            redirect('index.php/admin/index?fail=true');
+        }
     }
 
     function login(){

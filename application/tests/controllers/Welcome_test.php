@@ -32,10 +32,20 @@ class Welcome_test extends TestCase
             $this->assertEquals('nurlailiis', $_SESSION['username']);
         }
         
-        public function test_ceklogin_admin_not_login(){
+        public function test_ceklogin_admin_not_login_kosongsemua(){
             $this->request('GET', 'admin/cek_login');
             $this->assertRedirect('index.php/admin/index');
 	}
+        
+        public function test_ceklogin_admin_not_login_nopassword(){
+        $this->request('POST', 'admin/cek_login',
+            [
+                'username' => 'nurlailiis',
+                'password' => '',
+            ]);
+        $this->assertRedirect('admin/fail');
+        $this->assertFalse( isset($_SESSION['username']) );
+        }
         
         public function test_login(){
             $output = $this->request('GET', 'admin/login');

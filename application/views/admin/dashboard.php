@@ -74,7 +74,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="<?php echo base_url('index.php/admin/lapangan') ?>">
+                            <a href="<?php echo base_url('index.php/admin/inputlapangan') ?>">
                                 <div class="panel-footer">
                                     <span class="pull-left">Selengkapnya..</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

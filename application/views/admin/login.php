@@ -11,10 +11,10 @@
                         <?php echo form_open('admin/cek_login'); ?>
                             <fieldset>
                                 <div class="form-group has-success">
-                                    <input class="form-control" placeholder="Username" name="username" type="username" autofocus>
+                                    <input class="form-control" placeholder="Username" name="username" type="username" autofocus required="">
                                 </div>
                                 <div class="form-group has-success">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="" required="">
                                 </div>
                                 <input style="width: 100%" type="submit" value="LOGIN" class="btn btn-success btn-outline" name="">
                             </fieldset>

@@ -28,12 +28,18 @@ class data extends CI_Model
 		);
 	}
 
-	function readDataAdmin2($table,$where){
-		//return $this->db->query('select * from admin where username_admin ="' .$where.'" ');
-                return $this->db->get_where($table,$where);
-	}
-
-	function login($password){
+//	function readDataAdmin2($table,$where){
+//		//return $this->db->query('select * from admin where username_admin ="' .$where.'" ');
+//                return $this->db->get_where($table,$where);
+//	}
+        
+        function readDataAdmin2($where){
+            $username = strtolower($where);
+            $query = $this->db->get_where('admin', [ 'username_admin' => $username ]);
+            return $query->row();
+        }
+        
+        function login($password){
 		$key = $this->config->item('encryption_key');
 	    $salt1 = hash('sha512', $key . $password);
 	    $salt2 = hash('sha512', $password . $key);
