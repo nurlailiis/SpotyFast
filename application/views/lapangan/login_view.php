@@ -7,7 +7,6 @@
             <h1>LOGIN</h1>
             <?php echo form_open('lapangan/cek_login'); ?>
             <br>
-            <br>
             <fieldset>
             <p><?php echo $this->session->flashdata('pesan')?></p>
             <p><?php echo $this->session->flashdata('user_available')?></p>

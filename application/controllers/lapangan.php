@@ -157,18 +157,23 @@ class Lapangan extends CI_Controller {
 		$id_user = $this->input->post('id_user');
 		$nama_user = $this->input->post('nama_user');
 		$password_user = $this->input->post('password_user');
-		$sewa_user = $this->input->post('sewa_user');
+		$no_telp = $this->input->post('no_telp');
 		$cek_user = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();	
 		$enkripsi = $this->data->enkripsi($password_user);
 		if($cek_user>0){
-			$this->session->set_flashdata('user_available', 'Maaf, Username yang anda pilih sudah digunakan orang lain');
+			$this->session->set_flashdata('user_available', '
+        			<div class="alert alert-danger alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Maaf</strong> Username yang anda pilih sudah terdaftar.
+					</div>
+        		');
 			redirect('lapangan/signup');
 		}else{
 			$data = array(
 			'id_user' => $id_user,
 			'nama_user' => $nama_user,
 			'password_user' => $enkripsi,
-			'sewa_user' => $sewa_user
+			'no_telp' => $no_telp
 		);
 		$this->data->addData($data);
 		$this->session->set_flashdata('berhasil', 'Selamat, akun anda telah terdaftar. Silahkan lakukan login kembali');
@@ -179,6 +184,4 @@ class Lapangan extends CI_Controller {
 		unset($_SESSION['username']);		
 		redirect(base_url('lapangan/login'));
 	}
-
-
 }
