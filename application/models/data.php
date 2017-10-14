@@ -22,17 +22,12 @@ class data extends CI_Model
 		return $this->db->query('SELECT `no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status` FROM `jadwal` WHERE 1'
 		);
 	}
-
-	function inputLapangan(){
-		return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
-		);
-	}
         
-    function readDataAdmin2($where){
-            $username = strtolower($where);
-            $query = $this->db->get_where('admin', [ 'username_admin' => $username ]);
-            return $query->row();
-    }
+        function readDataAdmin2($where){
+                $username = strtolower($where);
+                $query = $this->db->get_where('admin', [ 'username_admin' => $username ]);
+                return $query->row();
+        }
         
 	public function enkripsi($password){
 		$key = $this->config->item('encryption_key');
@@ -51,12 +46,6 @@ class data extends CI_Model
 	public function addData($data) {
 		return $this->db->insert('user', $data);
 	} 
-
-	function readData($where){
-		$query = $this->db->query('select * from user where id_user ="' .$where.'" ');
-		return $query->result_array();
-		//return $this->db->get_where($table, array($id => $where));
-	}
 
 	function deleteData($item){  
 		$this->db->where_in('no', $item);  

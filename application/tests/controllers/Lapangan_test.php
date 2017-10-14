@@ -42,7 +42,6 @@ class Lapangan_test extends TestCase
         }
         public function test_sewajadwal_gagal(){
             $_SESSION['username'] != "name";
-            
             $output = $this->request('GET', 'lapangan/sewajadwal');                                                      
             $this->assertRedirect(base_url('lapangan/login'));            
         }
@@ -78,12 +77,12 @@ class Lapangan_test extends TestCase
         }
         
         public function test_ceklogin_admin_not_login(){
-            $this->request('GET', 'admin/cek_login');
+            $this->request('GET', 'lapangan/cek_login');
             $this->assertRedirect('index.php/admin/index');
 	}
         
         public function test_login(){
-            $output = $this->request('GET', 'admin/login');
+            $output = $this->request('GET', 'lapangan/login');
             $this->assertContains('<h1>LOGIN</h1>', $output);
         }
         
