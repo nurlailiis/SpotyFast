@@ -45,7 +45,10 @@ class admin extends CI_Controller {
                 'username'=>$user->username_admin
             );
             $this->session->set_userdata($data);
-            redirect('index.php/admin/login');
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/dashboard');
+            $this->load->view('admin/footer');
+//            redirect('index.php/admin/login');
         } 
         else
         {
@@ -63,7 +66,10 @@ class admin extends CI_Controller {
 
     function logout(){
         $this->session->sess_destroy();
-        redirect(base_url('index.php/admin'));
+        $this->load->view('admin/header');
+        $this->load->view('admin/login');
+        $this->load->view('admin/footer');
+//        redirect(base_url('index.php/admin'));
     }
 
     function inputlapangan(){
@@ -180,14 +186,24 @@ class admin extends CI_Controller {
 
     function deleteData($id){  
         $where = array('no' => $id ); 
-        $res = $this->data->deleteData($where);  
-        redirect($uri = base_url('index.php/admin/datapenyewaan'), $method = 'auto', $code = NULL);
+        $res = $this->data->deleteData($where); 
+        $data = $this->data->read('jadwal')->result_array();
+        $jadwal['jadwal'] = $data;
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/datapenyewaan', $jadwal);
+        $this->load->view('admin/footer');
+//        redirect($uri = base_url('index.php/admin/datapenyewaan'), $method = 'auto', $code = NULL);
     }
 
     function deleteDataLapangan($id){  
         $where = array('id_lapangan' => $id ); 
         $res = $this->data->deleteDataLapangan($where);  
-        redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
+        $data = $this->data->selectLapangan()->result_array();
+        $tampil['datalapangan'] = $data;
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/datalapangan', $tampil);
+        $this->load->view('admin/footer');
+//        redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
     
     public function validasi($id){
