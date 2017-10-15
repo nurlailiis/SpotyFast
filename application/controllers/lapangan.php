@@ -180,17 +180,17 @@ class Lapangan extends CI_Controller {
                     'no_telp' => $no_telp
             );
             $this->data->addData($data);
-            $this->session->set_flashdata('berhasil', 'Selamat, akun anda telah terdaftar. Silahkan lakukan login kembali');
+            $this->session->set_flashdata('berhasil', '
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <strong>Berhasil,</strong> akun anda telah terdaftar. Silahkan lakukan login kembali.
+                                    </div>
+                    ');
             redirect('lapangan/login');
             }		
 	}	
-        
-	public function logout($page = 'logout'){
-            $data = $this->data->read('user')->result_array();
-            $user['user'] = $data;
-            $user['page'] = $page;
-            $this->load->view('lapangan/header', $user);
-            $this->load->view('lapangan/login', $user);
-            $this->load->view('lapangan/footer');
-	}
+    public function logout(){
+        unset($_SESSION['username']);       
+        redirect(base_url('lapangan/login'));
+    }
 }

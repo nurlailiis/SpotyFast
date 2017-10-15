@@ -8,8 +8,9 @@
             <?php echo form_open('lapangan/cek_login'); ?>
             <br>
             <fieldset>
-            <p><?php echo $this->session->flashdata('pesan')?></p>
-            <p><?php echo $this->session->flashdata('user_available')?></p>
+              <p><?php echo $this->session->flashdata('pesan')?></p>
+              <p><?php echo $this->session->flashdata('user_available')?></p>
+              <p><?php echo $this->session->flashdata('berhasil') ?></p>
               <div class="form-group has-success" style="width:200px" >
                 <input class="form-control" placeholder="Username" name="username" type="username" margin-left="20px" autofocus required>
               </div>
