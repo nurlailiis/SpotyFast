@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('lapangan/home');?>">Home</a>
+              <a class="nav-link" href="<?php echo base_url('lapangan/index');?>">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>

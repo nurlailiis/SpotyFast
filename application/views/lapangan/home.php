@@ -3,7 +3,6 @@
   <div class="row">
     <?php foreach ($lapangan as $l){?>
       <div class="col-md-4">
-      <div class="box">
         <div class="card" style="width: 20rem;">
         <div class="img">
           <img style="max-height: 170px;" class="card-img-top" src="<?php echo $l['gambar_lapangan'] ?>" alt="Card image cap">
@@ -14,8 +13,7 @@
           <p class="card-text">Tarif Non ITS: <?php echo $l['tarif_nonits'] ?></p>
           <a href="<?php echo base_url('lapangan/detail/'.$l["id_lapangan"]) ?>" class="btn btn-primary">Detail</a>
           </div>
-        </div>
-      </div>            
+        </div>           
       </div>
     <?php } ?>
   </div>
