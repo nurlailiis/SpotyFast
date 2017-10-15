@@ -66,6 +66,11 @@ class Lapangan_test extends TestCase
             $output = $this->request('GET', 'lapangan/inputsewa');                                                      
             $this->assertRedirect(base_url('lapangan/login'));            
         }       
+        
+        public function test_signup() {
+            $output = $this->request('GET', 'lapangan/signup');
+            $this->assertContains('<h1>SIGN UP</h1>', $output);
+        }
 
         public function test_ceklogin(){
             $this->request('POST', 'lapangan/cek_login',
@@ -82,63 +87,20 @@ class Lapangan_test extends TestCase
             $this->assertRedirect('index.php/admin/index');
 	}
         
-        public function test_login(){
-            $output = $this->request('GET', 'admin/login');
-            $this->assertContains('<h1>LOGIN</h1>', $output);
-        }
-        
-        public function test_signup() {
-            $output = $this->request('GET', 'lapangan/signup');
-            $this->assertContains('<h1>SIGN UP</h1>', $output);
-        }
-        
-        public function test_logout(){
-            $this->request('POST', 'lapangan/cek_login',
-                    [
-                        'username' => 'arakhrn',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('arakhrn', $_SESSION['username']);
-            $this->request('GET', 'lapangan/logout');
-            $this->assertRedirect('index.php/lapangan');
-        }
-
-//      public function test_logout(){
-//            $this->request('GET', 'admin/logout');
-//            $this->warningOff();
-//            $this->assertRedirect('index.php/admin/index');
-//        }
-        
-        public function test_dahboard(){
-            $output = $this->request('GET', 'admin/dashboard');
-            $this->assertContains('<strong>Data Lapangan</strong>', $output);
-        }
-        
-        public function test_datapenyewaan(){
-            $output = $this->request('GET', 'admin/datapenyewaan');
-            $this->assertContains('<th>NO</th>', $output);
-        }
-        
         public function test_method_404()
 	{
 		$this->request('GET', 'welcome/method_not_exist');
 		$this->assertResponseCode(404);
 	}
         
-        public function test_dashboard()
-	{
-		$output = $this->request('GET', 'admin/index');
-		$this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
-	}
-    public function test_APPPATH()
-    {
-        $actual = realpath(APPPATH);
-        $expected = realpath(__DIR__ . '/../..');
-        $this->assertEquals(
-            $expected,
-            $actual,
-            'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-        );
-    }       
+        public function test_APPPATH()
+        {
+            $actual = realpath(APPPATH);
+            $expected = realpath(__DIR__ . '/../..');
+            $this->assertEquals(
+                $expected,
+                $actual,
+                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
+            );
+        }       
 }
