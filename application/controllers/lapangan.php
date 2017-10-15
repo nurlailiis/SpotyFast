@@ -57,6 +57,17 @@ class Lapangan extends CI_Controller {
                     redirect(base_url('lapangan/login'));
             }
 	}
+        
+        
+ 	public function signup($page = "signup"){
+            $data = $this->data->read('user')->result_array();
+            $user['user'] = $data;
+            $user['page'] = $page;
+            $this->load->view('lapangan/header', $user);
+            $this->load->view('lapangan/signup_view', $user);
+            $this->load->view('lapangan/footer');
+	}
+        
 	public function createsewa(){
             $no = $this->input->post('no');
             $nama = $this->input->post('nama');
@@ -144,16 +155,7 @@ class Lapangan extends CI_Controller {
                             ');
                 redirect(base_url('lapangan/login'));
             }
- 	}
-	
- 	public function signup($page = "signup"){
-            $data = $this->data->read('user')->result_array();
-            $user['user'] = $data;
-            $user['page'] = $page;
-            $this->load->view('lapangan/header', $user);
-            $this->load->view('lapangan/signup_view', $user);
-            $this->load->view('lapangan/footer');
-	}
+        }
         
  	public function tambah_user(){
             $id_user = $this->input->post('id_user');
