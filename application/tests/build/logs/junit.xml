@@ -1,27 +1,39 @@
-<<<<<<< HEAD
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CodeIgniter Application Test Suite" tests="36" assertions="42" failures="10" errors="8" time="5.827417">
-    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="14" assertions="24" failures="4" errors="0" time="1.597025">
-      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.159193"/>
-      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="3" time="0.142223"/>
-      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="37" assertions="1" time="0.109507"/>
-      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="43" assertions="3" time="0.136455"/>
-      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="49" assertions="3" time="0.094215"/>
-      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="57" assertions="1" time="0.079315"/>
-      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="64" assertions="1" time="0.094716"/>
-      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="69" assertions="1" time="0.113889"/>
-      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="79" assertions="0" time="0.085774">
+  <testsuite name="CodeIgniter Application Test Suite" tests="38" assertions="44" failures="11" errors="9" time="4.478102">
+    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="16" assertions="26" failures="5" errors="1" time="2.045571">
+      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.236951"/>
+      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="3" time="0.083353"/>
+      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="37" assertions="1" time="0.115340"/>
+      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="43" assertions="3" time="0.101333"/>
+      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="49" assertions="3" time="0.077382"/>
+      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="57" assertions="1" time="0.060023"/>
+      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="64" assertions="1" time="0.071705"/>
+      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="69" assertions="1" time="0.200930">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_createsewa
+Failed asserting that 'Lapangan/createsewa is not found' contains "&lt;h2&gt;Tabel Sewa Jadwal&lt;/h2&gt;".
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:71
+</failure>
+      </testcase>
+      <testcase name="test_createsewa_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="74" assertions="1" time="0.534185">
+        <error type="PHPUnit_Framework_Exception">Lapangan_test::test_createsewa_sukses
+PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
+
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:83
+</error>
+      </testcase>
+      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="86" assertions="1" time="0.083314"/>
+      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="96" assertions="0" time="0.052892">
         <failure type="PHPUnit_Framework_AssertionFailedError">Lapangan_test::test_login_sukses
 redirect() is not called.
 
 C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
-C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:82
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:99
 </failure>
       </testcase>
-      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="84" assertions="3" time="0.104236"/>
-      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="93" assertions="1" time="0.144552">
+      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="101" assertions="3" time="0.098388"/>
+      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="110" assertions="1" time="0.107713">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_login_gagal_password
 URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan/index/fail but Redirect to http://localhost/GIT/lapangan/login.
 Failed asserting that two strings are identical.
@@ -32,10 +44,10 @@ Failed asserting that two strings are identical.
 +Redirect to http://localhost/GIT/lapangan/login
 
 C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
-C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:99
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:116
 </failure>
       </testcase>
-      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="103" assertions="1" time="0.114838">
+      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="120" assertions="1" time="0.069696">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_login_gagal_username
 URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan/index/fail but Redirect to http://localhost/GIT/lapangan/login.
 Failed asserting that two strings are identical.
@@ -46,11 +58,11 @@ Failed asserting that two strings are identical.
 +Redirect to http://localhost/GIT/lapangan/login
 
 C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
-C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:109
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:126
 </failure>
       </testcase>
-      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="139" assertions="1" time="0.050635"/>
-      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="150" assertions="2" time="0.167477">
+      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="156" assertions="1" time="0.039692"/>
+      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="167" assertions="2" time="0.112674">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_logout
 URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan but Redirect to http://localhost/GIT/lapangan/login.
 Failed asserting that two strings are identical.
@@ -61,43 +73,43 @@ Failed asserting that two strings are identical.
 +Redirect to http://localhost/GIT/lapangan/login
 
 C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
-C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:162
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:177
 </failure>
       </testcase>
     </testsuite>
-    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="18" failures="6" errors="8" time="4.230392">
-      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.201403"/>
-      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.201466"/>
-      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.179526">
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="18" failures="6" errors="8" time="2.432532">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="1" time="0.097088"/>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.095034"/>
+      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.104294">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_ceklogin_admin_not_login_kosongsemua
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:42
 </error>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="45" assertions="1" time="0.146923">
+      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="45" assertions="1" time="0.084209">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_ceklogin_admin_not_login_nopassword
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:52
 </error>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="55" assertions="1" time="0.163537">
+      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="55" assertions="1" time="0.093275">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_ceklogin_admin_not_login_nousername
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:62
 </error>
       </testcase>
-      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="65" assertions="1" time="0.223996">
+      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="65" assertions="1" time="0.076872">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_ceklogin_admin_not_login_unmatch
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:72
 </error>
       </testcase>
-      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="75" assertions="1" time="0.174117"/>
-      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="80" assertions="1" time="0.309099">
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="75" assertions="1" time="0.094506"/>
+      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="80" assertions="1" time="0.152531">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_logout
 redirect() is not called.
 
@@ -105,17 +117,17 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:89
 </failure>
       </testcase>
-      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="92" assertions="2" time="0.261501"/>
-      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="104" assertions="0" time="0.147111">
+      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="92" assertions="2" time="0.140600"/>
+      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="104" assertions="0" time="0.098123">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_no_inputlapangan
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:106
 </error>
       </testcase>
-      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="109" assertions="1" time="0.168708"/>
-      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="114" assertions="1" time="0.224276"/>
-      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="119" assertions="1" time="0.211656">
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="109" assertions="1" time="0.096919"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="114" assertions="1" time="0.120342"/>
+      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="119" assertions="1" time="0.142509">
         <failure type="PHPUnit_Framework_ExpectationFailedException">Welcome_test::test_tambahlapangan
 Failed asserting that 'Array
 (
@@ -126,16 +138,16 @@ Failed asserting that 'Array
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:121
 </failure>
       </testcase>
-      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="124" assertions="1" time="0.207859"/>
-      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="129" assertions="2" time="0.237423"/>
-      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="0" time="0.142824">
+      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="124" assertions="1" time="0.108598"/>
+      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="129" assertions="2" time="0.169047"/>
+      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="0" time="0.071252">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_not_datalapangan
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:143
 </error>
       </testcase>
-      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="146" assertions="1" time="0.281590">
+      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="146" assertions="1" time="0.199725">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_deleteData
 redirect() is not called.
 
@@ -143,7 +155,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:155
 </failure>
       </testcase>
-      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="158" assertions="0" time="0.152142">
+      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="158" assertions="0" time="0.085265">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_deleteDataLapangan
 redirect() is not called.
 
@@ -151,7 +163,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:160
 </failure>
       </testcase>
-      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="163" assertions="0" time="0.123860">
+      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="163" assertions="0" time="0.088927">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_validasi
 redirect() is not called.
 
@@ -159,7 +171,7 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:165
 </failure>
       </testcase>
-      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="168" assertions="0" time="0.125154">
+      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="168" assertions="0" time="0.085210">
         <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_no_validasi
 redirect() is not called.
 
@@ -167,14 +179,14 @@ C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:170
 </failure>
       </testcase>
-      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="173" assertions="1" time="0.204280">
+      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="173" assertions="1" time="0.132646">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_do_editData
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
 C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:182
 </error>
       </testcase>
-      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="185" assertions="0" time="0.141940">
+      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="185" assertions="0" time="0.095560">
         <error type="PHPUnit_Framework_Exception">Welcome_test::test_do_editData_failed
 PHPUnit_Framework_Exception: Argument #2 of PHPUnit_Framework_Assert::assertContains() must be a array, iterator or string
 
@@ -184,4 +196,3 @@ C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:187
     </testsuite>
   </testsuite>
 </testsuites>
->>>>>>> a7e858b440bd881e77068662d2184dd1cb94ae73

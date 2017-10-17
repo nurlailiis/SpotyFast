@@ -11,6 +11,7 @@
               <p><?php echo $this->session->flashdata('success')?></p>
               <p><?php echo $this->session->flashdata('user_available')?></p>
               <p><?php echo $this->session->flashdata('berhasil') ?></p>
+              <p><?php echo $this->session->flashdata('pesan') ?></p>
               <div class="form-group has-success" style="width:200px" >
                 <input class="form-control" placeholder="Username" name="username" type="username" margin-left="20px" autofocus required>
               </div>
