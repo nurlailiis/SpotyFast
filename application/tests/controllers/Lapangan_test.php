@@ -82,10 +82,20 @@ class Lapangan_test extends TestCase
             $this->assertEquals('arakhrn', $_SESSION['username']);
         }
         
-        public function test_ceklogin_admin_not_login(){
-            $this->request('GET', 'admin/cek_login');
-            $this->assertRedirect('index.php/admin/index');
-	}
+        public function test_login_sukses(){
+            $_SESSION['username'] = "name";
+                        
+            $output = $this->request('GET', 'lapangan/login');
+            $this->assertRedirect(base_url('lapangan/index'));                                  
+        }
+        public function test_login_gagal(){
+            $_SESSION['username'] != "name";
+            
+            $output = $this->request('GET', 'lapangan/login');
+            $this->assertContains('<head>', $output);
+            $this->assertContains('<h1>LOGIN</h1>', $output);
+            $this->assertContains('<footer>',$output);                       
+        }
         
         public function test_method_404()
 	{
