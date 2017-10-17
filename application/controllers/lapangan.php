@@ -68,29 +68,29 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');
 	}
         
-//	public function createsewa(){
-//            $no = $this->input->post('no');
-//            $nama = $this->input->post('nama');
-//            $kategori = $this->input->post('kategori');
-//            $nomer_identitas = $this->input->post('nomer_identitas');
-//            $nama_lapangan = $this->input->post('nama_lapangan');
-//            $tanggal = $this->input->post('tanggal');
-//            $jam = $this->input->post('jam');
-//            $lama_sewa = $this->input->post('lama_sewa');
-//
-//            $data = array(
-//                    'no' => $no,
-//                    'nama' => $nama,
-//                    'kategori' => $kategori,
-//                    'nomer_identitas' => $nomer_identitas,
-//                    'nama_lapangan' => $nama_lapangan,
-//                    'tanggal' => $tanggal,
-//                    'jam' => $jam,
-//                    'lama_sewa' => $lama_sewa
-//            );
-//            $this->data->createJadwal($data, 'jadwal');
-//            redirect('lapangan/sewajadwal');
-//	}
+	public function createsewa(){
+            $no = $this->input->post('no');
+            $nama = $this->input->post('nama');
+            $kategori = $this->input->post('kategori');
+            $nomer_identitas = $this->input->post('nomer_identitas');
+            $nama_lapangan = $this->input->post('nama_lapangan');
+            $tanggal = $this->input->post('tanggal');
+            $jam = $this->input->post('jam');
+            $lama_sewa = $this->input->post('lama_sewa');
+
+            $data = array(
+                    'no' => $no,
+                    'nama' => $nama,
+                    'kategori' => $kategori,
+                    'nomer_identitas' => $nomer_identitas,
+                    'nama_lapangan' => $nama_lapangan,
+                    'tanggal' => $tanggal,
+                    'jam' => $jam,
+                    'lama_sewa' => $lama_sewa
+            );
+            $this->data->createJadwal($data, 'jadwal');
+            redirect('lapangan/sewajadwal');
+	}
 	
 	public function login($page = 'login'){
             if($this->session->has_userdata('username')){
@@ -106,7 +106,10 @@ class Lapangan extends CI_Controller {
             }
 	}
         
-	public function cek_login(){
+	public function cek_login($page="cek_login"){
+            $data = $this->data->read('lapangan')->result_array();
+            $lapangan['lapangan'] = $data;
+            $lapangan['page'] = $page;
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $read = $this->data->readWhere('user', $username, 'id_user')->result_array();
@@ -115,7 +118,7 @@ class Lapangan extends CI_Controller {
                 $user = $r['id_user'];
                         $pass = $r['password_user'];
                         $nama = $r['nama_user'];
-                        $sewa_user = $r['sewa_user'];
+                        $no_telp = $r['no_telp'];
                 }
 
             $enkripsi = $this->data->enkripsi($password);	       
@@ -125,7 +128,7 @@ class Lapangan extends CI_Controller {
                     $data = array(
                         'username'  	=> $user,                    
                         'nama'              => $nama,
-                        'sewa_user'		=> $sewa_user
+                        'no_telp'		=> $no_telp
 
                     );
                     $this->session->set_userdata($data);
@@ -135,7 +138,9 @@ class Lapangan extends CI_Controller {
                                               <strong>Berhasil!</strong> Selamat datang '.$nama.'  
                                             </div>
                             ');
-                            $this->load->view('lapangan/home');
+                    $this->load->view('lapangan/header', $lapangan);
+                    $this->load->view('lapangan/home', $lapangan);
+                    $this->load->view('lapangan/footer', $lapangan);
                             //redirect('lapangan/index');
                 }
                 else{
