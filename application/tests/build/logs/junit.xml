@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CodeIgniter Application Test Suite" tests="36" assertions="34" failures="10" errors="0" time="6.463618">
+    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="14" assertions="24" failures="4" errors="0" time="1.844163">
+      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.143595"/>
+      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="3" time="0.117364"/>
+      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="37" assertions="1" time="0.083200"/>
+      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="43" assertions="3" time="0.102624"/>
+      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="49" assertions="3" time="0.113062"/>
+      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="57" assertions="1" time="0.080418"/>
+      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="64" assertions="1" time="0.105130"/>
+      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="69" assertions="1" time="0.115377"/>
+      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="79" assertions="0" time="0.105036">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Lapangan_test::test_login_sukses
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:82
+</failure>
+      </testcase>
+      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="84" assertions="3" time="0.237448"/>
+      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="93" assertions="1" time="0.178088">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_login_gagal_password
+URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan/index/fail but Redirect to http://localhost/GIT/lapangan/login.
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-Redirect to http://localhost/GIT/index.php/lapangan/index/fail
++Redirect to http://localhost/GIT/lapangan/login
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:99
+</failure>
+      </testcase>
+      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="103" assertions="1" time="0.159038">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_login_gagal_username
+URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan/index/fail but Redirect to http://localhost/GIT/lapangan/login.
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-Redirect to http://localhost/GIT/index.php/lapangan/index/fail
++Redirect to http://localhost/GIT/lapangan/login
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:109
+</failure>
+      </testcase>
+      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="139" assertions="1" time="0.075304"/>
+      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="150" assertions="2" time="0.228479">
+        <failure type="PHPUnit_Framework_ExpectationFailedException">Lapangan_test::test_logout
+URL to redirect is not Redirect to http://localhost/GIT/index.php/lapangan but Redirect to http://localhost/GIT/lapangan/login.
+Failed asserting that two strings are identical.
+--- Expected
++++ Actual
+@@ @@
+-Redirect to http://localhost/GIT/index.php/lapangan
++Redirect to http://localhost/GIT/lapangan/login
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:427
+C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php:162
+</failure>
+      </testcase>
+    </testsuite>
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="10" failures="6" errors="0" time="4.619455">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="19" assertions="0" time="0.190010"/>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="25" assertions="1" time="0.206098"/>
+      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.181371"/>
+      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="45" assertions="1" time="0.172861"/>
+      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="55" assertions="1" time="0.176854"/>
+      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="65" assertions="1" time="0.175387"/>
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="75" assertions="0" time="0.197684"/>
+      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="80" assertions="1" time="0.289475">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_logout
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:89
+</failure>
+      </testcase>
+      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="92" assertions="1" time="0.308014"/>
+      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="104" assertions="0" time="0.157511"/>
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="109" assertions="0" time="0.193352"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="114" assertions="0" time="0.244258"/>
+      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="119" assertions="0" time="0.164099"/>
+      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="124" assertions="0" time="0.192176"/>
+      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="129" assertions="1" time="0.275408"/>
+      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="0" time="0.285499"/>
+      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="146" assertions="1" time="0.379032">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_deleteData
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:155
+</failure>
+      </testcase>
+      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="158" assertions="0" time="0.162919">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_deleteDataLapangan
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:160
+</failure>
+      </testcase>
+      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="163" assertions="0" time="0.118816">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_validasi
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:165
+</failure>
+      </testcase>
+      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="168" assertions="0" time="0.127561">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_no_validasi
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:170
+</failure>
+      </testcase>
+      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="173" assertions="1" time="0.255263"/>
+      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="185" assertions="0" time="0.165807">
+        <failure type="PHPUnit_Framework_AssertionFailedError">Welcome_test::test_do_editData_failed
+redirect() is not called.
+
+C:\xampp\htdocs\GIT\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:407
+C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:188
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>
