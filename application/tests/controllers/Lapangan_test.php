@@ -111,4 +111,16 @@ class Lapangan_test extends TestCase
                 'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
             );
         }       
+        
+        public function test_logout(){
+            $this->request('POST', 'lapangan/cek_login',
+                    [
+                        'username' => 'arakhrn',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('arakhrn', $_SESSION['username']);
+            $this->request('GET', 'lapangan/logout');
+            $this->assertRedirect('index.php/lapangan');
+        }
 }
