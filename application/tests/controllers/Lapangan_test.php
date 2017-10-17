@@ -90,10 +90,11 @@ class Lapangan_test extends TestCase
             $this->assertContains('<h1>LOGIN</h1>', $output);
             $this->assertContains('<footer>',$output);                       
         }
-        public function test_createsewa(){
-           $output = $this->request('POST', 'lapangan/createsewa');
-           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
-        }
+        
+//        public function test_createsewa(){
+//           $output = $this->request('POST', 'lapangan/createsewa');
+//           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
+//        }
 
         public function test_method_404()
 	{
