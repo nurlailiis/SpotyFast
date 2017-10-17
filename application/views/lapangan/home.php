@@ -1,4 +1,5 @@
 <?php echo $this->session->userdata('success') ?>
+<section class="lapangan">
 <div class="container">
   <div class="row">
     <?php foreach ($lapangan as $l){?>
@@ -18,3 +19,4 @@
     <?php } ?>
   </div>
 </div>
+</section>

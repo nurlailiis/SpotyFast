@@ -106,7 +106,10 @@ class Lapangan extends CI_Controller {
             }
 	}
         
-	public function cek_login(){
+	public function cek_login($page="cek_login"){
+            $data = $this->data->read('lapangan')->result_array();
+            $lapangan['lapangan'] = $data;
+            $lapangan['page'] = $page;
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $read = $this->data->readWhere('user', $username, 'id_user')->result_array();
@@ -115,7 +118,7 @@ class Lapangan extends CI_Controller {
                 $user = $r['id_user'];
                         $pass = $r['password_user'];
                         $nama = $r['nama_user'];
-                        $sewa_user = $r['sewa_user'];
+                        $no_telp = $r['no_telp'];
                 }
 
             $enkripsi = $this->data->enkripsi($password);	       
@@ -125,7 +128,7 @@ class Lapangan extends CI_Controller {
                     $data = array(
                         'username'  	=> $user,                    
                         'nama'              => $nama,
-                        'sewa_user'		=> $sewa_user
+                        'no_telp'		=> $no_telp
 
                     );
                     $this->session->set_userdata($data);
@@ -135,7 +138,9 @@ class Lapangan extends CI_Controller {
                                               <strong>Berhasil!</strong> Selamat datang '.$nama.'  
                                             </div>
                             ');
-                            $this->load->view('lapangan/home');
+                    $this->load->view('lapangan/header', $lapangan);
+                    $this->load->view('lapangan/home', $lapangan);
+                    $this->load->view('lapangan/footer', $lapangan);
                             //redirect('lapangan/index');
                 }
                 else{
