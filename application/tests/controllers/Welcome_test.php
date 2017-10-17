@@ -33,8 +33,13 @@ class Welcome_test extends TestCase
         }
         
         public function test_ceklogin_admin_not_login_kosongsemua(){
-            $this->request('GET', 'admin/cek_login');
-            $this->assertRedirect('index.php/admin/index');
+            $this->request('POST', 'admin/cek_login',
+                [
+                    'username' => '',
+                    'password' => '',
+                ]);
+            $this->assertRedirect('index.php/admin/index/fail');
+            $this->assertFalse( isset($_SESSION['username']) );
 	}
         
         public function test_ceklogin_admin_not_login_nopassword(){
@@ -169,7 +174,7 @@ class Welcome_test extends TestCase
             $this->request('POST', 'admin/cek_login',
                     [
                         'username' => 'nurlailiis',
-                        'password' => '1234',
+                        'password' => '5663bec6b51338020c7ebc0d8d65b7689d19abed',
                     ]
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
