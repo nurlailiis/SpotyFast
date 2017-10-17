@@ -185,6 +185,6 @@ class Welcome_test extends TestCase
         public function test_do_editData_failed(){
             $output = $this->request('GET', 'admin/do_editData');
 //            $this->assertContains('<h6>Edit</h6>');
-            $this->assertRedirect('index.php/admin/inputlapangan');
+            $this->assertRedirect('index.php/admin/inputlapangan', $output);
         }
 }

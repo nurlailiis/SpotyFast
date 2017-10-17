@@ -3,7 +3,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Tabel Sewa Jadwal
+                          <h2>Tabel Sewa Jadwal</h2>
                         </div>
                         <hr>
                         <div class="panel-body">

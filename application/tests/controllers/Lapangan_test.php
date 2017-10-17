@@ -65,6 +65,23 @@ class Lapangan_test extends TestCase
             $output = $this->request('GET', 'lapangan/signup');
             $this->assertContains('<h1>SIGN UP</h1>', $output);
         }
+        
+        public function test_createsewa() {
+            $output = $this->request('GET', 'lapangan/createsewa');
+            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
+        }
+        
+        public function test_createsewa_sukses() {
+            $this->request('POST', 'lapangan/cek_login',
+                    [
+                        'username' => 'arakhrn',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('arakhrn', $_SESSION['username']);
+            $output = $this->request('GET', 'alapangan/createsewa');
+            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>');
+        }
 
         public function test_ceklogin(){
             $this->request('POST', 'lapangan/cek_login',
@@ -148,7 +165,6 @@ class Lapangan_test extends TestCase
         }       
         
         public function test_logout(){
-
             $this->request('POST', 'lapangan/cek_login',
                     [
                         'username' => 'arakhrn',
@@ -158,7 +174,6 @@ class Lapangan_test extends TestCase
             $this->assertEquals('arakhrn', $_SESSION['username']);
             $this->request('GET', 'lapangan/logout');
             //$this->assertRedirect('index.php/lapangan');
-
             $this->assertRedirect('index.php/lapangan');
         }
 }

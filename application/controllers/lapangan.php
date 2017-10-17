@@ -151,16 +151,15 @@ class Lapangan extends CI_Controller {
                                             </div>
                             ');
                     redirect('lapangan/login');
-                }
-            }
-            else{
-                    $this->session->set_flashdata('pesan', '
+                } 
+            } else{
+                $this->session->set_flashdata('pesan', '
                                     <div class="alert alert-danger alert-dismissible" role="alert">
                                               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                               <strong>Maaf</strong> Username anda belum terdaftar.
                                             </div>
                             ');
-                redirect(base_url('lapangan/login'));
+               redirect(base_url('lapangan/login'));
             }
         }
         
@@ -195,10 +194,13 @@ class Lapangan extends CI_Controller {
                     ');
             redirect('lapangan/login');
             }		
-	}	
+	}
+        
     public function logout(){
         unset($_SESSION['username']);    
-        //$this->load->view('lapangan/login_view');
+//        $this->load->view('lapangan/header');
+//        $this->load->view('lapangan/login_view');
+//        $this->load->view('lapangan/footer');
         redirect(base_url('lapangan/login'));
     }
 }
