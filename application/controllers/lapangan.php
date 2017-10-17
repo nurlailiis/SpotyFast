@@ -68,29 +68,29 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');
 	}
         
-	public function createsewa(){
-            $no = $this->input->post('no');
-            $nama = $this->input->post('nama');
-            $kategori = $this->input->post('kategori');
-            $nomer_identitas = $this->input->post('nomer_identitas');
-            $nama_lapangan = $this->input->post('nama_lapangan');
-            $tanggal = $this->input->post('tanggal');
-            $jam = $this->input->post('jam');
-            $lama_sewa = $this->input->post('lama_sewa');
-
-            $data = array(
-                    'no' => $no,
-                    'nama' => $nama,
-                    'kategori' => $kategori,
-                    'nomer_identitas' => $nomer_identitas,
-                    'nama_lapangan' => $nama_lapangan,
-                    'tanggal' => $tanggal,
-                    'jam' => $jam,
-                    'lama_sewa' => $lama_sewa
-            );
-            $this->data->createJadwal($data, 'jadwal');
-            redirect('lapangan/sewajadwal');
-	}
+//	public function createsewa(){
+//            $no = $this->input->post('no');
+//            $nama = $this->input->post('nama');
+//            $kategori = $this->input->post('kategori');
+//            $nomer_identitas = $this->input->post('nomer_identitas');
+//            $nama_lapangan = $this->input->post('nama_lapangan');
+//            $tanggal = $this->input->post('tanggal');
+//            $jam = $this->input->post('jam');
+//            $lama_sewa = $this->input->post('lama_sewa');
+//
+//            $data = array(
+//                    'no' => $no,
+//                    'nama' => $nama,
+//                    'kategori' => $kategori,
+//                    'nomer_identitas' => $nomer_identitas,
+//                    'nama_lapangan' => $nama_lapangan,
+//                    'tanggal' => $tanggal,
+//                    'jam' => $jam,
+//                    'lama_sewa' => $lama_sewa
+//            );
+//            $this->data->createJadwal($data, 'jadwal');
+//            redirect('lapangan/sewajadwal');
+//	}
 	
 	public function login($page = 'login'){
             if($this->session->has_userdata('username')){
