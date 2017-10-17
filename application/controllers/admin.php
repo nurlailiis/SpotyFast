@@ -37,32 +37,19 @@ class admin extends CI_Controller {
     {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $read = $this->data->readWhere('admin', $username, 'username_admin')->result_array();
-        $enkripsi = $this->data->enkripsi($password);
-        foreach ($read as $r) {
-            $admin = $r['username_admin'];
-            $pass = $r['password_admin'];
-            }
-
-        $enkripsi = $this->data->enkripsi($password);	       
-        if ($username==$admin) {
-            if ($enkripsi==$pass) {
-                $enkripsi = $this->data->enkripsi($password);
-                $data = array(
-                    'username'  	=> $admin
-
-                );
-                $this->session->set_userdata($admin);
-                $this->session->set_flashdata('success', '
-                                <div class="alert alert-success alert-dismissible" role="alert">
-                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                          <strong>Berhasil!</strong> Selamat datang '.$admin.'  
-                                        </div>
-                        ');
-                $this->load->view('admin/headermasuk');
-                $this->load->view('admin/dashboard');
-                $this->load->view('admin/footer');
-            }
+        $user = $this->data->readDataAdmin2($username);
+        $pass1 = md5($password);
+        $pass2 = $user->password_admin;
+        if ( isset($user) AND $pass1 == $pass2 ) {
+            $data = array(
+                'username'=>$user->username_admin
+            );
+            $this->session->set_userdata($data);
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/dashboard');
+            $this->load->view('admin/footer');
+//            redirect('index.php/admin/login');
+            } 
         else
         {
             $this->session->set_flashdata('pesan', 'Maaf username atau password yang anda masukkan salah');
