@@ -30,7 +30,7 @@ class data extends CI_Model
         }
         
 	public function enkripsi($password){
-		$key = $this->config->item('encryption_key');
+            $key = $this->config->item('encryption_key');
 	    $salt1 = hash('sha1', $key . $password);
 	    $salt2 = hash('sha1', $password . $key);
 	    return hash('sha1', $salt1 . $password . $salt2);	

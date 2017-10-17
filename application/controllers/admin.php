@@ -38,7 +38,7 @@ class admin extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $user = $this->data->readDataAdmin2($username);
-        $pass1 = md5($password);
+        $pass1 = $this->data->enkripsi($password);
         $pass2 = $user->password_admin;
         if ( isset($user) AND $pass1 == $pass2 ) {
             $data = array(
@@ -56,7 +56,6 @@ class admin extends CI_Controller {
             var_dump($this->session->flashdata('pesan'));
             redirect('index.php/admin/index?fail=true');
         }
-    }
     }
 
     function login(){

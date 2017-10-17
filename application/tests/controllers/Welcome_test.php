@@ -174,7 +174,7 @@ class Welcome_test extends TestCase
             $this->request('POST', 'admin/cek_login',
                     [
                         'username' => 'nurlailiis',
-                        'password' => '5663bec6b51338020c7ebc0d8d65b7689d19abed',
+                        'password' => '1234',
                     ]
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
