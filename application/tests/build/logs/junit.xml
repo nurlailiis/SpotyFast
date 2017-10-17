@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite name="CodeIgniter Application Test Suite" tests="36" assertions="42" failures="14" errors="4" time="4.644011">
@@ -210,3 +212,4 @@ C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php:187
     </testsuite>
   </testsuite>
 </testsuites>
+>>>>>>> 3bb559688811ec7e989bc602530e990b0bf24114
