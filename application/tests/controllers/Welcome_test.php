@@ -33,48 +33,48 @@ class Welcome_test extends TestCase
         }
         
         public function test_ceklogin_admin_not_login_kosongsemua(){
-            $this->request('POST', 'admin/cek_login',
+            $output = $this->request('POST', 'admin/cek_login',
                 [
                     'username' => '',
                     'password' => '',
                 ]);
-            $this->assertRedirect('index.php/admin/index/fail');
             $this->assertFalse( isset($_SESSION['username']) );
+            $this->assertContains('Welcome', $output);
 	}
         
         public function test_ceklogin_admin_not_login_nopassword(){
-            $this->request('POST', 'admin/cek_login',
+            $ouput = $this->request('POST', 'admin/cek_login',
                 [
                     'username' => 'nurlailiis',
                     'password' => '',
                 ]);
-            $this->assertRedirect('index.php/admin/index/fail');
             $this->assertFalse( isset($_SESSION['username']) );
+            $this->assertContains('Welcome', $output);
         }
         
         public function test_ceklogin_admin_not_login_nousername(){
-            $this->request('POST', 'admin/cek_login',
+            $output = $this->request('POST', 'admin/cek_login',
                 [
                     'username' => '',
                     'password' => '1234',
                 ]);
-            $this->assertRedirect('index.php/admin/index/fail');
             $this->assertFalse( isset($_SESSION['username']) );
+            $this->assertContains('Welcome', $output);
         }
         
         public function test_ceklogin_admin_not_login_unmatch(){
-            $this->request('POST', 'admin/cek_login',
+            $output = $this->request('POST', 'admin/cek_login',
                 [
                     'username' => 'nurlailiis',
                     'password' => 'unmatch',
                 ]);
-            $this->assertRedirect('index.php/admin/index/fail');
             $this->assertFalse( isset($_SESSION['username']) );
+            $this->assertContains('Welcome', $output);
         }
         
         public function test_login(){
             $output = $this->request('GET', 'admin/login');
-            $this->assertContains('<strong>Dashboard</strong>', $output);
+            $this->assertContains('Dashboard', $output);
         }
 
         public function test_logout(){

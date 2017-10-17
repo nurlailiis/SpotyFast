@@ -111,7 +111,10 @@ class admin extends CI_Controller {
                 'gambar_lapangan' => $url, 
                 );
             $this->data->insertData('lapangan', $data);
-            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/lapangan');
+            $this->load->view('admin/footer');
+//            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
         }
     }
 
