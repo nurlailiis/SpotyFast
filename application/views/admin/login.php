@@ -10,7 +10,6 @@
                     <div class="panel-body">
                         <?php echo form_open('admin/cek_login'); ?>
                             <fieldset>
-                                <p><?php echo $this->session->flashdata('pesan')?></p>
                                 <div class="form-group has-success">
                                     <input class="form-control" placeholder="Username" name="username" type="username" autofocus required="">
                                 </div>
