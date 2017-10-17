@@ -24,6 +24,7 @@
                             </li>
                             <br></br>
                             <li>
+                                <strong>Welcome</strong>
                             <p>
                                 Selamat Datang Admin Futsal Fasor ITS, anda memiliki hak pada panel Admin Banboo.id. Hak Anda sebagai berikut :
                                 <br></br>

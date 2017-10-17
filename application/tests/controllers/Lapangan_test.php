@@ -95,7 +95,6 @@ class Lapangan_test extends TestCase
         
         public function test_login_sukses(){
             $_SESSION['username'] = "name";
-                        
             $output = $this->request('GET', 'lapangan/login');
             $this->assertRedirect(base_url('lapangan/index'));                                  
         }
