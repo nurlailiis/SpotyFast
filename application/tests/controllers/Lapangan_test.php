@@ -91,17 +91,52 @@ class Lapangan_test extends TestCase
             $this->assertContains('<footer>',$output);                       
         }
         
-//        public function test_createsewa(){
-//           $output = $this->request('POST', 'lapangan/createsewa');
+        public function test_login_gagal_password() {
+            $this->request('POST', 'lapangan/cek_login',
+                [
+                    'username' => 'arakhrn',
+                    'password' => '',
+                ]);
+            $this->assertRedirect('index.php/lapangan/index/fail');
+            $this->assertFalse( isset($_SESSION['username']) );
+        }
+        
+        public function test_login_gagal_username() {
+            $this->request('POST', 'lapangan/cek_login',
+                [
+                    'username' => '',
+                    'password' => '1234',
+                ]);
+            $this->assertRedirect('index.php/lapangan/index/fail');
+            $this->assertFalse( isset($_SESSION['username']) );
+        }
+        
+        
+    //    public function test_createsewa(){
+  //         $output = $this->request('POST', 'lapangan/createsewa');
 //           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
 //        }
 
-        public function test_method_404()
-	{
-		$this->request('GET', 'welcome/method_not_exist');
-		$this->assertResponseCode(404);
-	}
+//        public function test_method_404()
+//	{
+//		$this->request('GET', 'welcome/method_not_exist');
+//		$this->assertResponseCode(404);
+//	}
         
+
+//        public function test_APPPATH()
+//        {
+//            $actual = realpath(APPPATH);
+//            $expected = realpath(__DIR__ . '/../..');
+//            $this->assertEquals(
+//                $expected,
+//                $actual,
+//                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
+//            );
+//        }   
+        
+        
+
         public function test_APPPATH()
         {
             $actual = realpath(APPPATH);
@@ -114,6 +149,7 @@ class Lapangan_test extends TestCase
         }       
         
         public function test_logout(){
+
             $this->request('POST', 'lapangan/cek_login',
                     [
                         'username' => 'arakhrn',
@@ -122,6 +158,8 @@ class Lapangan_test extends TestCase
                     );
             $this->assertEquals('arakhrn', $_SESSION['username']);
             $this->request('GET', 'lapangan/logout');
+            //$this->assertRedirect('index.php/lapangan');
+
             $this->assertRedirect('index.php/lapangan');
         }
 }

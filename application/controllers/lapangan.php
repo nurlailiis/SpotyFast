@@ -94,7 +94,8 @@ class Lapangan extends CI_Controller {
 	
 	public function login($page = 'login'){
             if($this->session->has_userdata('username')){
-                    redirect('lapangan/index');
+                $this->load->view('lapangan/home');
+                    //redirect('lapangan/index');
             }else{
                     $data = $this->data->read('user')->result_array();
                     $user['user'] = $data;
@@ -134,7 +135,8 @@ class Lapangan extends CI_Controller {
                                               <strong>Berhasil!</strong> Selamat datang '.$nama.'  
                                             </div>
                             ');
-                            redirect('lapangan/index');
+                            $this->load->view('lapangan/home');
+                            //redirect('lapangan/index');
                 }
                 else{
                     $this->session->set_flashdata('pesan', '
@@ -190,7 +192,8 @@ class Lapangan extends CI_Controller {
             }		
 	}	
     public function logout(){
-        unset($_SESSION['username']);       
+        unset($_SESSION['username']);    
+        //$this->load->view('lapangan/login_view');
         redirect(base_url('lapangan/login'));
     }
 }
