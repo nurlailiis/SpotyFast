@@ -25,19 +25,13 @@ class Lapangan_test extends TestCase
             $this->assertContains('<div class="card" style="width: 20rem;">', $output);
             $this->assertContains('<footer>', $output);
         }
-        
-        public function test_home(){
-            $output = $this->request('GET', 'lapangan/home');
-            $this->assertContains('<meta charset="utf-8">', $output);
-            $this->assertContains('<div class="card" style="width: 20rem;">', $output);
-            $this->assertContains('<footer>', $output);
-        }
+
         public function test_sewajadwal(){
             $_SESSION['username'] = "name";
             
             $output = $this->request('GET', 'lapangan/sewajadwal');
             $this->assertContains('<head>', $output);
-            $this->assertContains('<td>Ibu risma</td>', $output);
+            $this->assertContains('<div class="table-responsive">', $output);
             $this->assertContains('<footer>', $output);          
         }
         public function test_sewajadwal_gagal(){
@@ -96,7 +90,11 @@ class Lapangan_test extends TestCase
             $this->assertContains('<h1>LOGIN</h1>', $output);
             $this->assertContains('<footer>',$output);                       
         }
-        
+        public function test_createsewa(){
+           $output = $this->request('POST', 'lapangan/createsewa');
+           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
+        }
+
         public function test_method_404()
 	{
 		$this->request('GET', 'welcome/method_not_exist');
