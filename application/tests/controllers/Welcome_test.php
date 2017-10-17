@@ -152,22 +152,22 @@ class Welcome_test extends TestCase
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/deleteData');
-            $this->assertRedirect('index.php/admin/datapenyewaan');
+            $this->assertRedirect('index.php/admin/datapenyewaan', $output);
         }
        
         public function test_deleteDataLapangan(){
             $output = $this->request('GET', 'admin/deleteDataLapangan');
-            $this->assertRedirect('index.php/admin/datalapangan');
+            $this->assertRedirect('index.php/admin/datalapangan', $output);
         }
         
         public function test_validasi(){
             $output = $this->request('GET', 'admin/validasi');
-            $this->assertRedirect('index.php/admin/datapenyewaan');
+            $this->assertRedirect('index.php/admin/datapenyewaan', $output);
         }
         
         public function test_no_validasi(){
             $output = $this->request('GET', 'admin/validasi');
-            $this->assertRedirect('index.php/admin/datapenyewaan');
+            $this->assertRedirect('index.php/admin/datapenyewaan', $output);
         }
         
         public function test_do_editData(){

@@ -66,10 +66,10 @@ class Lapangan_test extends TestCase
             $this->assertContains('<h1>SIGN UP</h1>', $output);
         }
         
-        public function test_createsewa() {
-            $output = $this->request('GET', 'lapangan/createsewa');
-            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
-        }
+//        public function test_createsewa() {
+//            $output = $this->request('GET', 'lapangan/createsewa');
+//            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
+//        }
         
         public function test_createsewa_sukses() {
             $this->request('POST', 'lapangan/cek_login',
