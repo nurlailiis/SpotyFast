@@ -135,11 +135,9 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-<<<<<<< HEAD
 //            $this->assertRedirect('lapangan/login');
-=======
+
             $this->assertRedirect('lapangan/tambah_user');
->>>>>>> a194e87bd9ca52ec3085d197b4932cbf4325ffb5
         }
         
         public function test_tambah_user_berhasil() {
