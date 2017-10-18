@@ -129,10 +129,10 @@ class Welcome_test extends TestCase
 //            $this->assertContains('<th>NO</th>', $output);
         }
         
-        public function test_tambahlapangan(){
-            $output = $this->request('GET', 'admin/tambahLapangan');
-//            $this->assertContains('<th>NO</th>', $output);
-        }
+//        public function test_tambahlapangan(){
+//            $output = $this->request('GET', 'admin/tambahLapangan');
+////            $this->assertContains('<th>NO</th>', $output);
+//        }
         
         public function test_tambahlapangan_success(){
             $this->request('POST', 'admin/cek_login',
@@ -142,7 +142,7 @@ class Welcome_test extends TestCase
                     ]
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
-            $output = $this->request('POST', 'admin/tambahLapangan',
+            $this->request('POST', 'admin/tambahLapangan',
                     [
                         'id_lapangan' => '1009',
                         'nama_lapangan' => 'Lapangan B',
@@ -152,6 +152,7 @@ class Welcome_test extends TestCase
                         'gambar_lapangan' => 'http://localhost/GIT/./assets/lapangan/image/20140608_1845481.jpg',
                     ]
                     );
+//            $this->assertContains('<th>NO</th>', $output);
         }
         
         public function test_editData(){

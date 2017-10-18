@@ -146,9 +146,6 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-                 $this->load->view('lapangan/header', $lapangan);
-                 $this->load->view('lapangan/login_view', $lapangan);
-                 $this->load->view('lapangan/footer', $lapangan);
         }
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
