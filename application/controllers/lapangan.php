@@ -140,7 +140,7 @@ class Lapangan extends CI_Controller {
                     $this->load->view('lapangan/header', $lapangan);
                     $this->load->view('lapangan/home', $lapangan);
                     $this->load->view('lapangan/footer', $lapangan);
-                            //redirect('lapangan/index');
+                            
                 }
                 else{
                     $this->session->set_flashdata('pesan', '
