@@ -184,12 +184,10 @@ class Welcome_test extends TestCase
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/deleteData');
-            $this->assertRedirect('index.php/admin/datapenyewaan');
         }
        
         public function test_deleteDataLapangan(){
             $output = $this->request('GET', 'admin/deleteDataLapangan');
-            $this->assertRedirect('index.php/admin/datalapangan', $output);
         }
         
         public function test_validasi(){
