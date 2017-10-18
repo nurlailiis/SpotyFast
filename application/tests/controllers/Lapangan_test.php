@@ -29,10 +29,7 @@ class Lapangan_test extends TestCase
         public function test_sewajadwal(){
             $_SESSION['username'] = "name";
             
-            $output = $this->request('GET', 'lapangan/sewajadwal');
-//            $this->assertContains('<head>', $output);
-//            $this->assertContains('<div class="table-responsive">', $output);
-//            $this->assertContains('<footer>', $output);          
+            $output = $this->request('GET', 'lapangan/sewajadwal');        
         }
         public function test_sewajadwal_gagal(){
             $_SESSION['username'] != "name";

@@ -45,21 +45,28 @@ class admin extends CI_Controller {
         $user = $this->data->readDataAdmin2($username);
         $pass1 = $this->data->enkripsi($password);
         $pass2 = $user->password_admin;
-        if ( isset($user) AND $pass1 == $pass2 ) {
-            $data = array(
-                'username'=>$user->username_admin
-            );
-            $this->session->set_userdata($data);
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/dashboard');
-            $this->load->view('admin/footer');
-//            redirect('index.php/admin/login');
-            } 
-        else
-        {
-            $this->session->set_flashdata('pesan', 'Maaf username atau password yang anda masukkan salah');
-            var_dump($this->session->flashdata('pesan'));
-            redirect('index.php/admin/index?fail=true');}}
+        foreach ($read as $r) {
+                $user = $r['username_admin'];
+                        $pass = $r['password_admin'];
+                }
+        if ($username==$user){
+            if ( $pass1 == $pass2 ){
+                $data = array(
+                    'username' =>$user  
+                    );
+                    $this->session->set_userdata($data);
+                    $this->load->view('admin/headermasuk');
+                    $this->load->view('admin/dashboard');
+                    $this->load->view('admin/footer');
+                }else{
+                    $this->session->set_flashdata('pesan', 'Maaf password yang anda masukkan salah');
+                    redirect('index.php/admin/index?fail=true');                                
+                }
+        }else{
+                    $this->session->set_flashdata('pesan', 'Maaf username yang anda masukkan salah');
+                    redirect('index.php/admin/index?fail=true');
+                }
+        }
 
     function login(){
         if ($this->session->has_userdata('username')) {
@@ -143,13 +150,4 @@ class admin extends CI_Controller {
         $this->data->updateData('jadwal', $data, $where);
     }
     
-         
-//    public function cetaksewa(){
-//        $data = $this->data->read('jadwal')->result_array();
-//        $jadwal['jadwal'] = $data;
-//        $this->load->view('admin/headermasuk');
-//        $this->load->view('admin/cetaksewa', $jadwal);
-//        $this->load->view('admin/footer');
-//    }
-
 }
