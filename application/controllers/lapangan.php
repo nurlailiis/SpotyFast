@@ -89,8 +89,7 @@ class Lapangan extends CI_Controller {
                     'lama_sewa' => $lama_sewa
             );
             $this->data->createJadwal($data, 'jadwal');
-            redirect('lapangan/sewajadwal');
-	}
+            redirect('lapangan/sewajadwal');}
 	
 	public function login($page = 'login'){
             if($this->session->has_userdata('username')){
@@ -164,6 +163,7 @@ class Lapangan extends CI_Controller {
                redirect(base_url('lapangan/login'));
             }
         }
+        
         
  	public function tambah_user(){
             $id_user = $this->input->post('id_user');
