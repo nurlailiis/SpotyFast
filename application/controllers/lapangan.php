@@ -41,7 +41,6 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/detail', $lapangan);
             $this->load->view('lapangan/footer');
 	}
-        
 	public function inputsewa($page = "inputsewa"){
             if ($this->session->has_userdata('username')) {
                     $data=array('nama_lapangan'=> $this->data->get_lapangan());  
