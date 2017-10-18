@@ -127,6 +127,28 @@ class Lapangan_test extends TestCase
             $this->assertFalse( isset($_SESSION['username']) );
         }
         
+        public function test_tambah_user() {
+            $this->request('POST', 'lapangan/tambah_user',
+                    [
+                        'id_user' => 'aisyahparamastri',
+                        'nama_user' => 'aisyah paramastri khairina',
+                        'password_user' => '1234',
+                        'no_telp' => '081234567890', 
+                    ]);
+            $this->assertRedirect('lapangan/login');
+        }
+        
+        public function test_tambah_user_gagal() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                        'id_user' => 'arakhrn',
+                        'nama_user' => 'aisyah paramastri',
+                        'password_user' => '1234',
+                        'no_telp' => '082226256261', 
+                ]);
+//            $this->assertRedirect('index.php/lapangan/index/fail', $output);
+            $this->assertFalse( isset($_SESSION['username']) );
+        }
         
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
