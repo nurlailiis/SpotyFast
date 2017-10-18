@@ -158,9 +158,7 @@ class Lapangan_test extends TestCase
                  $this->load->view('lapangan/header', $lapangan);
                  $this->load->view('lapangan/login_view', $lapangan);
                  $this->load->view('lapangan/footer', $lapangan);
-
-//            $this->assertRedirect('lapangan/login');
-//            $this->assertRedirect('lapangan/tambah_user');
+//$this->assertRedirect('lapangan/login');
         }
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
