@@ -146,9 +146,7 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-                 $this->load->view('lapangan/header', $lapangan);
-                 $this->load->view('lapangan/login_view', $lapangan);
-                 $this->load->view('lapangan/footer', $lapangan);
+                 
         }
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
@@ -181,10 +179,6 @@ class Lapangan_test extends TestCase
                     );
             $this->assertEquals('arakhrn', $_SESSION['username']);
             $this->request('GET', 'lapangan/logout');
-            //$this->assertRedirect('index.php/lapangan');
-//            $this->assertRedirect('index.php/lapangan', $output);
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/login_view', $lapangan);
-            $this->load->view('lapangan/footer', $lapangan);
+            
         }
 }
