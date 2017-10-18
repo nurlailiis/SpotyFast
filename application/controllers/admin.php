@@ -53,12 +53,10 @@ class admin extends CI_Controller {
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/dashboard');
             $this->load->view('admin/footer');
-//            redirect('index.php/admin/login');
             } 
         else
         {
-            $this->session->set_flashdata('pesan', 'Maaf username atau password yang anda masukkan salah');
-            var_dump($this->session->flashdata('pesan'));
+            $this->session->set_flashdata('pesan', 'Maaf password yang anda masukkan salah');
             redirect('index.php/admin/index?fail=true');}}
 
     function login(){
@@ -143,13 +141,4 @@ class admin extends CI_Controller {
         $this->data->updateData('jadwal', $data, $where);
     }
     
-         
-//    public function cetaksewa(){
-//        $data = $this->data->read('jadwal')->result_array();
-//        $jadwal['jadwal'] = $data;
-//        $this->load->view('admin/headermasuk');
-//        $this->load->view('admin/cetaksewa', $jadwal);
-//        $this->load->view('admin/footer');
-//    }
-
 }
