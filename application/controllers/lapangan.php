@@ -172,6 +172,7 @@ class Lapangan extends CI_Controller {
             $no_telp = $this->input->post('no_telp');
             $cek_user = $this->data->readWhere('user', $id_user, 'id_user')->num_rows();	
             $enkripsi = $this->data->enkripsi($password_user);
+                                  
             if($cek_user>0){
                     $this->session->set_flashdata('user_available', '
                             <div class="alert alert-danger alert-dismissible" role="alert">
@@ -195,7 +196,9 @@ class Lapangan extends CI_Controller {
                                       <strong>Berhasil,</strong> akun anda telah terdaftar. Silahkan lakukan login kembali.
                                     </div>
                     ');
-            redirect('lapangan/login');}}
+            redirect('lapangan/login');            
+            }            
+        }
         
     public function logout(){
         unset($_SESSION['username']);    

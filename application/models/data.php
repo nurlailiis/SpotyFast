@@ -48,6 +48,11 @@ class data extends CI_Model
 		$res = $this->db->delete('jadwal'); 
 		return $res;
 	}
+        function deleteUser($item){  
+		$this->db->where_in('id_user', $item);  
+		$res = $this->db->delete('user'); 
+		return $res;
+	}
 
 	function updateData($table, $data, $where){
 		$res=$this->db->update($table, $data, $where);

@@ -114,24 +114,31 @@ class Lapangan_test extends TestCase
             $this->assertFalse( isset($_SESSION['username']) );
         }
         
-        public function test_tambah_user_gagal() {
-            $this->request('POST', 'lapangan/tambah_user',
-                    [
-                        'id_user' => 'arakhrn',
-                        'nama_user' => 'aisyah paramastri',
-                        'password' => '1234',
-                        'no_telp' => '082226256261',
-                    ]);
-        }
-        
-        public function test_tambah_user_berhasil() {
-            $this->request('POST', 'lapangan/tambah_user',
+        public function test_tambah_user_gagal() {            
+            $output = $this->request(
+                    'POST',
+                    'lapangan/tambah_user',
                     [
                         'id_user' => 'aisyahparamastri',
                         'nama_user' => 'aisyah paramastri khairina',
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
+            $this->assertRedirect('lapangan/signup',$output);
+        }
+        public function test_tambah_user_berhasil(){
+            $output = $this->request(
+                    'POST',
+                    'lapangan/tambah_user',
+                    [
+                        'id_user' => 'modavid',
+                        'nama_user' => 'david',
+                        'password_user' => '1234',
+                        'no_telp' => '0811111', 
+                    ]);                      
+            $item = 'modavid';
+            $this->objl->deleteUser($item);            
+            $this->assertRedirect('lapangan/login',$output); 
         }
 
         public function test_logout(){
