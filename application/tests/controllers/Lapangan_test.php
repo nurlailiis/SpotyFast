@@ -15,7 +15,7 @@ class Lapangan_test extends TestCase
         if(isset($_SESSION)) $_SESSION = aaray();
         $this->resetInstance();
         $this->CI->load->model('data');
-        $this->obj1 = $this->CI->data;
+        $this->objl= $this->CI->data;
         }
         
         public function test_index()
@@ -77,6 +77,8 @@ class Lapangan_test extends TestCase
                         'lama_sewa' => '1' 
                     ]);
             $this->assertRedirect('lapangan/sewajadwal');
+            $where = 1;
+            $this->objl->deleteData($where);
         }
 
         public function test_ceklogin(){
