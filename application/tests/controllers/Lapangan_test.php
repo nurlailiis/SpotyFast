@@ -71,19 +71,21 @@ class Lapangan_test extends TestCase
 //            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
 //        }
         
-//        public function test_createsewa(){
-//            $this->request('POST', 'lapangan/createsewa',
-//                    [
-//                        'no' => '3',
-//                        'nama' => 'ara',
-//                        'kategori' => 'mahasiswa',
-//                        'nomer_identitas' => '5215100128',
-//                        'tanggal' => '2017-09-13',
-//                        'jam' => '14:00:00',
-//                        'lama_sewa' => '1', 
-//                    ]);
-//            $this->assertRedirect('lapangan/sewajadwal');
-//        }
+        public function test_createsewa(){
+            $_SESSION['username'] = "name";
+            $this->request('POST', 'lapangan/createsewa',
+                    [
+                        'no' => '3',
+                        'nama' => 'ara',
+                        'kategori' => 'mahasiswa',
+                        'nomer_identitas' => '5215100128',
+                        'nama_lapangan' => 'Lapangan A',
+                        'tanggal' => '2017-09-13',
+                        'jam' => '14:00:00',
+                        'lama_sewa' => '1' 
+                    ]);
+            $this->assertRedirect('lapangan/sewajadwal');
+        }
 
         public function test_ceklogin(){
             $this->request('POST', 'lapangan/cek_login',
