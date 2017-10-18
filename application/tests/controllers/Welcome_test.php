@@ -11,7 +11,6 @@ class Welcome_test extends TestCase
         public function test_index()
 	{
             $output = $this->request('GET', 'admin/index');
-//            $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
         
         public function test_ceklogin(){
@@ -31,7 +30,6 @@ class Welcome_test extends TestCase
                     'password' => '',
                 ]);
             $this->assertFalse( isset($_SESSION['username'], $output) );
-//            $this->assertContains('<strong>Welcome</strong>', $output);
 	}
         
         public function test_ceklogin_admin_not_login_nopassword(){
@@ -41,7 +39,6 @@ class Welcome_test extends TestCase
                     'password' => '',
                 ]);
             $this->assertFalse( isset($_SESSION['username'], $ouput) );
-//            $this->assertContains('<strong>Welcome</strong>', $output);
         }
         
         public function test_ceklogin_admin_not_login_nousername(){
@@ -51,7 +48,6 @@ class Welcome_test extends TestCase
                     'password' => '1234',
                 ]);
             $this->assertFalse( isset($_SESSION['username'], $output) );
-//            $this->assertContains('<strong>Welcome</strong>', $output);
         }
         
         public function test_ceklogin_admin_not_login_unmatch(){
@@ -61,86 +57,46 @@ class Welcome_test extends TestCase
                     'password' => 'unmatch',
                 ]);
             $this->assertFalse( isset($_SESSION['username'], $output) );
-//            $this->assertContains('<strong>Welcome</strong>', $output);
         }
         
         public function test_login(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/login');
-//            $this->assertContains('Dashboard', $output);
         }
 
         public function test_logout(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $this->request('GET', 'admin/logout');
             $this->assertRedirect('index.php/admin');
         }
         
         public function test_inputlapangan() {
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/inputlapangan');
-//            $this->assertContains('<h6>Add</h6>', $output);   
         }
         
         public function test_no_inputlapangan() {
+            $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/inputlapangan');
-//            $this->assertContains('<h6>Add</h6>', $output);   
         }
         
         public function test_dahboard(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/dashboard');
-//            $this->assertContains('<strong>Data Lapangan</strong>', $output);
         }
         
         public function test_datapenyewaan(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/datapenyewaan');
-//            $this->assertContains('<th>NO</th>', $output);
         }
         
         public function test_tambahlapangan_failed(){
+            $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/tambahLapangan');
         }
         
         public function test_tambahlapangan_success(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $this->request('POST', 'admin/tambahLapangan',
                     [
                         'id_lapangan' => '1009',
@@ -153,80 +109,42 @@ class Welcome_test extends TestCase
         }
         
         public function test_editData(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/editData');
-//            $this->assertContains('<h6>Edit</h6>', $output);
         }
         
         public function test_datalapangan(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/datalapangan');
-//            $this->assertContains('<h6>Data</h6>', $output);
         }
         
          public function test_not_datalapangan(){
+             $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/datalapangan');
-//            $this->assertContains('<strong>Dashboard</strong>', $output); 
         }
         
         public function test_deleteData(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/deleteData');
-        }
-       
-        public function test_deleteDataLapangan(){
-            $output = $this->request('GET', 'admin/deleteDataLapangan');
         }
         
         public function test_validasi(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/validasi');
         }
         
         public function test_no_validasi(){
+            $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/validasi');
-//            $this->assertRedirect('index.php/admin/datapenyewaan', $output);
         }
         
         public function test_do_editData(){
-            $this->request('POST', 'admin/cek_login',
-                    [
-                        'username' => 'nurlailiis',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/do_editData');
-//            $this->assertContains('<h6>Edit</h6>');
         }
         
         public function test_do_editData_failed(){
+            $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/do_editData');
-//            $this->assertContains('<h6>Edit</h6>');
-//            $this->assertRedirect('index.php/admin/inputlapangan', $output);
         }
 }

@@ -1,96 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<<<<<<< HEAD
-  <testsuite name="CodeIgniter Application Test Suite" tests="40" assertions="38" failures="0" errors="0" time="5.183343">
-    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="17" assertions="21" failures="0" errors="0" time="1.713585">
-      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.109113"/>
-      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="0" time="0.097742"/>
-      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="34" assertions="1" time="0.081799"/>
-      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="40" assertions="3" time="0.097669"/>
-      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="46" assertions="3" time="0.095830"/>
-      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="54" assertions="1" time="0.078753"/>
-      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="61" assertions="1" time="0.095749"/>
-      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="71" assertions="1" time="0.129327"/>
-      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="87" assertions="1" time="0.122864"/>
-      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="97" assertions="0" time="0.082458"/>
-      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="102" assertions="3" time="0.119658"/>
-      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="111" assertions="1" time="0.098932"/>
-      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="121" assertions="1" time="0.155389"/>
-      <testcase name="test_tambah_user_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="131" assertions="0" time="0.084204"/>
-      <testcase name="test_tambah_user_berhasil" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="141" assertions="0" time="0.086598"/>
-      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="161" assertions="1" time="0.041598"/>
-      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="172" assertions="1" time="0.135902"/>
+  <testsuite name="CodeIgniter Application Test Suite" tests="38" assertions="26" failures="0" errors="0" time="4.564355">
+    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="16" assertions="20" failures="0" errors="0" time="1.739142">
+      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="13" assertions="3" time="0.101897"/>
+      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="0" time="0.093199"/>
+      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="26" assertions="1" time="0.086718"/>
+      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="32" assertions="3" time="0.101947"/>
+      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="38" assertions="3" time="0.121682"/>
+      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="46" assertions="1" time="0.080193"/>
+      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="53" assertions="1" time="0.088209"/>
+      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="58" assertions="1" time="0.225063"/>
+      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="76" assertions="1" time="0.112247"/>
+      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="86" assertions="0" time="0.091560"/>
+      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="90" assertions="3" time="0.129023"/>
+      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="99" assertions="1" time="0.083426"/>
+      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="108" assertions="1" time="0.088993"/>
+      <testcase name="test_tambah_user_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="117" assertions="0" time="0.079576"/>
+      <testcase name="test_tambah_user_berhasil" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="127" assertions="0" time="0.123881"/>
+      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="137" assertions="1" time="0.131528"/>
     </testsuite>
-    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="23" assertions="17" failures="0" errors="0" time="3.469758">
-      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="11" assertions="0" time="0.215279"/>
-      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="17" assertions="1" time="0.143397"/>
-      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="27" assertions="1" time="0.111654"/>
-      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="37" assertions="1" time="0.109899"/>
-      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="47" assertions="1" time="0.129257"/>
-      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="57" assertions="1" time="0.113965"/>
-      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="67" assertions="1" time="0.184443"/>
-      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="79" assertions="2" time="0.198382"/>
-      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="91" assertions="1" time="0.182562"/>
-      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="103" assertions="0" time="0.104231"/>
-      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="108" assertions="1" time="0.181504"/>
-      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="120" assertions="1" time="0.181573"/>
-      <testcase name="test_tambahlapangan_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="132" assertions="0" time="0.112112"/>
-      <testcase name="test_tambahlapangan_success" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="136" assertions="1" time="0.181996"/>
-      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="155" assertions="1" time="0.164957"/>
-      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="167" assertions="1" time="0.177907"/>
-      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="179" assertions="0" time="0.102828"/>
-      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="184" assertions="1" time="0.200386"/>
-      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="195" assertions="0" time="0.110223"/>
-      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="199" assertions="1" time="0.184015"/>
-      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="210" assertions="0" time="0.114339"/>
-      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="215" assertions="1" time="0.165897"/>
-      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="227" assertions="0" time="0.098953"/>
-=======
-  <testsuite name="CodeIgniter Application Test Suite" tests="40" assertions="38" failures="0" errors="0" time="4.766432">
-    <testsuite name="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" fullPackage="Lapangan" tests="17" assertions="21" failures="0" errors="0" time="1.700793">
-      <testcase name="test_index" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="21" assertions="3" time="0.081542"/>
-      <testcase name="test_sewajadwal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="29" assertions="0" time="0.080550"/>
-      <testcase name="test_sewajadwal_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="34" assertions="1" time="0.074372"/>
-      <testcase name="test_detail" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="40" assertions="3" time="0.101830"/>
-      <testcase name="test_inputsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="46" assertions="3" time="0.085760"/>
-      <testcase name="test_inputsewa_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="54" assertions="1" time="0.070482"/>
-      <testcase name="test_signup" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="61" assertions="1" time="0.080274"/>
-      <testcase name="test_createsewa" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="66" assertions="1" time="0.305406"/>
-      <testcase name="test_ceklogin" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="84" assertions="1" time="0.098362"/>
-      <testcase name="test_login_sukses" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="94" assertions="0" time="0.073162"/>
-      <testcase name="test_login_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="98" assertions="3" time="0.081697"/>
-      <testcase name="test_login_gagal_password" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="107" assertions="1" time="0.088871"/>
-      <testcase name="test_login_gagal_username" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="116" assertions="1" time="0.075141"/>
-      <testcase name="test_tambah_user_gagal" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="125" assertions="0" time="0.114960"/>
-      <testcase name="test_tambah_user_berhasil" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="135" assertions="0" time="0.082401"/>
-      <testcase name="test_APPPATH" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="146" assertions="1" time="0.042326"/>
-      <testcase name="test_logout" class="Lapangan_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Lapangan_test.php" line="157" assertions="1" time="0.163657"/>
-    </testsuite>
-    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="23" assertions="17" failures="0" errors="0" time="3.065639">
-      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="11" assertions="0" time="0.140938"/>
-      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="17" assertions="1" time="0.191307"/>
-      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="27" assertions="1" time="0.108981"/>
-      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="37" assertions="1" time="0.094962"/>
-      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="47" assertions="1" time="0.102980"/>
-      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="57" assertions="1" time="0.102910"/>
-      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="67" assertions="1" time="0.165113"/>
-      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="79" assertions="2" time="0.153941"/>
-      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="91" assertions="1" time="0.152839"/>
-      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="103" assertions="0" time="0.123427"/>
-      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="108" assertions="1" time="0.173078"/>
-      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="120" assertions="1" time="0.156980"/>
-      <testcase name="test_tambahlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="132" assertions="0" time="0.098180"/>
-      <testcase name="test_tambahlapangan_success" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="137" assertions="1" time="0.142269"/>
-      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="149" assertions="1" time="0.141185"/>
-      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="161" assertions="1" time="0.151373"/>
-      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="173" assertions="0" time="0.090513"/>
-      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="178" assertions="1" time="0.208181"/>
-      <testcase name="test_deleteDataLapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="189" assertions="0" time="0.092822"/>
-      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="193" assertions="1" time="0.146296"/>
-      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="204" assertions="0" time="0.103422"/>
-      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="209" assertions="1" time="0.132946"/>
-      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="221" assertions="0" time="0.090996"/>
->>>>>>> 97aeb22fb9a356659cf5f296ff66a4ef566c19a8
+    <testsuite name="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" fullPackage="Welcome" tests="22" assertions="6" failures="0" errors="0" time="2.825213">
+      <testcase name="test_index" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="11" assertions="0" time="0.140842"/>
+      <testcase name="test_ceklogin" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="16" assertions="1" time="0.131781"/>
+      <testcase name="test_ceklogin_admin_not_login_kosongsemua" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="26" assertions="1" time="0.143349"/>
+      <testcase name="test_ceklogin_admin_not_login_nopassword" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="35" assertions="1" time="0.123858"/>
+      <testcase name="test_ceklogin_admin_not_login_nousername" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="44" assertions="1" time="0.130397"/>
+      <testcase name="test_ceklogin_admin_not_login_unmatch" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="53" assertions="1" time="0.131199"/>
+      <testcase name="test_login" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="62" assertions="0" time="0.126985"/>
+      <testcase name="test_logout" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="67" assertions="1" time="0.159405"/>
+      <testcase name="test_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="73" assertions="0" time="0.150122"/>
+      <testcase name="test_no_inputlapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="78" assertions="0" time="0.135516"/>
+      <testcase name="test_dahboard" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="83" assertions="0" time="0.153829"/>
+      <testcase name="test_datapenyewaan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="88" assertions="0" time="0.135225"/>
+      <testcase name="test_tambahlapangan_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="93" assertions="0" time="0.146719"/>
+      <testcase name="test_tambahlapangan_success" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="98" assertions="0" time="0.112584"/>
+      <testcase name="test_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="111" assertions="0" time="0.100917"/>
+      <testcase name="test_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="116" assertions="0" time="0.121205"/>
+      <testcase name="test_not_datalapangan" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="121" assertions="0" time="0.112175"/>
+      <testcase name="test_deleteData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="126" assertions="0" time="0.133177"/>
+      <testcase name="test_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="131" assertions="0" time="0.111695"/>
+      <testcase name="test_no_validasi" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="136" assertions="0" time="0.113954"/>
+      <testcase name="test_do_editData" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="141" assertions="0" time="0.100380"/>
+      <testcase name="test_do_editData_failed" class="Welcome_test" file="C:\xampp\htdocs\GIT\application\tests\controllers\Welcome_test.php" line="146" assertions="0" time="0.109898"/>
     </testsuite>
   </testsuite>
 </testsuites>

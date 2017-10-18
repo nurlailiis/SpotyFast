@@ -1,12 +1,4 @@
 <?php
-/**
- * Part of ci-phpunit-test
- *
- * @author     Kenji Suzuki <https://github.com/kenjis>
- * @license    MIT License
- * @copyright  2015 Kenji Suzuki
- * @link       https://github.com/kenjis/ci-phpunit-test
- */
 
 class Lapangan_test extends TestCase
 {
@@ -27,12 +19,12 @@ class Lapangan_test extends TestCase
         }
 
         public function test_sewajadwal(){
-            $_SESSION['username'] = "name";
+            $_SESSION['username'] = "nama";
             
             $output = $this->request('GET', 'lapangan/sewajadwal');        
         }
         public function test_sewajadwal_gagal(){
-            $_SESSION['username'] != "name";
+            $_SESSION['username'] != "nama";
             
             $output = $this->request('GET', 'lapangan/sewajadwal');                                                      
             $this->assertRedirect(base_url('lapangan/login', $output));            
@@ -44,7 +36,7 @@ class Lapangan_test extends TestCase
             $this->assertContains('<footer>', $output);                       
         }
         public function test_inputsewa(){
-            $_SESSION['username'] = "name";
+            $_SESSION['username'] = "nama";
             
             $output = $this->request('GET', 'lapangan/inputsewa');           
             $this->assertContains('<head>', $output);
@@ -52,7 +44,7 @@ class Lapangan_test extends TestCase
             $this->assertContains('<footer>', $output);                                           
         }
         public function test_inputsewa_gagal(){
-            $_SESSION['username'] != "name";
+            $_SESSION['username'] != "nama";
             
             $output = $this->request('GET', 'lapangan/inputsewa');                                                      
             $this->assertRedirect(base_url('lapangan/login', $output));            
@@ -64,7 +56,7 @@ class Lapangan_test extends TestCase
         }
         
         public function test_createsewa(){
-            $_SESSION['username'] = "name";
+            $_SESSION['username'] = "nama";
             $this->request('POST', 'lapangan/createsewa',
                     [
                         'no' => '3',
@@ -77,7 +69,7 @@ class Lapangan_test extends TestCase
                         'lama_sewa' => '1' 
                     ]);
             $this->assertRedirect('lapangan/sewajadwal');
-            $where = 1;
+            $where = 3;
             $this->objl->deleteData($where);
         }
 
@@ -92,11 +84,11 @@ class Lapangan_test extends TestCase
         }
         
         public function test_login_sukses(){
-            $_SESSION['username'] = "name";
+            $_SESSION['username'] = "nama";
             $output = $this->request('GET', 'lapangan/login');                                
         }
         public function test_login_gagal(){
-            $_SESSION['username'] != "name";
+            $_SESSION['username'] != "nama";
             
             $output = $this->request('GET', 'lapangan/login');
             $this->assertContains('<head>', $output);
@@ -142,17 +134,6 @@ class Lapangan_test extends TestCase
                     ]);
         }
 
-        public function test_APPPATH()
-        {
-            $actual = realpath(APPPATH);
-            $expected = realpath(__DIR__ . '/../..');
-            $this->assertEquals(
-                $expected,
-                $actual,
-                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-            );
-        }       
-        
         public function test_logout(){
             $output = $this->request('POST', 'lapangan/cek_login',
                     [
