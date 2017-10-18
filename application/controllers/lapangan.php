@@ -196,9 +196,8 @@ class Lapangan extends CI_Controller {
                                     </div>
                     ');
             $this->load->view('lapangan/header', $lapangan);
-                    $this->load->view('lapangan/login_view', $lapangan);
-                    $this->load->view('lapangan/footer', $lapangan);
-            //redirect('lapangan/login');
+            $this->load->view('lapangan/login_view', $lapangan);
+            $this->load->view('lapangan/footer', $lapangan);
             }		
 	}
         

@@ -136,7 +136,6 @@ class Lapangan_test extends TestCase
                         'password' => '1234',
                         'no_telp' => '082226256261',
                     ]);
-            $this->assertRedirect('lapangan/tambah_user');
         }
         
         public function test_tambah_user_berhasil() {
@@ -150,7 +149,6 @@ class Lapangan_test extends TestCase
                  $this->load->view('lapangan/header', $lapangan);
                  $this->load->view('lapangan/login_view', $lapangan);
                  $this->load->view('lapangan/footer', $lapangan);
-//$this->assertRedirect('lapangan/login');
         }
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
