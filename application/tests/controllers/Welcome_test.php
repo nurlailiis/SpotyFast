@@ -148,6 +148,7 @@ class Welcome_test extends TestCase
                         'detail_lapangan' => 'Lapangan Futsal Fasor ITS',
                         'tarif_mahasiswa' => '80000',
                         'tarif_nonits' => '10000',
+                        'gambar_lapangan' => 'http://localhost/GIT/./assets/lapangan/image/20140608_1845481.jpg'
                     ]);
         }
         
