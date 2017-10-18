@@ -63,11 +63,6 @@ class Lapangan_test extends TestCase
             $this->assertContains('<h1>SIGN UP</h1>', $output);
         }
         
-//        public function test_createsewa() {
-//            $output = $this->request('GET', 'lapangan/createsewa');
-//            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
-//        }
-        
         public function test_createsewa(){
             $_SESSION['username'] = "name";
             $this->request('POST', 'lapangan/createsewa',
@@ -96,8 +91,7 @@ class Lapangan_test extends TestCase
         
         public function test_login_sukses(){
             $_SESSION['username'] = "name";
-            $output = $this->request('GET', 'lapangan/login');
-//            $this->assertRedirect(base_url('lapangan/index', $output));                                  
+            $output = $this->request('GET', 'lapangan/login');                                
         }
         public function test_login_gagal(){
             $_SESSION['username'] != "name";
@@ -114,7 +108,6 @@ class Lapangan_test extends TestCase
                     'username' => 'arakhrn',
                     'password' => '',
                 ]);
-//            $this->assertRedirect('index.php/lapangan/index/fail', $output);
             $this->assertFalse( isset($_SESSION['username']) );
         }
         
@@ -124,7 +117,6 @@ class Lapangan_test extends TestCase
                     'username' => 'arse',
                     'password' => '1234',
                 ]);
-//            $this->assertRedirect('index.php/lapangan/index/fail', $output);
             $this->assertFalse( isset($_SESSION['username']) );
         }
         
@@ -148,16 +140,6 @@ class Lapangan_test extends TestCase
                     ]);
                  
         }
-    //    public function test_createsewa(){
-  //         $output = $this->request('POST', 'lapangan/createsewa');
-//           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
-//        }
-
-//        public function test_method_404()
-//	{
-//		$this->request('GET', 'welcome/method_not_exist');
-//		$this->assertResponseCode(404);
-//	}
 
         public function test_APPPATH()
         {
