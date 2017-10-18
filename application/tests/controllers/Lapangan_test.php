@@ -1,12 +1,4 @@
 <?php
-/**
- * Part of ci-phpunit-test
- *
- * @author     Kenji Suzuki <https://github.com/kenjis>
- * @license    MIT License
- * @copyright  2015 Kenji Suzuki
- * @link       https://github.com/kenjis/ci-phpunit-test
- */
 
 class Lapangan_test extends TestCase
 {
@@ -142,17 +134,6 @@ class Lapangan_test extends TestCase
                     ]);
         }
 
-        public function test_APPPATH()
-        {
-            $actual = realpath(APPPATH);
-            $expected = realpath(__DIR__ . '/../..');
-            $this->assertEquals(
-                $expected,
-                $actual,
-                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-            );
-        }       
-        
         public function test_logout(){
             $output = $this->request('POST', 'lapangan/cek_login',
                     [
