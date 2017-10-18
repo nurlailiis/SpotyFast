@@ -1,12 +1,4 @@
 <?php
-/**
- * Part of ci-phpunit-test
- *
- * @author     Kenji Suzuki <https://github.com/kenjis>
- * @license    MIT License
- * @copyright  2015 Kenji Suzuki
- * @link       https://github.com/kenjis/ci-phpunit-test
- */
 
 class Welcome_test extends TestCase
 {
@@ -73,6 +65,13 @@ class Welcome_test extends TestCase
         }
         
         public function test_login(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/login');
 //            $this->assertContains('Dashboard', $output);
         }
@@ -107,21 +106,49 @@ class Welcome_test extends TestCase
         }
         
         public function test_dahboard(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/dashboard');
 //            $this->assertContains('<strong>Data Lapangan</strong>', $output);
         }
         
         public function test_datapenyewaan(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/datapenyewaan');
 //            $this->assertContains('<th>NO</th>', $output);
         }
         
         public function test_tambahlapangan(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/tambahLapangan');
 //            $this->assertContains('<th>NO</th>', $output);
         }
         
         public function test_editData(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/editData');
 //            $this->assertContains('<h6>Edit</h6>', $output);
         }
@@ -161,6 +188,13 @@ class Welcome_test extends TestCase
         }
         
         public function test_validasi(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $output = $this->request('GET', 'admin/validasi');
 //            $this->assertRedirect('index.php/admin/datapenyewaan', $output);
         }
