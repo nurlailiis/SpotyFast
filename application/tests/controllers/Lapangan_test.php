@@ -140,7 +140,6 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-                 
         }
 
         public function test_APPPATH()
