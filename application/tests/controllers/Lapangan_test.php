@@ -82,10 +82,6 @@ class Lapangan_test extends TestCase
 //                        'jam' => '14:00:00',
 //                        'lama_sewa' => '1', 
 //                    ]);
-//            
-//            //$this->assertEquals('arakhrn', $_SESSION['username']);
-//            //$output = $this->request('GET', 'lapangan/createsewa');
-////            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>');
 //            $this->assertRedirect('lapangan/sewajadwal');
 //        }
 
@@ -141,9 +137,6 @@ class Lapangan_test extends TestCase
                         'password' => '1234',
                         'no_telp' => '082226256261',
                     ]);
-//                $this->load->view('lapangan/header', $lapangan);
-//                $this->load->view('lapangan/tambah_akun', $lapangan);
-//                $this->load->view('lapangan/footer', $lapangan);
             $this->assertRedirect('lapangan/tambah_user');
         }
         
