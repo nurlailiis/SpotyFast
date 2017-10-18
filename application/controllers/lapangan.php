@@ -140,7 +140,7 @@ class Lapangan extends CI_Controller {
                     $this->load->view('lapangan/header', $lapangan);
                     $this->load->view('lapangan/home', $lapangan);
                     $this->load->view('lapangan/footer', $lapangan);
-                            //redirect('lapangan/index');
+                            
                 }
                 else{
                     $this->session->set_flashdata('pesan', '
@@ -195,17 +195,9 @@ class Lapangan extends CI_Controller {
                                       <strong>Berhasil,</strong> akun anda telah terdaftar. Silahkan lakukan login kembali.
                                     </div>
                     ');
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/login_view', $lapangan);
-            $this->load->view('lapangan/footer', $lapangan);
-            }		
-	}
+            redirect('lapangan/login');}}
         
     public function logout(){
         unset($_SESSION['username']);    
-        $this->load->view('lapangan/header');
-        $this->load->view('lapangan/login_view');
-        $this->load->view('lapangan/footer');
-//        redirect(base_url('lapangan/login'));
-    }
+        redirect(base_url('lapangan/login'));}
 }
