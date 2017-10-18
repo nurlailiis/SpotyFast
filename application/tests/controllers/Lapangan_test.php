@@ -71,16 +71,22 @@ class Lapangan_test extends TestCase
 //            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
 //        }
         
-        public function test_createsewa_sukses() {
-            $this->request('POST', 'lapangan/cek_login',
+        public function test_createsewa(){
+            $this->request('POST', 'lapangan/createsewa',
                     [
-                        'username' => 'arakhrn',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('arakhrn', $_SESSION['username']);
-            $output = $this->request('GET', 'alapangan/createsewa');
+                        'no' => '3',
+                        'nama' => 'ara',
+                        'kategori' => 'mahasiswa',
+                        'nomer_identitas' => '5215100128',
+                        'tanggal' => '2017-09-13',
+                        'jam' => '14:00:00',
+                        'lama_sewa' => '1', 
+                    ]);
+            
+            //$this->assertEquals('arakhrn', $_SESSION['username']);
+            //$output = $this->request('GET', 'lapangan/createsewa');
 //            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>');
+            $this->assertRedirect('lapangan/sewajadwal');
         }
 
         public function test_ceklogin(){
@@ -120,7 +126,7 @@ class Lapangan_test extends TestCase
         public function test_login_gagal_username() {
             $output = $this->request('POST', 'lapangan/cek_login',
                 [
-                    'username' => '',
+                    'username' => 'arse',
                     'password' => '1234',
                 ]);
 //            $this->assertRedirect('index.php/lapangan/index/fail', $output);
@@ -130,24 +136,32 @@ class Lapangan_test extends TestCase
         public function test_tambah_user_gagal() {
             $this->request('POST', 'lapangan/tambah_user',
                     [
+                        'id_user' => 'arakhrn',
+                        'nama_user' => 'aisyah paramastri',
+                        'password' => '1234',
+                        'no_telp' => '082226256261',
+                    ]);
+//                $this->load->view('lapangan/header', $lapangan);
+//                $this->load->view('lapangan/tambah_akun', $lapangan);
+//                $this->load->view('lapangan/footer', $lapangan);
+$this->assertRedirect('lapangan/tambah_user');
+        }
+        
+        public function test_tambah_user_berhasil() {
+            $this->request('POST', 'lapangan/tambah_user',
+                    [
                         'id_user' => 'aisyahparamastri',
                         'nama_user' => 'aisyah paramastri khairina',
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-            $this->assertRedirect('lapangan/tambah_user');
+                 $this->load->view('lapangan/header', $lapangan);
+                 $this->load->view('lapangan/login_view', $lapangan);
+                 $this->load->view('lapangan/footer', $lapangan);
+//$this->assertRedirect('lapangan/login');
         }
         
-        public function test_tambah_user_berhasil() {
-            $output = $this->request('POST', 'lapangan/tambah_user',
-                [
-                        'id_user' => 'arakhrn',
-                        'nama_user' => 'aisyah paramastri',
-                        'password_user' => '1234',
-                        'no_telp' => '082226256261', 
-                ]);
-            $this->assertRedirect('lapangan/login');
-        }
+       
         
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
@@ -196,5 +210,8 @@ class Lapangan_test extends TestCase
             $this->request('GET', 'lapangan/logout');
             //$this->assertRedirect('index.php/lapangan');
 //            $this->assertRedirect('index.php/lapangan', $output);
+            $this->load->view('lapangan/header', $lapangan);
+                 $this->load->view('lapangan/login_view', $lapangan);
+                 $this->load->view('lapangan/footer', $lapangan);
         }
 }
