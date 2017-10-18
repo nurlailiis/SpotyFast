@@ -71,23 +71,23 @@ class Lapangan_test extends TestCase
 //            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>', $output);
 //        }
         
-        public function test_createsewa(){
-            $this->request('POST', 'lapangan/createsewa',
-                    [
-                        'no' => '3',
-                        'nama' => 'ara',
-                        'kategori' => 'mahasiswa',
-                        'nomer_identitas' => '5215100128',
-                        'tanggal' => '2017-09-13',
-                        'jam' => '14:00:00',
-                        'lama_sewa' => '1', 
-                    ]);
-            
-            //$this->assertEquals('arakhrn', $_SESSION['username']);
-            //$output = $this->request('GET', 'lapangan/createsewa');
-//            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>');
-            $this->assertRedirect('lapangan/sewajadwal');
-        }
+//        public function test_createsewa(){
+//            $this->request('POST', 'lapangan/createsewa',
+//                    [
+//                        'no' => '3',
+//                        'nama' => 'ara',
+//                        'kategori' => 'mahasiswa',
+//                        'nomer_identitas' => '5215100128',
+//                        'tanggal' => '2017-09-13',
+//                        'jam' => '14:00:00',
+//                        'lama_sewa' => '1', 
+//                    ]);
+//            
+//            //$this->assertEquals('arakhrn', $_SESSION['username']);
+//            //$output = $this->request('GET', 'lapangan/createsewa');
+////            $this->assertContains('<h2>Tabel Sewa Jadwal</h2>');
+//            $this->assertRedirect('lapangan/sewajadwal');
+//        }
 
         public function test_ceklogin(){
             $this->request('POST', 'lapangan/cek_login',
@@ -144,7 +144,7 @@ class Lapangan_test extends TestCase
 //                $this->load->view('lapangan/header', $lapangan);
 //                $this->load->view('lapangan/tambah_akun', $lapangan);
 //                $this->load->view('lapangan/footer', $lapangan);
-$this->assertRedirect('lapangan/tambah_user');
+            $this->assertRedirect('lapangan/tambah_user');
         }
         
         public function test_tambah_user_berhasil() {
@@ -155,32 +155,13 @@ $this->assertRedirect('lapangan/tambah_user');
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-<<<<<<< HEAD
                  $this->load->view('lapangan/header', $lapangan);
                  $this->load->view('lapangan/login_view', $lapangan);
                  $this->load->view('lapangan/footer', $lapangan);
-//$this->assertRedirect('lapangan/login');
-        }
-        
-       
-=======
-//            $this->assertRedirect('lapangan/login');
 
+//            $this->assertRedirect('lapangan/login');
 //            $this->assertRedirect('lapangan/tambah_user');
         }
-        
-        public function test_tambah_user_berhasil() {
-            $output = $this->request('POST', 'lapangan/tambah_user',
-                [
-                        'id_user' => 'arakhrn',
-                        'nama_user' => 'aisyah paramastri',
-                        'password_user' => '1234',
-                        'no_telp' => '082226256261', 
-                ]);
-//            $this->assertRedirect('lapangan/login');
-        }
->>>>>>> d1db30e5d1adfbfc2b7f1d1b9dfaf44ed1157760
-        
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
 //           $this->assertRedirect(base_url('lapangan/sewajadwal'));                   
