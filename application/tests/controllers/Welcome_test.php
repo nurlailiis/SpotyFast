@@ -142,8 +142,16 @@ class Welcome_test extends TestCase
                     ]
                     );
             $this->assertEquals('nurlailiis', $_SESSION['username']);
-            $output = $this->request('GET', 'admin/tambahLapangan');
-//            $this->assertContains('<th>NO</th>', $output);
+            $output = $this->request('POST', 'admin/tambahLapangan',
+                    [
+                        'id_lapangan' => '1009',
+                        'nama_lapangan' => 'Lapangan B',
+                        'detail_lapangan' => 'Lapangan Futsal Fasor ITS',
+                        'tarif_mahasiswa' => '80000',
+                        'tarif_nonits' => '10000',
+                        'gambar_lapangan' => 'http://localhost/GIT/./assets/lapangan/image/20140608_1845481.jpg',
+                    ]
+                    );
         }
         
         public function test_editData(){
