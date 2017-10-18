@@ -194,7 +194,7 @@ class Lapangan_test extends TestCase
             //$this->assertRedirect('index.php/lapangan');
 //            $this->assertRedirect('index.php/lapangan', $output);
             $this->load->view('lapangan/header', $lapangan);
-                 $this->load->view('lapangan/login_view', $lapangan);
-                 $this->load->view('lapangan/footer', $lapangan);
+            $this->load->view('lapangan/login_view', $lapangan);
+            $this->load->view('lapangan/footer', $lapangan);
         }
 }

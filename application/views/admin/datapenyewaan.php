@@ -25,14 +25,6 @@
                         <div class="table-responsive">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <h3><center>LAPANGAN</center></h3>
-                            <center>
-                              <p class="col-md-4" align="center"><select name="kategori" class="form-control">
-                                    <option selected="" disabled="">--Category--</option>
-                                    <option>Lapangan A</option>
-                                    <option>Lapangan B</option>
-                                    <option>Lapangan C</option>
-                                </select></p>
-                            </center>
                             <thead>
                                 <tr>
                                     <th>NO</th>

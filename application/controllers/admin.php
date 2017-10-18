@@ -116,62 +116,6 @@ class admin extends CI_Controller {
             $this->data->insertData('lapangan', $data);
             redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
 
-    function editData($id){
-        if ($this->session->has_userdata('username')) {
-            $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
-            $image= $update[0]['gambar_lapangan'];
-            $id_lapangan = $update[0]['id_lapangan'];
-            $nama = $update[0]['nama_lapangan'];
-            $detail = $update[0]['detail_lapangan'];
-            $tarifmhs = $update[0]['tarif_mahasiswa'];
-            $tarifnon = $update[0]['tarif_nonits'];
-            $data = array(
-                'id_lapangan' => $id_lapangan,
-                'nama_lapangan' => $nama,
-                'detail_lapangan' => $detail,
-                'tarif_mahasiswa' => $tarifmhs,
-                'tarif_nonits' => $tarifnon,
-                'gambar_lapangan' => $image, 
-                );
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/editData', $data);
-            $this->load->view('admin/footer');
-        }
-        else{
-            redirect(base_url('index.php/admin/login'));}}
-
-    function do_editData(){
-        $config['upload_path']          = './assets/lapangan/image/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 1000000;
-        $config['max_width']            = 1000000;
-        $config['max_height']           = 1000000;
-
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('gambar')) {
-            $this->session->has_userdata('username');
-            echo print_r(array('error' => $this->upload->display_errors()));    
-        }
-        else{
-            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
-            $id = $_POST['id'];
-            $where = array('id_lapangan' => $id);
-            $id = $this->input->post('id');
-            $nama = $this->input->post('nama');
-            $detail = $this->input->post('detail');
-            $tarifmhs = $this->input->post('tarif_mahasiswa');
-            $tarifnon = $this->input->post('tarif_nonits');
-            $data = array(
-                'id_lapangan' => $id_lapangan,
-                'nama_lapangan' => $nama,
-                'detail_lapangan' => $detail,
-                'tarif_mahasiswa' => $tarifmhs,
-                'tarif_nonits' => $tarifnon,
-                'gambar_lapangan' => $url,  
-                );
-            $this->data->updateData('lapangan', $data, $where);
-            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
-
     function datalapangan(){
         if ($this->session->has_userdata('username')) {
             $data = $this->data->selectLapangan()->result_array();
