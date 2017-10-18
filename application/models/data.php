@@ -9,10 +9,6 @@ class data extends CI_Model
 		return $this->db->get_where($table, array($where => $id));
 	}
 
-	function getDataLapangan($where="") {
-		$query = $this->db->query('select * from lapangan ' .$where);
-		return $query->result_array();
-	}
 	function selectLapangan(){
 		return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
 		);
