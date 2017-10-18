@@ -126,6 +126,66 @@ class Lapangan_test extends TestCase
                     ]);
             $this->assertRedirect('lapangan/signup',$output);
         }
+        public function test_tambah_user_gagal_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => '',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '1234',
+                    'no_telp' => '081234567890',
+                ]);
+            $item = '';
+            $this->objl->deleteUser($item);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_namauser_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => '',
+                    'password_user' => '1234',
+                    'no_telp' => '081234567890',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_password_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '',
+                    'no_telp' => '081234567890',
+                ]);
+            $item = '';
+            $this->objl->deleteUser($item);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_notelp_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '1234',
+                    'no_telp' => '',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_tidak_diisi_semua() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => '',
+                    'nama_user' => '',
+                    'password_user' => '',
+                    'no_telp' => '',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        
         public function test_tambah_user_berhasil(){
             $output = $this->request(
                     'POST',
