@@ -130,6 +130,11 @@ class Welcome_test extends TestCase
         }
         
         public function test_tambahlapangan(){
+            $output = $this->request('GET', 'admin/tambahLapangan');
+//            $this->assertContains('<th>NO</th>', $output);
+        }
+        
+        public function test_tambahlapangan_success(){
             $this->request('POST', 'admin/cek_login',
                     [
                         'username' => 'nurlailiis',

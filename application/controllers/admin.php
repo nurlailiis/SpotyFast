@@ -86,14 +86,15 @@ class admin extends CI_Controller {
     function tambahLapangan(){
         $config['upload_path']          = './assets/lapangan/image/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100000;
-        $config['max_width']            = 10000;
-        $config['max_height']           = 10000;
+        $config['max_size']             = 1000000;
+        $config['max_width']            = 1000000;
+        $config['max_height']           = 1000000;
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
+            $this->session->has_userdata('username');
             echo print_r(array('error' => $this->upload->display_errors()));    
-            // redirect(base_url('admin/inputlapangan'));
+//             redirect(base_url('admin/inputlapangan'));
         }
         else{
             $url = base_url().$config['upload_path'].$this->upload->data('file_name');
@@ -111,10 +112,7 @@ class admin extends CI_Controller {
                 'gambar_lapangan' => $url, 
                 );
             $this->data->insertData('lapangan', $data);
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/lapangan');
-            $this->load->view('admin/footer');
-//            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
+            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
         }
     }
 
