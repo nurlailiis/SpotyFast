@@ -179,6 +179,7 @@ class Lapangan extends CI_Controller {
                                       <strong>Maaf</strong> Username yang anda pilih sudah terdaftar.
                                     </div>
                     ');
+                    
                     redirect('lapangan/signup');
             }else{
                     $data = array(

@@ -135,7 +135,7 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
-//            $this->assertRedirect('lapangan/login');
+            $this->assertRedirect('lapangan/tambah_user');
         }
         
         public function test_tambah_user_berhasil() {
@@ -146,8 +146,7 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '082226256261', 
                 ]);
-//            $this->assertRedirect('index.php/lapangan/index/fail', $output);
-           // $this->assertFalse( isset($_SESSION['username']) );
+            $this->assertRedirect('lapangan/login');
         }
         
     //    public function test_createsewa(){
