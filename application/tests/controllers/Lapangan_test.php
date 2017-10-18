@@ -155,6 +155,7 @@ $this->assertRedirect('lapangan/tambah_user');
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
+<<<<<<< HEAD
                  $this->load->view('lapangan/header', $lapangan);
                  $this->load->view('lapangan/login_view', $lapangan);
                  $this->load->view('lapangan/footer', $lapangan);
@@ -162,6 +163,23 @@ $this->assertRedirect('lapangan/tambah_user');
         }
         
        
+=======
+//            $this->assertRedirect('lapangan/login');
+
+//            $this->assertRedirect('lapangan/tambah_user');
+        }
+        
+        public function test_tambah_user_berhasil() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                        'id_user' => 'arakhrn',
+                        'nama_user' => 'aisyah paramastri',
+                        'password_user' => '1234',
+                        'no_telp' => '082226256261', 
+                ]);
+//            $this->assertRedirect('lapangan/login');
+        }
+>>>>>>> d1db30e5d1adfbfc2b7f1d1b9dfaf44ed1157760
         
     //    public function test_createsewa(){
   //         $output = $this->request('POST', 'lapangan/createsewa');
@@ -173,20 +191,6 @@ $this->assertRedirect('lapangan/tambah_user');
 //		$this->request('GET', 'welcome/method_not_exist');
 //		$this->assertResponseCode(404);
 //	}
-        
-
-//        public function test_APPPATH()
-//        {
-//            $actual = realpath(APPPATH);
-//            $expected = realpath(__DIR__ . '/../..');
-//            $this->assertEquals(
-//                $expected,
-//                $actual,
-//                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-//            );
-//        }   
-        
-        
 
         public function test_APPPATH()
         {
