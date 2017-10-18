@@ -26,7 +26,6 @@
                                     <th style="width: 250px;">Tarif Civitas ITS</th>
                                     <th style="width: 250px;">Tarif Non ITS</th>
                                     <th style="width: 250px;">Gambar</th>
-                                    <th style="width: 250px;">Pilihan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -38,9 +37,6 @@
                                     <td><?php echo 'Rp. '.number_format($d['tarif_mahasiswa'], 2, ',', '.'); ?></td>
                                     <td><?php echo 'Rp. '.number_format($d['tarif_nonits'], 2, ',', '.'); ?></td>
                                     <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>"></td>
-                                    <td class="center">
-                                        <a class="btn btn-primary btn-outline" href="<?php echo base_url()."index.php/admin/editData/".$d['id_lapangan']?>">Update</a>
-                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
