@@ -134,6 +134,13 @@ class Welcome_test extends TestCase
         }
         
         public function test_tambahlapangan_success(){
+            $this->request('POST', 'admin/cek_login',
+                    [
+                        'username' => 'nurlailiis',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('nurlailiis', $_SESSION['username']);
             $this->request('POST', 'admin/tambahLapangan',
                     [
                         'id_lapangan' => '1009',
@@ -141,9 +148,8 @@ class Welcome_test extends TestCase
                         'detail_lapangan' => 'Lapangan Futsal Fasor ITS',
                         'tarif_mahasiswa' => '80000',
                         'tarif_nonits' => '10000',
-                        'gambar_lapangan' => 'http://localhost/GIT/./assets/lapangan/image/20140608_1845481.jpg',
-                    ]
-                    );
+                        'gambar_lapangan' => 'http://localhost/GIT/./assets/lapangan/image/20140608_1845481.jpg'
+                    ]);
 //            $this->assertContains('<th>NO</th>', $output);
         }
         
