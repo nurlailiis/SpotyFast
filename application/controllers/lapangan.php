@@ -165,6 +165,7 @@ class Lapangan extends CI_Controller {
             }
         }
         
+        
  	public function tambah_user(){
             $id_user = $this->input->post('id_user');
             $nama_user = $this->input->post('nama_user');
