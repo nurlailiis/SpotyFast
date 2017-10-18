@@ -53,12 +53,6 @@ class data extends CI_Model
 		return $res;
 	}
 
-	function deleteDataLapangan($item){  
-		$this->db->where_in('id_lapangan', $item);  
-		$res = $this->db->delete('lapangan'); 
-		return $res;
-	}
-
 	function updateData($table, $data, $where){
 		$res=$this->db->update($table, $data, $where);
 		return $res;

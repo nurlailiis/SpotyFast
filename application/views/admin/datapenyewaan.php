@@ -45,7 +45,6 @@
                                     <th>LAMA SEWA</th>                                    
                                     <th>STATUS</th>
                                     <th>HAPUS</th>
-                                    <th>NOTA</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,15 +66,6 @@
                                    ?></td>
                                    <td class="center">
                                         <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteData/".$g['no']?>">Hapus</a>
-                                    </td>
-                                     <td class="center">
-                                          <button class="btn btn-outline" onclick="myFunction()" style="color: white; background: blue">Cetak</button>
-                                          <a class="btn btn-outline" href="<?php echo base_url()."index.php/admin/cetaksewa/".$g['no']?>" style="color: white; background: blue">Cetak</a>
-                                          <script>
-                                          function myFunction() {
-                                              window.print();
-                                          }
-                                          </script></a>
                                     </td>
                                 </tr>
                             <?php } ?>

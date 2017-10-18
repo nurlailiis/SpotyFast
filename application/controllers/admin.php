@@ -191,18 +191,6 @@ class admin extends CI_Controller {
         $this->load->view('admin/headermasuk');
         $this->load->view('admin/datapenyewaan', $jadwal);
         $this->load->view('admin/footer');
-//        redirect($uri = base_url('index.php/admin/datapenyewaan'), $method = 'auto', $code = NULL);
-    }
-
-    function deleteDataLapangan($id){  
-        $where = array('id_lapangan' => $id ); 
-        $res = $this->data->deleteDataLapangan($where);  
-        $data = $this->data->selectLapangan()->result_array();
-        $tampil['datalapangan'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/datalapangan', $tampil);
-        $this->load->view('admin/footer');
-//        redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);
     }
     
     public function validasi($id){
