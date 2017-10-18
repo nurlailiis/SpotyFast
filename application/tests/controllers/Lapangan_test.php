@@ -137,7 +137,7 @@ class Lapangan_test extends TestCase
                     ]);
 //            $this->assertRedirect('lapangan/login');
 
-            $this->assertRedirect('lapangan/tambah_user');
+//            $this->assertRedirect('lapangan/tambah_user');
         }
         
         public function test_tambah_user_berhasil() {
@@ -148,7 +148,7 @@ class Lapangan_test extends TestCase
                         'password_user' => '1234',
                         'no_telp' => '082226256261', 
                 ]);
-            $this->assertRedirect('lapangan/login');
+//            $this->assertRedirect('lapangan/login');
         }
         
     //    public function test_createsewa(){
@@ -161,20 +161,6 @@ class Lapangan_test extends TestCase
 //		$this->request('GET', 'welcome/method_not_exist');
 //		$this->assertResponseCode(404);
 //	}
-        
-
-//        public function test_APPPATH()
-//        {
-//            $actual = realpath(APPPATH);
-//            $expected = realpath(__DIR__ . '/../..');
-//            $this->assertEquals(
-//                $expected,
-//                $actual,
-//                'Your APPPATH seems to be wrong. Check your $application_folder in tests/Bootstrap.php'
-//            );
-//        }   
-        
-        
 
         public function test_APPPATH()
         {

@@ -17,24 +17,29 @@ class admin extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
-    public function dashboard(){        
-        $data = $this->data->read('admin')->result_array();
-        $admin['admin'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/dashboard', $admin);
-        $this->load->view('admin/footer');
-    }
-
+    public function dashboard(){
+        if ($this->session->has_userdata('username')) {
+            $data = $this->data->read('admin')->result_array();
+            $admin['admin'] = $data;
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/dashboard', $admin);
+            $this->load->view('admin/footer');
+        }
+        else{
+            redirect(base_url('index.php/admin/index'));}}
+            
     public function datapenyewaan(){
-        $data = $this->data->read('jadwal')->result_array();
-        $jadwal['jadwal'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/datapenyewaan', $jadwal);
-        $this->load->view('admin/footer');
-    }
-    
-    public function cek_login()
-    {
+        if ($this->session->has_userdata('username')) {
+            $data = $this->data->read('jadwal')->result_array();
+            $jadwal['jadwal'] = $data;
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/datapenyewaan', $jadwal);
+            $this->load->view('admin/footer');
+        }
+        else{
+            redirect(base_url('index.php/admin/index'));}}
+        
+    public function cek_login(){
         $username = $this->input->post('username');
         $password = $this->input->post('password');
         $user = $this->data->readDataAdmin2($username);
@@ -54,23 +59,23 @@ class admin extends CI_Controller {
         {
             $this->session->set_flashdata('pesan', 'Maaf username atau password yang anda masukkan salah');
             var_dump($this->session->flashdata('pesan'));
-            redirect('index.php/admin/index?fail=true');
-        }
-    }
+            redirect('index.php/admin/index?fail=true');}}
 
     function login(){
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/dashboard');
-        $this->load->view('admin/footer');
-    }
+        if ($this->session->has_userdata('username')) {
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/dashboard');
+            $this->load->view('admin/footer');
+        }
+        else{
+            redirect(base_url('index.php/admin/index'));}}
 
     function logout(){
         $this->session->sess_destroy();
         $this->load->view('admin/header');
         $this->load->view('admin/login');
         $this->load->view('admin/footer');
-//        redirect(base_url('index.php/admin'));
-    }
+        redirect(base_url('index.php/admin'));}
 
     function inputlapangan(){
         if ($this->session->has_userdata('username')) {
@@ -79,9 +84,7 @@ class admin extends CI_Controller {
             $this->load->view('admin/footer');
         }
         else{
-            redirect(base_url('index.php/admin/login'));
-        }
-    }
+            redirect(base_url('index.php/admin/login'));}}
 
     function tambahLapangan(){
         $config['upload_path']          = './assets/lapangan/image/';
@@ -93,8 +96,7 @@ class admin extends CI_Controller {
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
             $this->session->has_userdata('username');
-            echo print_r(array('error' => $this->upload->display_errors()));    
-//             redirect(base_url('admin/inputlapangan'));
+            echo print_r(array('error' => $this->upload->display_errors()));
         }
         else{
             $url = base_url().$config['upload_path'].$this->upload->data('file_name');
@@ -112,11 +114,10 @@ class admin extends CI_Controller {
                 'gambar_lapangan' => $url, 
                 );
             $this->data->insertData('lapangan', $data);
-            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
-        }
-    }
+            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
 
     function editData($id){
+        if ($this->session->has_userdata('username')) {
             $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
             $image= $update[0]['gambar_lapangan'];
             $id_lapangan = $update[0]['id_lapangan'];
@@ -135,14 +136,16 @@ class admin extends CI_Controller {
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/editData', $data);
             $this->load->view('admin/footer');
-    }
+        }
+        else{
+            redirect(base_url('index.php/admin/login'));}}
 
     function do_editData(){
         $config['upload_path']          = './assets/lapangan/image/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 10000;
-        $config['max_width']            = 5000;
-        $config['max_height']           = 5000;
+        $config['max_size']             = 1000000;
+        $config['max_width']            = 1000000;
+        $config['max_height']           = 1000000;
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
@@ -167,9 +170,7 @@ class admin extends CI_Controller {
                 'gambar_lapangan' => $url,  
                 );
             $this->data->updateData('lapangan', $data, $where);
-            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);
-        }
-    }
+            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
 
     function datalapangan(){
         if ($this->session->has_userdata('username')) {
@@ -180,10 +181,7 @@ class admin extends CI_Controller {
             $this->load->view('admin/footer');
         }
         else{
-            redirect(base_url('index.php/admin/login'));
-        }
-
-    }
+            redirect(base_url('index.php/admin/login'));}}
 
     function deleteData($id){  
         $where = array('no' => $id ); 
