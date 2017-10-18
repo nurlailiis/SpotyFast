@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite name="CodeIgniter Application Test Suite" tests="40" assertions="38" failures="0" errors="0" time="5.299835">
@@ -47,3 +49,4 @@
     </testsuite>
   </testsuite>
 </testsuites>
+>>>>>>> d1db30e5d1adfbfc2b7f1d1b9dfaf44ed1157760
