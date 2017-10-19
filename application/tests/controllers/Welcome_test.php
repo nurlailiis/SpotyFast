@@ -11,6 +11,7 @@ class Welcome_test extends TestCase
         public function test_index()
 	{
             $output = $this->request('GET', 'admin/index');
+            $this->assertContains('<h1>PANEL ADMIN FUTSAL FASOR ITS</h1>', $output);
 	}
         
         public function test_ceklogin(){
@@ -44,13 +45,14 @@ class Welcome_test extends TestCase
         public function test_ceklogin_admin_not_login_nousername(){
             $output = $this->request('POST', 'admin/cek_login',
                 [
-                    'username' => '',
+                    'username' => 'ahaha',
                     'password' => '1234',
                 ]);
             $this->assertFalse( isset($_SESSION['username'], $output) );
         }
         
         public function test_ceklogin_admin_not_login_unmatch(){
+            $_SESSION['username'] != "username";
             $output = $this->request('POST', 'admin/cek_login',
                 [
                     'username' => 'nurlailiis',
@@ -61,6 +63,12 @@ class Welcome_test extends TestCase
         
         public function test_login(){
             $_SESSION['username'] = "username";
+            $output = $this->request('GET', 'admin/login');
+            $this->assertContains('<p>Dashboard</p>', $output);
+        }
+        
+        public function test_login_failed(){
+            $_SESSION['username'] != "username";
             $output = $this->request('GET', 'admin/login');
         }
 
@@ -73,6 +81,7 @@ class Welcome_test extends TestCase
         public function test_inputlapangan() {
             $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/inputlapangan');
+            $this->assertContains('<h6>Add</h6>', $output);
         }
         
         public function test_no_inputlapangan() {
@@ -83,16 +92,23 @@ class Welcome_test extends TestCase
         public function test_dahboard(){
             $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/dashboard');
+            $this->assertContains('<p>Dashboard</p>', $output);
+        }
+        
+        public function test_no_dahboard(){
+            $_SESSION['username'] != "username";
+            $output = $this->request('GET', 'admin/dashboard');
         }
         
         public function test_datapenyewaan(){
             $_SESSION['username'] = "username";
             $output = $this->request('GET', 'admin/datapenyewaan');
+            $this->assertCOntains('<th>NO</th>', $output);
         }
         
-        public function test_tambahlapangan_failed(){
+        public function test_no_datapenyewaan(){
             $_SESSION['username'] != "username";
-            $output = $this->request('GET', 'admin/tambahLapangan');
+            $output = $this->request('GET', 'admin/datapenyewaan');
         }
         
         public function test_tambahlapangan_success(){
@@ -108,9 +124,9 @@ class Welcome_test extends TestCase
                     ]);
         }
         
-        public function test_editData(){
-            $_SESSION['username'] = "username";
-            $output = $this->request('GET', 'admin/editData');
+        public function test_tambahlapangan_failed(){
+            $_SESSION['username'] != "username";
+            $output = $this->request('GET', 'admin/tambahLapangan');
         }
         
         public function test_datalapangan(){

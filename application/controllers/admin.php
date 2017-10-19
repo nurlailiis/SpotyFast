@@ -38,26 +38,40 @@ class admin extends CI_Controller {
         }
         else{
             redirect(base_url('index.php/admin/index'));}}
-        
+            
     public function cek_login(){
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $user = $this->data->readDataAdmin2($username);
-        $pass1 = $this->data->enkripsi($password);
-        $pass2 = $user->password_admin;
-        if ( isset($user) AND $pass1 == $pass2 ) {
-            $data = array(
-                'username'=>$user->username_admin
-            );
-            $this->session->set_userdata($data);
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/dashboard');
-            $this->load->view('admin/footer');
-            } 
-        else
-        {
-            $this->session->set_flashdata('pesan', 'Maaf password yang anda masukkan salah');
-            redirect('index.php/admin/index?fail=true');}}
+            $data = $this->data->read('admin')->result_array();
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $read = $this->data->readWhere('admin', $username, 'username_admin')->result_array();
+            $pass1 = $this->data->enkripsi($password);
+            foreach ($read as $id) {
+                $admin = $id['username_admin'];
+                        $pass = $id['password_admin'];
+                }
+            $pass1 = $this->data->enkripsi($password);	       
+            if ($username==$admin) {
+                if ($pass1==$pass) {
+                    $pass1 = $this->data->enkripsi($password);
+                    $data = array(
+                        'username'=>$admin
+                    );
+                    $this->session->set_userdata($data);
+                    $this->load->view('admin/headermasuk');
+                    $this->load->view('admin/dashboard');
+                    $this->load->view('admin/footer');
+                            
+                }
+                else{
+                    $this->session->set_flashdata('pesan', '<strong>Maaf</strong> Password anda salah.
+                            ');
+                    redirect('index.php/admin/index');
+                } 
+            }
+            else{
+                $this->session->set_flashdata('pesan', '<strong>Maaf</strong> Username anda salah.
+                            ');
+               redirect(base_url('index.php/admin/index'));}}
 
     function login(){
         if ($this->session->has_userdata('username')) {

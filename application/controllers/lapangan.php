@@ -196,9 +196,7 @@ class Lapangan extends CI_Controller {
                                       <strong>Berhasil,</strong> akun anda telah terdaftar. Silahkan lakukan login kembali.
                                     </div>
                     ');
-            redirect('lapangan/login');            
-            }            
-        }
+            redirect('lapangan/login');}}
         
     public function logout(){
         unset($_SESSION['username']);    

@@ -2,28 +2,22 @@
 class data extends CI_Model
 {
 	function read($table){
-		return $this->db->get($table);
+            return $this->db->get($table);
 	}
 
 	function readWhere($table, $id, $where){
-		return $this->db->get_where($table, array($where => $id));
+            return $this->db->get_where($table, array($where => $id));
 	}
 
 	function selectLapangan(){
-		return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
-		);
+            return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
+            );
 	}
 
 	function selectJadwal(){
-		return $this->db->query('SELECT `no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status` FROM `jadwal` WHERE 1'
-		);
+            return $this->db->query('SELECT `no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status` FROM `jadwal` WHERE 1'
+            );
 	}
-        
-        function readDataAdmin2($where){
-                $username = strtolower($where);
-                $query = $this->db->get_where('admin', [ 'username_admin' => $username ]);
-                return $query->row();
-        }
         
 	public function enkripsi($password){
             $key = $this->config->item('encryption_key');

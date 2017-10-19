@@ -72,16 +72,6 @@ class Lapangan_test extends TestCase
             $where = 3;
             $this->objl->deleteData($where);
         }
-
-        public function test_ceklogin(){
-            $this->request('POST', 'lapangan/cek_login',
-                    [
-                        'username' => 'arakhrn',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('arakhrn', $_SESSION['username']);
-        }
         
         public function test_login_sukses(){
             $_SESSION['username'] = "nama";
@@ -94,6 +84,16 @@ class Lapangan_test extends TestCase
             $this->assertContains('<head>', $output);
             $this->assertContains('<h1>LOGIN</h1>', $output);
             $this->assertContains('<footer>',$output);                       
+        }
+
+        public function test_ceklogin(){
+            $this->request('POST', 'lapangan/cek_login',
+                    [
+                        'username' => 'arakhrn',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('arakhrn', $_SESSION['username']);
         }
         
         public function test_login_gagal_password() {
