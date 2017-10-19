@@ -18,13 +18,13 @@
                         <h1 class="page-header">
                             Dashboard <small></small>
                         </h1>
+                        <p>Dashboard</p>
                         <ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard
                             </li>
                             <br></br>
                             <li>
-                                <strong>Welcome</strong>
                             <p>
                                 Selamat Datang Admin Futsal Fasor ITS, anda memiliki hak pada panel Admin Banboo.id. Hak Anda sebagai berikut :
                                 <br></br>

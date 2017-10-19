@@ -11,7 +11,6 @@
                         <div class="panel-heading">
                             Data Lapangan
                         </div>
-                        <h6>Data</h6>
                         <div class="panel-body">
                         <a class="btn btn-success" href="<?php echo base_url('index.php/admin/inputlapangan') ?>">+ Tambah Lapangan</a>
                         <br>

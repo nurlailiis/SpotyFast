@@ -24,7 +24,7 @@
 
                         <div class="table-responsive">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <h3><center>LAPANGAN</center></h3>
+                            <h3><center>DATA PENYEWAAN LAPANGAN</center></h3>
                             <thead>
                                 <tr>
                                     <th>NO</th>

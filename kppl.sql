@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2017 at 06:33 PM
+-- Generation Time: Oct 19, 2017 at 02:49 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -36,10 +36,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username_admin`, `password_admin`) VALUES
-('arakhrn', '81dc9bdb52d04dc20036dbd8313ed055'),
+('arakhrn', '5663bec6b51338020c7ebc0d8d65b7689d19abed'),
 ('maman', '123'),
-('mohamad', '81dc9bdb52d04dc20036dbd8313ed055'),
-('nurlailiis', '81dc9bdb52d04dc20036dbd8313ed055');
+('mohamad', '5663bec6b51338020c7ebc0d8d65b7689d19abed'),
+('nurlailiis', '5663bec6b51338020c7ebc0d8d65b7689d19abed');
 
 -- --------------------------------------------------------
 
@@ -64,28 +64,10 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status`) VALUES
-('1', 'David', 'Mahasiswa', '5215100069', 'Lapangan A', '2017-09-13', '14:00:00', 1, 1),
-('2', 'ara', 'Mahasiswa', '5215100000', 'Lapangan B', '2017-09-07', '17:00:00', 2, 0),
-('1506941920', 'Nur laili', 'Mahasiswa', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 0),
-('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0),
-('1507272828', 'Ibu risma', 'Non ITS', '673276424797', 'Lapangan A', '0000-00-00', '16:00:00', 2, 0);
+('1506941920', 'Nur laili', 'Mahasiswa', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 1),
+('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 1),
+('1508372949', 'Kim Jong Kok', 'Mahasiswa', '5215100020', 'Lapangan A', '2017-10-19', '07:00:00', 2, 1),
+('1508373366', 'Song Hye Kyo', 'Mahasiswa', '05241150000020', 'Lapangan B', '2017-10-19', '07:37:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -107,7 +89,9 @@ CREATE TABLE `lapangan` (
 --
 
 INSERT INTO `lapangan` (`id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan`) VALUES
-('1004', 'Lapangan A', 'Lapangan Futsal Fasor ITS', '80000', '100000', 'http://localhost/GIT/./assets/lapangan/image/2015-11-30_07_53_10_11.jpg');
+('1001', 'Lapangan A', 'Lapangan Futsal Fasor ITS', '80000', '100000', 'http://localhost/GIT/./assets/lapangan/image/lap11.jpg'),
+('1002', 'Lapangan B', 'Lapangan Futsal Fasor ITS', '90000', '110000', 'http://localhost/GIT/./assets/lapangan/image/lap31.jpg'),
+('1003', 'Lapangan C', 'Lapangan Futsal Fasor ITS', '80000', '100000', 'http://localhost/GIT/./assets/lapangan/image/lap22.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,10 +111,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `no_telp`) VALUES
-('arakhrn', 'ara', '1234', 'coba'),
+('', '', '94e723dc305f28b58ba1aba04e14aade037baa95', ''),
+('aisyahparamastri', 'aisyah paramastri khairina', '5663bec6b51338020c7ebc0d8d65b7689d19abed', '081234567890'),
+('arakhrn', 'ara', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'coba'),
+('knpooami', 'kttirvaq', '3beca18752e89129a0aff16d61918cca6f43274d', '555-666-0606'),
 ('modavidck', 'mohamad david', '5663bec6b51338020c7ebc0d8d65b7689d19abed', '085338436164'),
-('nurlailiis', 'sakd', 'khads', 'jask'),
-('nurlailis', 'tukiyem', '1234', 'coba 1');
+('nurlailiis', 'laili cantik', '5663bec6b51338020c7ebc0d8d65b7689d19abed', '085745907300');
 
 --
 -- Indexes for dumped tables

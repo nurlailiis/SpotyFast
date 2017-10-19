@@ -72,16 +72,6 @@ class Lapangan_test extends TestCase
             $where = 3;
             $this->objl->deleteData($where);
         }
-
-        public function test_ceklogin(){
-            $this->request('POST', 'lapangan/cek_login',
-                    [
-                        'username' => 'arakhrn',
-                        'password' => '1234',
-                    ]
-                    );
-            $this->assertEquals('arakhrn', $_SESSION['username']);
-        }
         
         public function test_login_sukses(){
             $_SESSION['username'] = "nama";
@@ -94,6 +84,16 @@ class Lapangan_test extends TestCase
             $this->assertContains('<head>', $output);
             $this->assertContains('<h1>LOGIN</h1>', $output);
             $this->assertContains('<footer>',$output);                       
+        }
+
+        public function test_ceklogin(){
+            $this->request('POST', 'lapangan/cek_login',
+                    [
+                        'username' => 'arakhrn',
+                        'password' => '1234',
+                    ]
+                    );
+            $this->assertEquals('arakhrn', $_SESSION['username']);
         }
         
         public function test_login_gagal_password() {
@@ -114,24 +114,91 @@ class Lapangan_test extends TestCase
             $this->assertFalse( isset($_SESSION['username']) );
         }
         
-        public function test_tambah_user_gagal() {
-            $this->request('POST', 'lapangan/tambah_user',
-                    [
-                        'id_user' => 'arakhrn',
-                        'nama_user' => 'aisyah paramastri',
-                        'password' => '1234',
-                        'no_telp' => '082226256261',
-                    ]);
-        }
-        
-        public function test_tambah_user_berhasil() {
-            $this->request('POST', 'lapangan/tambah_user',
+        public function test_tambah_user_gagal() {            
+            $output = $this->request(
+                    'POST',
+                    'lapangan/tambah_user',
                     [
                         'id_user' => 'aisyahparamastri',
                         'nama_user' => 'aisyah paramastri khairina',
                         'password_user' => '1234',
                         'no_telp' => '081234567890', 
                     ]);
+            $this->assertRedirect('lapangan/signup',$output);
+        }
+        public function test_tambah_user_gagal_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => '',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '1234',
+                    'no_telp' => '081234567890',
+                ]);
+            $item = '';
+            $this->objl->deleteUser($item);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_namauser_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => '',
+                    'password_user' => '1234',
+                    'no_telp' => '081234567890',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_password_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '',
+                    'no_telp' => '081234567890',
+                ]);
+            $item = '';
+            $this->objl->deleteUser($item);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_notelp_tidak_diisi() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => 'aisyahparamastri',
+                    'nama_user' => 'aisyah paramastri khairina',
+                    'password_user' => '1234',
+                    'no_telp' => '',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        public function test_tambah_user_gagal_tidak_diisi_semua() {
+            $output = $this->request('POST', 'lapangan/tambah_user',
+                [
+                    'id_user' => '',
+                    'nama_user' => '',
+                    'password_user' => '',
+                    'no_telp' => '',
+                ]);
+            $this->assertFalse( isset($_SESSION['username']) );
+            
+        }
+        
+        public function test_tambah_user_berhasil(){
+            $output = $this->request(
+                    'POST',
+                    'lapangan/tambah_user',
+                    [
+                        'id_user' => 'modavid',
+                        'nama_user' => 'david',
+                        'password_user' => '1234',
+                        'no_telp' => '0811111', 
+                    ]);                      
+            $item = 'modavid';
+            $this->objl->deleteUser($item);            
+            $this->assertRedirect('lapangan/login',$output); 
         }
 
         public function test_logout(){
