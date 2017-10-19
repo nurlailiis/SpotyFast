@@ -151,8 +151,13 @@ class admin extends CI_Controller {
     
     public function validasi($id){
         $where = array('no' => $id);
-        $data ["status"] = 1;
-        $this->data->updateData('jadwal', $data, $where);
+        $status ["status"] = 1;
+        $this->data->updateData('jadwal', $status, $where);
+        $data = $this->data->read('jadwal')->result_array();
+        $jadwal['jadwal'] = $data;
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/datapenyewaan', $jadwal);
+        $this->load->view('admin/footer');
     }
     
 }

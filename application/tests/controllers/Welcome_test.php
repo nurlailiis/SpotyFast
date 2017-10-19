@@ -15,13 +15,13 @@ class Welcome_test extends TestCase
 	}
         
         public function test_ceklogin(){
-            $this->request('POST', 'admin/cek_login',
+            $output = $this->request('POST', 'admin/cek_login',
                     [
                         'username' => 'nurlailiis',
                         'password' => '1234',
                     ]
                     );
-            $this->assertEquals('nurlailiis', $_SESSION['username']);
+            $this->assertEquals('nurlailiis', $_SESSION['username'], $output);
         }
         
         public function test_ceklogin_admin_not_login_kosongsemua(){
