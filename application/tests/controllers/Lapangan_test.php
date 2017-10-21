@@ -57,6 +57,7 @@ class Lapangan_test extends TestCase
         
         public function test_createsewa(){
             $_SESSION['username'] = "nama";
+            $awal = $this->objl->getNumRow('3','ara','mahasiswa', '5215100128', 'Lapangan A', '2017-09-13', '14:00:00', '1');
             $this->request('POST', 'lapangan/createsewa',
                     [
                         'no' => '3',
@@ -68,6 +69,10 @@ class Lapangan_test extends TestCase
                         'jam' => '14:00:00',
                         'lama_sewa' => '1' 
                     ]);
+            $akhir = $this->objl->getNumRow('3','ara','mahasiswa', '5215100128', 'Lapangan A', '2017-09-13', '14:00:00', '1');
+            $this->assertEquals($akhir, $awal+1);
+            
+            
             $this->assertRedirect('lapangan/sewajadwal');
             $where = 3;
             $this->objl->deleteData($where);

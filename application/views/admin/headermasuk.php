@@ -44,9 +44,6 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="'.base_url('index.php/admin/setting').'"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                                    </li>
-                                    <li>
                                         <a href=" '.base_url('index.php/admin/logout').'"><i class="fa fa-fw fa-gear"></i>Logout
                                         </a>
                                     </li>

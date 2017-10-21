@@ -58,5 +58,19 @@ class data extends CI_Model
  		$query = $this->db->get();
  		return $query->result();
     }
+    function getNumRow($no,$nama, $kategori, $nomer_identitas, $nama_lapangan, $tanggal, $jam, $lama_sewa){
+        $this->db->where('no',$no);
+        $this->db->where('nama',$nama);
+        $this->db->where('kategori',$kategori);
+        $this->db->where('nomer_identitas',$nomer_identitas);
+        $this->db->where('tanggal',$tanggal);
+        $this->db->where('jam',$jam);
+        $this->db->where('lama_sewa',$lama_sewa);
+        
+        $query = $this->db->get('jadwal');
+        return $query->num_rows();
+        
+        
+    }
 }
  ?>

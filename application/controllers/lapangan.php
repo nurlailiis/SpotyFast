@@ -72,7 +72,7 @@ class Lapangan extends CI_Controller {
             $no = $this->input->post('no');
             $nama = $this->input->post('nama');
             $kategori = $this->input->post('kategori');
-            $nomer_identitas = $this->input->post('nomer_identitas');
+//            $nomer_identitas = $this->input->post('nomer_identitas');
             $nama_lapangan = $this->input->post('nama_lapangan');
             $tanggal = $this->input->post('tanggal');
             $jam = $this->input->post('jam');
@@ -82,7 +82,7 @@ class Lapangan extends CI_Controller {
                     'no' => $no,
                     'nama' => $nama,
                     'kategori' => $kategori,
-                    'nomer_identitas' => $nomer_identitas,
+                    //'nomer_identitas' => $nomer_identitas,
                     'nama_lapangan' => $nama_lapangan,
                     'tanggal' => $tanggal,
                     'jam' => $jam,
