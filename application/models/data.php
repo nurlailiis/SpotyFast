@@ -14,6 +14,11 @@ class data extends CI_Model
             );
 	}
 
+	function selectKompetisi(){
+            return $this->db->query('SELECT `id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, `penyelenggara`, `lokasi_kompetisi`, `gambar_kompetisi` FROM `kompetisi` WHERE 1'
+            );
+	}
+
 	function selectJadwal(){
             return $this->db->query('SELECT `no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status` FROM `jadwal` WHERE 1'
             );
@@ -55,6 +60,12 @@ class data extends CI_Model
 	function get_lapangan(){
 		$this->db->select('*');
  		$this->db->from('lapangan');
+ 		$query = $this->db->get();
+ 		return $query->result();
+    }
+    function get_kompetisi(){
+		$this->db->select('*');
+ 		$this->db->from('kompetisi');
  		$query = $this->db->get();
  		return $query->result();
     }

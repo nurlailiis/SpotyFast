@@ -43,6 +43,9 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('lapangan/kompetisi');?>">kompetisi</a>
+            </li>
             <li class="nav-item <?php if($page =='login') {echo 'active';} ?>dropdown">
             <?php 
               if($this->session->has_userdata('username')){

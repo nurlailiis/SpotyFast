@@ -74,13 +74,13 @@
                         <a href="<?php echo base_url('index.php/admin/inputlapangan') ?>"><i class="fa fa-fw fa-edit"></i> Input Data Lapangan</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/admin/inputlapangan') ?>"><i class="fa fa-fw fa-edit"></i> Input Data Kompetisi</a>
+                        <a href="<?php echo base_url('index.php/admin/inputkompetisi') ?>"><i class="fa fa-fw fa-edit"></i> Input Data Kompetisi</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/admin/datalapangan') ?>"><i class="fa fa-fw fa-table"></i> Data Lapangan</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/admin/datalapangan') ?>"><i class="fa fa-fw fa-table"></i> Data Kompetisi</a>
+                        <a href="<?php echo base_url('index.php/admin/datakompetisi') ?>"><i class="fa fa-fw fa-table"></i> Data Kompetisi</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/admin/datapenyewaan') ?>"><i class="fa fa-fw fa-edit"></i> History</a>
