@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Futsal fasor ITS, tempat untuk menyewa lapangan futsal dengan cepat.">
-    <meta name="author" content="Mohamad David | Nur laili | Aisyah paramastri">
+    <meta name="author" content="Nur Laili Sholichah | Alqindi Irsyam | Agung Purnomo | Satrio Narendra">
 
-    <title>Futsal Fasor ITS | <?php echo $page ?></title>
+     <title>Futsal Fasor ITS | <?php echo $page ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="<?php echo base_url();?>">Futsal Fasor</a>
+        <a class="navbar-brand" href="<?php echo base_url();?>">SportyFast</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -47,13 +47,13 @@
             <?php 
               if($this->session->has_userdata('username')){
               echo '
-              <a href="'.base_url('lapangan/logout').'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$this->session->userdata('nama').'<span class="caret"></span></a>
+              <a class="nav-link" href="'.base_url('lapangan/logout').'" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">'.$this->session->userdata('nama').'<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="'.base_url('lapangan/logout').'">Logout</a></li>
+                <li><a class="nav-link" href="'.base_url('lapangan/logout').'">Logout</a></li>
               </ul>
               ';
             }else{
-               echo '<a href="'.base_url('lapangan/login').'">Login</a>';
+               echo '<a class="nav-link" href="'.base_url('lapangan/login').'">Login</a>';
             }
              ?>
             </li>         
@@ -67,8 +67,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Futsal Fasor ITS</h1>
-              <span class="subheading">Fasilitas futsal dengan berbagai macam jenis lapangan</span>
+              <h1>SportyFast</h1>
+              <span class="subheading">Tempat penyewaan Futsal, basket, dan Badminton</span>
             </div>
           </div>
         </div>
