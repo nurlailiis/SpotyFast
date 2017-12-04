@@ -8,7 +8,7 @@
     <meta name="description" content="Futsal fasor ITS, tempat untuk menyewa lapangan futsal dengan cepat.">
     <meta name="author" content="Nur Laili Sholichah | Alqindi Irsyam | Agung Purnomo | Satrio Narendra">
 
-     <title>Futsal Fasor ITS | <?php echo $page ?></title>
+     <title>SportyFast | <?php echo $page ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

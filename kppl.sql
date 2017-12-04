@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2017 at 02:49 AM
+-- Generation Time: Dec 04, 2017 at 01:19 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -56,18 +56,33 @@ CREATE TABLE `jadwal` (
   `tanggal` date NOT NULL,
   `jam` time NOT NULL,
   `lama_sewa` int(20) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` tinyint(1) NOT NULL,
+  `nota_pembayaran` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `jadwal`
 --
 
-INSERT INTO `jadwal` (`no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status`) VALUES
-('1506941920', 'Nur laili', 'Mahasiswa', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 1),
-('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 1),
-('1508372949', 'Kim Jong Kok', 'Mahasiswa', '5215100020', 'Lapangan A', '2017-10-19', '07:00:00', 2, 1),
-('1508373366', 'Song Hye Kyo', 'Mahasiswa', '05241150000020', 'Lapangan B', '2017-10-19', '07:37:00', 1, 0);
+INSERT INTO `jadwal` (`no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status`, `nota_pembayaran`) VALUES
+('1506941920', 'Nur laili', 'Mahasiswa', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 1, ''),
+('1506963199', 'laili ara', 'Mahasiswa', '5263362325', 'Lapangan B', '2017-10-02', '02:00:00', 2, 1, ''),
+('1508372949', 'Kim Jong Kok', 'Mahasiswa', '5215100020', 'Lapangan A', '2017-10-19', '07:00:00', 2, 1, ''),
+('1508373366', 'Song Hye Kyo', 'Mahasiswa', '05241150000020', 'Lapangan B', '2017-10-19', '07:37:00', 1, 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kompetisi`
+--
+
+CREATE TABLE `kompetisi` (
+  `id_kompetisi` varchar(200) NOT NULL,
+  `nama_kompetisi` varchar(200) NOT NULL,
+  `tanggal_kompetisi` date NOT NULL,
+  `penyelenggara` varchar(200) NOT NULL,
+  `lokasi_kompetisi` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -127,6 +142,12 @@ INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `no_telp`) VALUES
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`username_admin`);
+
+--
+-- Indexes for table `kompetisi`
+--
+ALTER TABLE `kompetisi`
+  ADD PRIMARY KEY (`id_kompetisi`);
 
 --
 -- Indexes for table `lapangan`
