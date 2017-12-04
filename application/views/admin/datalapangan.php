@@ -33,8 +33,8 @@
                                     <td><?php echo $d['id_lapangan'] ?></td>
                                     <td><?php echo $d['nama_lapangan'] ?></td>
                                     <td class="center"><?php echo $d['detail_lapangan'] ?></td>
-                                    <td><?php echo 'Rp. '.number_format($d['tarif_mahasiswa'], 2, ',', '.'); ?></td>
-                                    <td><?php echo 'Rp. '.number_format($d['tarif_nonits'], 2, ',', '.'); ?></td>
+                                    <td><?php echo 'Rp. '.number_format($d['tarif_student'], 2, ',', '.'); ?></td>
+                                    <td><?php echo 'Rp. '.number_format($d['tarif_umum'], 2, ',', '.'); ?></td>
                                     <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>"></td>
                                 </tr>
                             <?php } ?>

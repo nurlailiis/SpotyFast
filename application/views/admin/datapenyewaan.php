@@ -34,8 +34,7 @@
                                     <th>NAMA LAPANGAN</th>
                                     <th>TANGGAL SEWA</th>
                                     <th>JAM</th>
-                                    <th>LAMA SEWA</th>
-                                    <th>BUKTI PEMBAYARAN</th>                                     
+                                    <th>LAMA SEWA</th>                                    
                                     <th>STATUS</th>
                                     <th>HAPUS</th>
                                 </tr>
@@ -51,7 +50,6 @@
                                    <td><?php echo $g['tanggal'] ?></td>
                                    <td><?php echo $g['jam'] ?></td>
                                    <td><?php echo $g['lama_sewa'] ?></td>
-                                   <td class="center"><img style="width: 200px" src="<?php echo $g['nota_pembayaran'] ?>"></td>
                                    <td><?php if($g['status']==0) {
                                            echo '<a class="btn btn-cancel" style="color: white; background: pink" href="'.base_url('admin/validasi/'.$g['no']).'">Ngutang</a>';
                                        }else{

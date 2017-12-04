@@ -30,7 +30,7 @@ class admin extends CI_Controller {
             
     public function datapenyewaan(){
         if ($this->session->has_userdata('username')) {
-            $data = $this->data->read('jadwal')->result_array();
+            $data = $this->data->selectJadwal($this->session->userdata('username'))->result_array();
             $jadwal['jadwal'] = $data;
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/datapenyewaan', $jadwal);
@@ -47,14 +47,16 @@ class admin extends CI_Controller {
             $pass1 = $this->data->enkripsi($password);
             foreach ($read as $id) {
                 $admin = $id['username_admin'];
-                        $pass = $id['password_admin'];
+                $pass = $id['password_admin'];
+                $type = $id['type'];
                 }
             $pass1 = $this->data->enkripsi($password);	       
             if ($username==$admin) {
                 if ($pass1==$pass) {
                     $pass1 = $this->data->enkripsi($password);
                     $data = array(
-                        'username'=>$admin
+                        'username'=>$admin,
+                        'type'=>$type
                     );
                     $this->session->set_userdata($data);
                     $this->load->view('admin/headermasuk');
@@ -98,15 +100,6 @@ class admin extends CI_Controller {
         else{
             redirect(base_url('index.php/admin/login'));}}
 
-    function inputkompetisi(){
-        if ($this->session->has_userdata('username')) {
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/kompetisi');
-            $this->load->view('admin/footer');
-        }
-        else{
-            redirect(base_url('index.php/admin/login'));}}
-
     function tambahLapangan(){
         $config['upload_path']          = './assets/lapangan/image/';
         $config['allowed_types']        = 'gif|jpg|png';
@@ -124,66 +117,29 @@ class admin extends CI_Controller {
             $id = $this->input->post('id');
             $nama = $this->input->post('nama');
             $detail = $this->input->post('detail');
+            $type = $this->input->post('type');
+            $admin = $this->input->post('admin');
             $tarifmhs = $this->input->post('tarifmhs');
             $tarifnon = $this->input->post('tarifnon');
             $data = array(
                 'id_lapangan' => $id,
                 'nama_lapangan' => $nama,
                 'detail_lapangan' => $detail,
-                'tarif_mahasiswa' => $tarifmhs,
-                'tarif_nonits' => $tarifnon,
+                'pemilik' => $admin,
+                'type'=> $type,
+                'tarif_student' => $tarifmhs,
+                'tarif_umum' => $tarifnon,
                 'gambar_lapangan' => $url, 
                 );
             $this->data->insertData('lapangan', $data);
             redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
 
-    function tambahKompetisi(){
-        $config['upload_path']          = './assets/lapangan/image/';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 1000000;
-        $config['max_width']            = 1000000;
-        $config['max_height']           = 1000000;
-
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('gambar')) {
-            $this->session->has_userdata('username');
-            echo print_r(array('error' => $this->upload->display_errors()));
-        }
-        else{
-            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
-            $id = $this->input->post('id');
-            $nama = $this->input->post('nama');
-            $tanggal = $this->input->post('tanggal');
-            $penyelenggara = $this->input->post('penyelenggara');
-            $lokasi = $this->input->post('lokasi');
-            $data = array(
-                'id_kompetisi' => $id,
-                'nama_kompetisi' => $nama,
-                'tanggal_kompetisi' => $tanggal,
-                'penyelenggara' => $penyelenggara,
-                'lokasi_kompetisi' => $lokasi,
-                'gambar_kompetisi' => $url, 
-                );
-            $this->data->insertData('kompetisi', $data);
-            redirect($uri = base_url('index.php/admin/inputkompetisi'), $method = 'auto', $code = NULL);}}
-
     function datalapangan(){
         if ($this->session->has_userdata('username')) {
-            $data = $this->data->selectLapangan()->result_array();
+            $data = $this->data->selectLapangan($this->session->userdata('username'))->result_array();
             $tampil['datalapangan'] = $data;
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/datalapangan', $tampil);
-            $this->load->view('admin/footer');
-        }
-        else{
-            redirect(base_url('index.php/admin/login'));}}
-
-    function datakompetisi(){
-        if ($this->session->has_userdata('username')) {
-            $data = $this->data->selectKompetisi()->result_array();
-            $tampil['datakompetisi'] = $data;
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/datakompetisi', $tampil);
             $this->load->view('admin/footer');
         }
         else{

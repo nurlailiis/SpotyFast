@@ -45,7 +45,7 @@
                             </tbody>
                         </table>
                         <p class="col-md-12">
-                          <a class="btn btn-primary" href="<?php echo base_url('lapangan/inputsewa'); ?>">Sewa</a> 
+                          <a class="btn btn-primary" href="<?php echo base_url('lapangan/inputsewa/'.$g['admin']); ?>">Sewa</a> 
                         </p>                        
                         </div>
                         </div>

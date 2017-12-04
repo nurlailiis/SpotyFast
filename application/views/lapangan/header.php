@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Futsal fasor ITS, tempat untuk menyewa lapangan futsal dengan cepat.">
-    <meta name="author" content="Nur Laili Sholichah | Alqindi Irsyam | Agung Purnomo | Satrio Narendra">
+    <meta name="author" content="Mohamad David | Nur laili | Aisyah paramastri">
 
-     <title>SportyFast | <?php echo $page ?></title>
+    <title>Futsal Fasor ITS | <?php echo $page ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,6 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('lapangan/kompetisi');?>">kompetisi</a>
-            </li>
             <li class="nav-item <?php if($page =='login') {echo 'active';} ?>dropdown">
             <?php 
               if($this->session->has_userdata('username')){
@@ -65,7 +62,7 @@
       </div>
     </nav>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('<?php echo base_url();?>assets/img/olahraga1.jpg')">
+    <header class="masthead" style="background-image: url('<?php echo base_url();?>assets/img/futsal wall.png')">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">

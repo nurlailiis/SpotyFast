@@ -3,7 +3,18 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
- 
+/*TAMBAHAN POSITION RELATIVE UNTUK WRAPPER, CONTENT, DAN FOOTER*/<br>#wrapper{
+width:100%;
+position:relative; /*posisi disarankan*/
+}
+
+#header{
+width:100%; /*supaya header memenuhi layar*/
+z-index:1000; /*z-index dgn nilai besar berfungsi supaya header selalu tampil didepan*/
+position:fixed;
+height:60px; 
+}
+
 body {
   font-size: 20px;
   color: #333333;

@@ -4,7 +4,7 @@
      <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">FUTSAL FASOR ITS</h1>
+                    <h1 class="page-header">Lapangan </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -13,16 +13,17 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tambah Lapangan Futsal Fasor ITS
+                            Tambah Lapangan 
                         </div>
-                        <h6>Add</h6>
                         <div class="panel-body">
                         <?php echo form_open_multipart(base_url('index.php/admin/tambahLapangan')); ?>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Id Lapangan" name="id"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Nama Lapangan" name="nama"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Detail Lapangan" name="detail"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Mahasiswa" name="tarifmhs"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Non ITS" name="tarifnon"></p>
+                                <input type="hidden" name="type" value = "<?php echo $this->session->userdata('type')?>">
+                                <input type="hidden" name="admin" value = "<?php echo $this->session->userdata('username')?>">
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Pelajar" name="tarifmhs"></p>
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Umum" name="tarifnon"></p>
                                 <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar"></p>
                                 <br>
                                 <p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning" name=""></p>

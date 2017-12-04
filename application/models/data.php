@@ -9,23 +9,24 @@ class data extends CI_Model
             return $this->db->get_where($table, array($where => $id));
 	}
 
-	function selectLapangan(){
-            return $this->db->query('SELECT `id_lapangan`, `nama_lapangan`, `detail_lapangan`, `tarif_mahasiswa`, `tarif_nonits`, `gambar_lapangan` FROM `lapangan` WHERE 1'
-            );
+	function selectLapangan($admin){
+        $this->db->select('*');
+		$this->db->from('lapangan');
+		$this->db->where('pemilik', $admin);
+		$query = $this->db->get();
+		return $query;
 	}
 
-	function selectKompetisi(){
-            return $this->db->query('SELECT `id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, `penyelenggara`, `lokasi_kompetisi`, `gambar_kompetisi` FROM `kompetisi` WHERE 1'
-            );
-	}
-
-	function selectJadwal(){
-            return $this->db->query('SELECT `no`, `nama`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status` FROM `jadwal` WHERE 1'
-            );
+	function selectJadwal($admin){
+        $this->db->select('*');
+		$this->db->from('jadwal');
+		$this->db->where('admin', $admin);
+		$query = $this->db->get();
+		return $query;
 	}
         
 	public function enkripsi($password){
-            $key = $this->config->item('encryption_key');
+        $key = $this->config->item('encryption_key');
 	    $salt1 = hash('sha1', $key . $password);
 	    $salt2 = hash('sha1', $password . $key);
 	    return hash('sha1', $salt1 . $password . $salt2);	
@@ -57,15 +58,10 @@ class data extends CI_Model
 		$res=$this->db->update($table, $data, $where);
 		return $res;
 	}
-	function get_lapangan(){
+	function get_lapangan($admin){
 		$this->db->select('*');
  		$this->db->from('lapangan');
- 		$query = $this->db->get();
- 		return $query->result();
-    }
-    function get_kompetisi(){
-		$this->db->select('*');
- 		$this->db->from('kompetisi');
+ 		$this->db->where('pemilik', $admin);
  		$query = $this->db->get();
  		return $query->result();
     }

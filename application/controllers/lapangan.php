@@ -10,18 +10,46 @@ class Lapangan extends CI_Controller {
 	}
  
 	public function index($page = 'home'){		
-            $data = $this->data->read('lapangan')->result_array();
-            $lapangan['lapangan'] = $data;
             $lapangan['page'] = $page;
             $this->load->view('lapangan/header', $lapangan);
             $this->load->view('lapangan/home', $lapangan);
             $this->load->view('lapangan/footer');
 	}
 
-	
-	public function sewajadwal($page = 'sewajadwal'){
+    public function homePil($type,$page = 'homePilihans'){
+        $lapangan['page'] = $page;
+        if($type=='futsal'){
+            $this->load->view('lapangan/header', $lapangan);
+            $this->load->view('lapangan/homeFutsal', $lapangan);
+            $this->load->view('lapangan/footer');
+        }
+        else{
+            $this->load->view('lapangan/header', $lapangan);
+            $this->load->view('lapangan/homeBasket', $lapangan);
+            $this->load->view('lapangan/footer');
+        }
+    }
+
+    public function gambarLapangan($type, $page = 'gambarLapangan'){      
+            $data = $this->db->get_where('lapangan',array('type' => $type));
+            $data = $data->result_array();
+            $lapangan['lapangan'] = $data;
+            $lapangan['page'] = $page;
+            if($type=='futsal'){
+                $this->load->view('lapangan/header', $lapangan);
+                $this->load->view('lapangan/lapFutsal', $lapangan);
+                $this->load->view('lapangan/footer');
+            }
+            else{
+                $this->load->view('lapangan/header', $lapangan);
+                $this->load->view('lapangan/lapBasket', $lapangan);
+                $this->load->view('lapangan/footer');
+            }
+    }
+
+	public function sewajadwal($admin, $page = 'sewajadwal'){
             if ($this->session->has_userdata('username')) {
-                    $data = $this->data->selectJadwal()->result_array();
+                    $data = $this->data->selectJadwal($admin)->result_array();
                     $tampil['sewajadwal'] = $data;
                     $tampil['page'] = $page;
                     $this->load->view('lapangan/header', $tampil);
@@ -33,20 +61,6 @@ class Lapangan extends CI_Controller {
             }
 	}
 
-    public function kompetisi($page = 'kompetisi'){
-            if ($this->session->has_userdata('username')) {
-                    $data = $this->data->selectKompetisi()->result_array();
-                    $tampil['kompetisi'] = $data;
-                    $tampil['page'] = $page;
-                    $this->load->view('lapangan/header', $tampil);
-                    $this->load->view('lapangan/kompetisi', $tampil);
-                    $this->load->view('lapangan/footer');       
-            }
-            else{
-                    redirect(base_url('kompetisi/login'));
-            }
-    }
-
 	public function detail($id, $page="detail"){
             $data = $this->data->readWhere('lapangan', $id, 'id_lapangan')->result_array();
             $where = array('id_lapangan' => $id);
@@ -56,11 +70,12 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/detail', $lapangan);
             $this->load->view('lapangan/footer');
 	}
-	public function inputsewa($page = "inputsewa"){
+
+	public function inputsewa($admin, $page = "inputsewa"){
             if ($this->session->has_userdata('username')) {
-                    $data=array('nama_lapangan'=> $this->data->get_lapangan());  
+                    $data=array('nama_lapangan'=> $this->data->get_lapangan($admin));  
                     $lapangan['kode'] = time();
-                    $tampil = $this->data->read('lapangan')->result_array();
+                    $tampil = $this->data->readWhere('lapangan', $admin, 'pemilik')->result_array();
                     $lapangan['lapangan'] = $data;
                     $lapangan['lapangan'] = $tampil;
                     $lapangan['page'] = $page;
@@ -87,6 +102,8 @@ class Lapangan extends CI_Controller {
             $no = $this->input->post('no');
             $nama = $this->input->post('nama');
             $kategori = $this->input->post('kategori');
+            $type = $this->input->post('type');
+            $admin = $this->input->post('admin');
 //            $nomer_identitas = $this->input->post('nomer_identitas');
             $nama_lapangan = $this->input->post('nama_lapangan');
             $tanggal = $this->input->post('tanggal');
@@ -97,6 +114,8 @@ class Lapangan extends CI_Controller {
                     'no' => $no,
                     'nama' => $nama,
                     'kategori' => $kategori,
+                    'type' => $type,
+                    'admin' => $admin,
                     //'nomer_identitas' => $nomer_identitas,
                     'nama_lapangan' => $nama_lapangan,
                     'tanggal' => $tanggal,
@@ -104,7 +123,7 @@ class Lapangan extends CI_Controller {
                     'lama_sewa' => $lama_sewa
             );
             $this->data->createJadwal($data, 'jadwal');
-            redirect('lapangan/sewajadwal');}
+            redirect('lapangan/sewajadwal/'.$admin);}
 	
 	public function login($page = 'login'){
             if($this->session->has_userdata('username')){

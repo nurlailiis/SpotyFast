@@ -15,7 +15,7 @@
 	<center>
 		<h3><i>Tambah Penyewaan</i></h3>
 	</center>
-	<form action="<?php echo base_url(). 'lapangan/createsewa'; ?>" method="post">
+	<form action="<?php echo base_url('lapangan/createsewa'); ?>" method="post">
 		<table style="margin:20px auto;">
 			<tr>
 				<td>No</td>
@@ -32,8 +32,8 @@
 				<td>:</td>
 				<td>
 					<select name="kategori" class="form-control" required>				
-						<option>Mahasiswa</option>
-						<option>Non ITS</option>
+						<option>Pelajar</option>
+						<option>Umum</option>
 					</select>
 				</td>
 			</tr>
@@ -54,6 +54,8 @@
 					</select>
 				</td>
 			</tr>
+			<input type="hidden" name="type" value="<?php echo $row['type'];?>">
+			<input type="hidden" name="admin" value="<?php echo $row['pemilik'];?>">
 			<tr>
 				<td>Tanggal</td>
 				<td>:</td>
@@ -69,9 +71,11 @@
 				<td>:</td>
 				<td>
 					<select name="lama_sewa" class="form-control" required>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
+						<option>1 Jam</option>
+						<option>2 Jam</option>
+						<option>3 Jam</option>
+						<option>4 Jam</option>
+						<option>5 Jam</option>
 					</select>
 				</td>
 			</tr>

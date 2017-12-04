@@ -11,10 +11,10 @@
 						<h1><?php echo $l['nama_lapangan'] ?></h1>
 						<p class="prc"><?php echo $l['detail_lapangan'] ?></p>
 						<br>
-						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_mahasiswa'], 2, ',', '.'); ?>/Mahasiswa</p>
-						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_nonits'], 2, ',', '.'); ?>/Non ITS</p>
+						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_student'], 2, ',', '.'); ?>/jam untuk Pelajar</p>
+						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_umum'], 2, ',', '.'); ?>/jam untuk Umum</p>
 						<br>
-						<a class="btn btn-primary" href="<?php echo base_url('lapangan/sewajadwal'); ?>">Cek Jadwal</a>						
+						<a class="btn btn-primary" href="<?php echo base_url('lapangan/sewajadwal/'.$l['pemilik']); ?>">Cek Jadwal</a>						
 					</div>
 					<?php } ?>
 				</div>
