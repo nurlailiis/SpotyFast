@@ -2,7 +2,7 @@
     <div style="margin-top: 100px;" class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <center><h1>PANEL ADMIN FUTSAL FASOR ITS</h1></center>
+                <center><h1>PANEL ADMIN SPORTYFAST</h1></center>
                 <div class="login-panel panel panel-green">
                     <div class="panel-heading">
                         <h3 class="panel-title">Login</h3>

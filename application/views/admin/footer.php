@@ -28,7 +28,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted" style="text-align: center;">Panel Admin Futsal Fasor ITS</p>
+            <p class="copyright text-muted" style="text-align: center;">Panel Admin SportyFast</p>
           </div>
         </div>
       </div>
