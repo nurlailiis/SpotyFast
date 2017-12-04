@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url('index.php/admin/dashboard') ?>">PANEL ADMIN SPORTYFAST</a>
+                <a class="navbar-brand" href="<?php echo base_url('index.php/admin/dashboard') ?>">PANEL ADMIN</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -83,7 +83,7 @@
                         <a href="<?php echo base_url('index.php/admin/datalapangan') ?>"><i class="fa fa-fw fa-table"></i> Data Kompetisi</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/admin/datapenyewaan') ?>"><i class="fa fa-fw fa-edit"></i> Data Penyewaan</a>
+                        <a href="<?php echo base_url('index.php/admin/datapenyewaan') ?>"><i class="fa fa-fw fa-edit"></i> History</a>
                     </li>
                 </ul>
             </div>

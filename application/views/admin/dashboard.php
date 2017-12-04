@@ -26,15 +26,21 @@
                             <br></br>
                             <li>
                             <p>
-                                Selamat Datang Admin Futsal Fasor ITS, anda memiliki hak pada panel Admin Banboo.id. Hak Anda sebagai berikut :
+                                Selamat Datang Admin Lapangan di SportyFast, anda memiliki hak pada panel Admin SportyFast. Hak Anda sebagai berikut :
                                 <br></br>
-                                1. Merubah dan Memasukkan Data Lapangan yang disewakan oleh Fasor ITS baik untuk civitas atau non-civitas ITS
+                                1. Merubah dan Memasukkan Data Lapangan yang disewakan oleh di SportyFast
                                 <br></br>
-                                2. Menambahkan Data Penyewaan Lapangan Fasor ITS baik untuk civitas atau non-civitas ITS
+                                2. Menambahkan Data Penyewaan Lapangan di SportyFast
                                 <br></br>
-                                3. Menghapus Data Penyewaan Lapangan Fasor ITS baik untuk civitas atau non-civitas ITS
+                                3. Menghapus Data Penyewaan Lapangan di SportyFast
                                 <br></br>
-                                4. Mengakses Data Penyewaan Lapangan Fasor ITS baik untuk civitas atau non-civitas ITS
+                                4. Mengakses Data Penyewaan Lapangan di SportyFast
+                                <br></br>
+                                5. Menambahkan Data Kompetisi Lomba di SportyFast
+                                <br></br>
+                                6. Menghapus Data Kompetisi Lomba di SportyFast
+                                <br></br>
+                                7. Mengakses Data Kompetisi Lomba di SportyFast
                             </p>
                             </li>
 
@@ -42,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-3">
+                <div class="col-lg-3 col-md-6">
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">
@@ -55,6 +61,27 @@
                                 </div>
                             </div>
                             <a href="<?php echo base_url('index.php/admin/login') ?>">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Selengkapnya..</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div><strong>Data Kompetisi</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="<?php echo base_url('index.php/admin/inputlapangan') ?>">
                                 <div class="panel-footer">
                                     <span class="pull-left">Selengkapnya..</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
