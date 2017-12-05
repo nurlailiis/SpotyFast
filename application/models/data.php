@@ -17,6 +17,18 @@ class data extends CI_Model
 		return $query;
 	}
 
+	function selectKompetisi(){
+            return $this->db->query('SELECT `id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, `penyelenggara`, `lokasi_kompetisi`, `gambar_kompetisi` FROM `kompetisi` WHERE 1'
+            );
+	}
+
+	function get_kompetisi(){
+		$this->db->select('*');
+ 		$this->db->from('kompetisi');
+ 		$query = $this->db->get();
+ 		return $query->result();
+    }
+
 	function selectJadwal($admin){
         $this->db->select('*');
 		$this->db->from('jadwal');

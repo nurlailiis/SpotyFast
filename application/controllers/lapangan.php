@@ -30,6 +30,22 @@ class Lapangan extends CI_Controller {
         }
     }
 
+    public function kompetisi($page = 'kompetisi'){
+            if ($this->session->has_userdata('username')) {
+                    $data = $this->data->selectKompetisi()->result_array();
+                    $tampil['kompetisi'] = $data;
+                    $tampil['page'] = $page;
+                    $this->load->view('lapangan/header', $tampil);
+                    $this->load->view('lapangan/kompetisi', $tampil);
+                    $this->load->view('lapangan/footer');       
+            }
+            else{
+                    redirect(base_url('kompetisi/login'));
+            }
+    }
+
+    
+
     public function gambarLapangan($type, $page = 'gambarLapangan'){      
             $data = $this->db->get_where('lapangan',array('type' => $type));
             $data = $data->result_array();
