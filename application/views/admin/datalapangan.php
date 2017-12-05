@@ -1,6 +1,6 @@
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header"><br>Data Lapangan Futsal Fasor ITS</h1>
+                    <h1 class="page-header"><br>Data Lapangan</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -22,8 +22,8 @@
                                     <th style="width: 250px;">ID Lapangan</th>
                                     <th style="width: 250px;">Nama Lapangan</th>
                                     <th style="width: 250px;">Detail Lapangan</th>
-                                    <th style="width: 250px;">Tarif Civitas ITS</th>
-                                    <th style="width: 250px;">Tarif Non ITS</th>
+                                    <th style="width: 250px;">Tarif Pelajar</th>
+                                    <th style="width: 250px;">Tarif Umum</th>
                                     <th style="width: 250px;">Gambar</th>
                                 </tr>
                             </thead>

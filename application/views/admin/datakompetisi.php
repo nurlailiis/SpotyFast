@@ -1,6 +1,6 @@
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header"><br>Data Lapangan Futsal Fasor ITS</h1>
+                    <h1 class="page-header"><br>Data Kompetisi</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Data Lapangan
+                            
                         </div>
                         <div class="panel-body">
                         <a class="btn btn-success" href="<?php echo base_url('index.php/admin/inputlapangan') ?>">+ Tambah Kompetisi</a>
@@ -22,8 +22,8 @@
                                     <th style="width: 250px;">ID Kompetisi</th>
                                     <th style="width: 250px;">Nama Kompetisi</th>
                                     <th style="width: 250px;">Tanggal</th>
-                                    <th style="width: 250px;">penyelenggara</th>
-                                    <th style="width: 250px;">lokasi</th>
+                                    <th style="width: 250px;">Penyelenggara</th>
+                                    <th style="width: 250px;">Lokasi</th>
                                     <th style="width: 250px;">Gambar</th>
                                 </tr>
                             </thead>
