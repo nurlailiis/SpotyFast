@@ -2,13 +2,6 @@
 <div class="col-md-12">
   <h2 class="page-header" align="center">Daftar Lapangan GOR Futsal 169</h2>
 </div>
-<div class="col-md-12" align="center">
-  <div style="width: 20rem;">
-    <a href="<?php echo base_url('lapangan/gamFut');?>">
-      <img style="max-height: 500px;" class="card-img-top" src="<?php echo base_url('/assets/lapangan/image/169.jpg');?>" alt="Card image cap"> 
-    </a>                 
-  </div>           
-</div>
 <div class="col-md-12">
   <h3 class="page-header" align="center">Jl.bulak sari No.6 SURABAYA<br>Telp . (031) – 81666169</h3>
 </div>

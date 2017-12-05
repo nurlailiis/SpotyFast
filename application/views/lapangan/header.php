@@ -40,7 +40,7 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/index');?>">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
               <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
             </li>
             <li class="nav-item">

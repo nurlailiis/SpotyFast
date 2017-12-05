@@ -17,6 +17,19 @@ class admin extends CI_Controller {
         $this->load->view('admin/footer');
     }
 
+    public function dashboard(){
+        if ($this->session->has_userdata('username')) {
+            $data = $this->data->read('admin')->result_array();
+            $admin['admin'] = $data;
+            $this->load->view('admin/headermasuk');
+            $this->load->view('admin/dashboard', $admin);
+            $this->load->view('admin/footer');
+        }
+        else{
+            redirect(base_url('index.php/admin/index'));
+        }
+    }
+
     function inputkompetisi(){
         if ($this->session->has_userdata('username')) {
             $this->load->view('admin/headermasuk');
@@ -67,17 +80,6 @@ class admin extends CI_Controller {
         else{
             redirect(base_url('index.php/admin/login'));}}
 
-    public function dashboard(){
-        if ($this->session->has_userdata('username')) {
-            $data = $this->data->read('admin')->result_array();
-            $admin['admin'] = $data;
-            $this->load->view('admin/headermasuk');
-            $this->load->view('admin/dashboard', $admin);
-            $this->load->view('admin/footer');
-        }
-        else{
-            redirect(base_url('index.php/admin/index'));}}
-            
     public function datapenyewaan(){
         if ($this->session->has_userdata('username')) {
             $data = $this->data->selectJadwal($this->session->userdata('username'))->result_array();

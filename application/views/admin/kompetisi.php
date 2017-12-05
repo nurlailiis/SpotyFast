@@ -15,12 +15,11 @@
                         <div class="panel-heading">
                             Tambah Kompetisi
                         </div>
-                        <h6>Add</h6>
                         <div class="panel-body">
                         <?php echo form_open_multipart(base_url('index.php/admin/tambahkompetisi')); ?>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Id Kompetisi" name="id"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Nama Kompetisi" name="nama"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="tanggal" name="tanggal"></p>
+                                <p class="col-md-6"><input type="date" class="form-control" placeholder="tanggal" name="tanggal"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="penyelenggara" name="penyelenggara"></p>
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="lokasi" name="lokasi"></p>
                                 <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar"></p>

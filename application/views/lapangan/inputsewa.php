@@ -25,7 +25,7 @@
 			<tr>
 				<td>Nama</td>
 				<td>:</td>
-				<td><input type="text" name="nama" required ></td>
+				<td><input type="text" name="nama" value="<?php echo $this->session->userdata('nama')?>" required ></td>
 			</tr>
 			<tr>
 				<td>Kategori</td>
