@@ -41,10 +41,20 @@
               <a class="nav-link" href="<?php echo base_url('lapangan/index');?>">Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link" href="<?php echo base_url('lapangan/sewajadwal');?>">Sewa Jadwal</a>
+              <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Sewa Jadwal</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsal');?>">Futsal</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basket');?>">Basket</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('lapangan/kompetisi');?>">kompetisi</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Kompetisi</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsal');?>">Futsal</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basket');?>">Basket</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
+              </ul>
             </li>
             <li class="nav-item <?php if($page =='login') {echo 'active';} ?>dropdown">
             <?php 
