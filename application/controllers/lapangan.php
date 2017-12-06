@@ -40,16 +40,6 @@ class Lapangan extends CI_Controller {
                 $this->load->view('lapangan/lapFutsal', $lapangan);
                 $this->load->view('lapangan/footer');
             }
-            else if($type=='basket'){
-                $this->load->view('lapangan/header', $lapangan);
-                $this->load->view('lapangan/lapBasket', $lapangan);
-                $this->load->view('lapangan/footer');
-            }
-            else if($type=='futsalkom'){
-                $this->load->view('lapangan/header', $lapangan);
-                $this->load->view('lapangan/lapBasket', $lapangan);
-                $this->load->view('lapangan/footer');
-            }
             else{
                 $this->load->view('lapangan/header', $lapangan);
                 $this->load->view('lapangan/lapBasket', $lapangan);
