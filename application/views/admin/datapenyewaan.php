@@ -1,8 +1,19 @@
 <div class="container">
-  <div class="row">
-                        <div class="table-responsive">
+
+    <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header"><br></h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+          <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <h3><center>DATA HISTORY PENYEWAAN LAPANGAN</center></h3>
+                        </div>
+                            
                             <thead>
                                 <tr>
                                     <th>NO</th>
