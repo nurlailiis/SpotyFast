@@ -9,6 +9,11 @@ class data extends CI_Model
             return $this->db->get_where($table, array($where => $id));
 	}
 
+	function getDataLapangan($where="") {
+		$query = $this->db->query('select * from lapangan ' .$where);
+		return $query->result_array();
+	}
+
 	function selectLapangan($admin){
         $this->db->select('*');
 		$this->db->from('lapangan');
@@ -60,9 +65,16 @@ class data extends CI_Model
 		$res = $this->db->delete('jadwal'); 
 		return $res;
 	}
-        function deleteUser($item){  
+    
+    function deleteUser($item){  
 		$this->db->where_in('id_user', $item);  
 		$res = $this->db->delete('user'); 
+		return $res;
+	}
+
+	function deleteLapangan($item){  
+		$this->db->where_in('id_lapangan', $item);  
+		$res = $this->db->delete('lapangan'); 
 		return $res;
 	}
 

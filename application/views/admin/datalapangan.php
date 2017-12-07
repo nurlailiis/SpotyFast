@@ -25,6 +25,7 @@
                                     <th style="width: 250px;">Tarif Pelajar</th>
                                     <th style="width: 250px;">Tarif Umum</th>
                                     <th style="width: 250px;">Gambar</th>
+                                    <th style="width: 250px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,7 +36,12 @@
                                     <td class="center"><?php echo $d['detail_lapangan'] ?></td>
                                     <td><?php echo 'Rp. '.number_format($d['tarif_student'], 2, ',', '.'); ?></td>
                                     <td><?php echo 'Rp. '.number_format($d['tarif_umum'], 2, ',', '.'); ?></td>
-                                    <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>"></td>
+                                    <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>">
+                                    </td>
+                                    <td class="center">
+                                        <a class="btn btn-primary btn-outline" href="<?php echo base_url()."index.php/admin/editDataLapangan/".$d['id_lapangan']?>">Update</a>
+                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteDataLapangan/".$d['id_lapangan']?>">Delete</a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>

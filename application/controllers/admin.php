@@ -127,6 +127,11 @@ class admin extends CI_Controller {
                             ');
                redirect(base_url('index.php/admin/index'));}}
 
+    function deleteDataLapangan($id){  
+        $where = array('id_lapangan' => $id ); 
+        $res = $this->data->deleteLapangan($where);  
+        redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);}
+
     function login(){
         if ($this->session->has_userdata('username')) {
             $this->load->view('admin/headermasuk');
@@ -196,6 +201,31 @@ class admin extends CI_Controller {
         }
         else{
             redirect(base_url('index.php/admin/login'));}}
+
+    function editDataLapangan($id){
+        $update = $this->data->getDataLapangan("where id_lapangan = '$id'");
+
+            $image= $update[0]['gambar_lapangan'];
+            $id = $update[0]['id_lapangan'];
+            $nama = $update[0]['nama_lapangan'];
+            $detail = $update[0]['detail_lapangan'];
+            $admin = $update[0]['pemilik'];
+            $type = $update[0]['type'];
+            $tarifmhs = $update[0]['tarif_student'];
+            $tarifnon = $update[0]['tarif_umum'];
+            $data = array(
+                'id_lapangan' => $id,
+                'nama_lapangan' => $nama,
+                'detail_lapangan' => $detail,
+                'pemilik' => $admin,
+                'type' => $type,
+                'tarif_student' => $tarifmhs,
+                'tarif_umum' => $tarifnon,
+                'gambar_lapangan' => $image, 
+                );
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/editDataLapangan', $data);
+        $this->load->view('admin/footer');}
 
     function deleteData($id){  
         $where = array('no' => $id ); 
