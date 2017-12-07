@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2017 at 05:41 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.5
+-- Generation Time: Dec 07, 2017 at 02:52 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -57,6 +57,7 @@ CREATE TABLE `jadwal` (
   `tanggal` date NOT NULL,
   `jam` time NOT NULL,
   `lama_sewa` int(20) NOT NULL,
+  `nota_pembayaran` varchar(256) NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -64,10 +65,11 @@ CREATE TABLE `jadwal` (
 -- Dumping data for table `jadwal`
 --
 
-INSERT INTO `jadwal` (`no`, `type`, `nama`, `admin`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `status`) VALUES
-('1506941920', 'futsal', 'Nur laili', 'admin169', 'Pelajar', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, 1),
-('1508373366', 'basket', 'Putra', 'adminmayasi', 'Pelajar', '05241150000020', 'Lapangan Bayasi ', '2017-10-19', '09:00:00', 1, 0),
-('1512409830', 'futsal', 'Lailis', 'admin169', 'Pelajar', '', 'Lapangan B', '2018-10-01', '07:00:00', 2, 0);
+INSERT INTO `jadwal` (`no`, `type`, `nama`, `admin`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `nota_pembayaran`, `status`) VALUES
+('1506941920', 'futsal', 'Nur laili', 'admin169', 'Pelajar', '5215100000', 'Lapangan C', '2017-10-02', '01:00:00', 1, '', 1),
+('1508373366', 'basket', 'Putra', 'adminmayasi', 'Pelajar', '05241150000020', 'Lapangan Bayasi ', '2017-10-19', '09:00:00', 1, '', 0),
+('1512409830', 'futsal', 'Lailis', 'admin169', 'Pelajar', '', 'Lapangan B', '2018-10-01', '07:00:00', 2, '', 0),
+('1512451068', 'basket', 'laili cantik', 'adminmayasi', 'Pelajar', '', 'Lapangan Bayasi', '2017-12-19', '09:55:00', 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -83,6 +85,13 @@ CREATE TABLE `kompetisi` (
   `lokasi_kompetisi` varchar(200) NOT NULL,
   `gambar_kompetisi` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kompetisi`
+--
+
+INSERT INTO `kompetisi` (`id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, `penyelenggara`, `lokasi_kompetisi`, `gambar_kompetisi`) VALUES
+('40001', 'Futsal 169 AYECOYYY', '2018-02-14', 'Futsal 169', 'Jl.bulak sari No.6 SURABAYA BARAT', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/home-bg.jpg');
 
 -- --------------------------------------------------------
 
@@ -106,10 +115,10 @@ CREATE TABLE `lapangan` (
 --
 
 INSERT INTO `lapangan` (`id_lapangan`, `type`, `pemilik`, `nama_lapangan`, `detail_lapangan`, `tarif_student`, `tarif_umum`, `gambar_lapangan`) VALUES
-(1001, 'futsal', 'admin169', 'Lapangan A', 'Lapangan Futsal 169 A', '70000', '120000', 'http://localhost/SportyFast/./assets/lapangan/image/lapfutA.jpg'),
-(1002, 'futsal', 'admin169', 'Lapangan B', 'Lapangan Futsal 169 B', '70000', '120000', 'http://localhost/SportyFast/./assets/lapangan/image/lapfutB.jpg'),
-(1003, 'futsal', 'admin169', 'Lapangan C', 'Lapangan Futsal 169 C', '70000', '120000', 'http://localhost/SportyFast/./assets/lapangan/image/lapfutC.jpg'),
-(2001, 'basket', 'adminmayasi', 'Lapangan Bayasi', 'Mayasi Basketball', '200000', '300000', 'http://localhost/SportyFast/./assets/lapangan/image/lapAbas.jpg');
+(1001, 'futsal', 'admin169', 'Lapangan A', 'Lapangan Futsal 169 A', '70000', '120000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lap14.jpg'),
+(1002, 'futsal', 'admin169', 'Lapangan B', 'Lapangan Futsal 169 B', '70000', '120000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lapfutB.jpg'),
+(1004, 'futsal', 'nurlailiis', 'Lapangan A', 'Lapangan Futsal 169 B', 'Rp. 70.000,00/jam untuk Pelajar', 'Rp. 120.000,00/jam untuk Umum', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lap13.jpg'),
+(2001, 'basket', 'adminmayasi', 'Lapangan Bayasi', 'Mayasi Basketball', '200000', '300000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lapAbas.jpg');
 
 -- --------------------------------------------------------
 

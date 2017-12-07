@@ -1,30 +1,8 @@
 <div class="container">
   <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                          Data Penyewaan Lapangan
-                          <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo base_url()."index.php/admin/deleteData/"?>">LAPANGAN A</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo base_url()."index.php/admin/deleteData/"?>">LAPANGAN B</a>
-                                </li>
-                                 <li>
-                                    <a href="<?php echo base_url()."index.php/admin/deleteData/"?>">LAPANGAN C</a>
-                                </li>
-                              </ul>
-                            </li>
-                        </div>
-                        <hr>
-                        <div class="panel-body">
-
                         <div class="table-responsive">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                            <h3><center>DATA PENYEWAAN LAPANGAN</center></h3>
+                            <h3><center>DATA HISTORY PENYEWAAN LAPANGAN</center></h3>
                             <thead>
                                 <tr>
                                     <th>NO</th>
@@ -34,7 +12,8 @@
                                     <th>NAMA LAPANGAN</th>
                                     <th>TANGGAL SEWA</th>
                                     <th>JAM</th>
-                                    <th>LAMA SEWA</th>                                    
+                                    <th>LAMA SEWA</th> 
+                                    <th>NOTA PEMBAYARAN</th>                                   
                                     <th>STATUS</th>
                                     <th>HAPUS</th>
                                 </tr>
@@ -50,10 +29,11 @@
                                    <td><?php echo $g['tanggal'] ?></td>
                                    <td><?php echo $g['jam'] ?></td>
                                    <td><?php echo $g['lama_sewa'] ?></td>
+                                   <td class="center"><img style="width: 200px" src="<?php echo $g['nota_pembayaran'] ?>"></td>
                                    <td><?php if($g['status']==0) {
-                                           echo '<a class="btn btn-cancel" style="color: white; background: pink" href="'.base_url('admin/validasi/'.$g['no']).'">Ngutang</a>';
+                                           echo '<a class="btn btn-cancel" style="color: white; background: pink" href="'.base_url('admin/validasi/'.$g['no']).'">Decline</a>';
                                        }else{
-                                            echo '<a class="btn btn-success btn-outline" style="color: white; background: green;" >Dibayar</a>';
+                                            echo '<a class="btn btn-success btn-outline" style="color: white; background: green;" >Accept</a>';
                                        }
                                    ?></td>
                                    <td class="center">
