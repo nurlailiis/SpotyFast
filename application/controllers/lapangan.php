@@ -23,9 +23,14 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/homeFutsal', $lapangan);
             $this->load->view('lapangan/footer');
         }
-        else{
+         else if($type=='basket'){
             $this->load->view('lapangan/header', $lapangan);
             $this->load->view('lapangan/homeBasket', $lapangan);
+            $this->load->view('lapangan/footer');
+        }
+        else{
+            $this->load->view('lapangan/header', $lapangan);
+            $this->load->view('lapangan/homeBasketKom', $lapangan);
             $this->load->view('lapangan/footer');
         }
     }
@@ -38,16 +43,6 @@ class Lapangan extends CI_Controller {
             if($type=='futsal'){
                 $this->load->view('lapangan/header', $lapangan);
                 $this->load->view('lapangan/lapFutsal', $lapangan);
-                $this->load->view('lapangan/footer');
-            }
-            else if($type=='basket'){
-                $this->load->view('lapangan/header', $lapangan);
-                $this->load->view('lapangan/lapBasket', $lapangan);
-                $this->load->view('lapangan/footer');
-            }
-            else if($type=='futsalkom'){
-                $this->load->view('lapangan/header', $lapangan);
-                $this->load->view('lapangan/lapBasket', $lapangan);
                 $this->load->view('lapangan/footer');
             }
             else{
@@ -92,17 +87,12 @@ class Lapangan extends CI_Controller {
     }
 
     public function kompetisi($page = 'kompetisi'){
-            if ($this->session->has_userdata('username')) {
-                    $data = $this->data->selectKompetisi()->result_array();
-                    $tampil['kompetisi'] = $data;
-                    $tampil['page'] = $page;
-                    $this->load->view('lapangan/header', $tampil);
-                    $this->load->view('lapangan/kompetisi', $tampil);
-                    $this->load->view('lapangan/footer');       
-            }
-            else{
-                    redirect(base_url('lapangan/login'));
-            }
+            $data = $this->data->selectKompetisi()->result_array();
+            $tampil['kompetisi'] = $data;
+            $tampil['page'] = $page;
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/kompetisi', $tampil);
+            $this->load->view('lapangan/footer');       
     }
 
 	public function inputsewa($admin, $page = "inputsewa"){
@@ -195,7 +185,7 @@ class Lapangan extends CI_Controller {
                     $data = array(
                         'username'  	=> $user,                    
                         'nama'              => $nama,
-                        'no_telp'		=> $no_telp
+                        'no_telp'		=> $no_telp,
 
                     );
                     $this->session->set_userdata($data);

@@ -52,7 +52,7 @@
               <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Kompetisi</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsal');?>">Futsal</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basket');?>">Basket</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basketKom');?>">Basket</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
               </ul>
             </li>
