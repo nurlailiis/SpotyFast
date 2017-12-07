@@ -24,6 +24,8 @@
                                     <th style="width: 250px;">Detail Lapangan</th>
                                     <th style="width: 250px;">Tarif Pelajar</th>
                                     <th style="width: 250px;">Tarif Umum</th>
+                                    <th style="width: 250px;">Tipe</th>
+                                    <th style="width: 250px;">Pemilik</th>
                                     <th style="width: 250px;">Gambar</th>
                                     <th style="width: 250px;">Aksi</th>
                                 </tr>
@@ -36,6 +38,8 @@
                                     <td class="center"><?php echo $d['detail_lapangan'] ?></td>
                                     <td><?php echo 'Rp. '.number_format($d['tarif_student'], 2, ',', '.'); ?></td>
                                     <td><?php echo 'Rp. '.number_format($d['tarif_umum'], 2, ',', '.'); ?></td>
+                                    <td><?php echo $d['type'] ?></td>
+                                    <td><?php echo $d['pemilik'] ?></td>
                                     <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_lapangan'] ?>">
                                     </td>
                                     <td class="center">

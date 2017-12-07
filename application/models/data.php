@@ -14,6 +14,11 @@ class data extends CI_Model
 		return $query->result_array();
 	}
 
+	function getDataKompetisi($where="") {
+		$query = $this->db->query('select * from kompetisi ' .$where);
+		return $query->result_array();
+	}
+
 	function selectLapangan($admin){
         $this->db->select('*');
 		$this->db->from('lapangan');
@@ -82,6 +87,7 @@ class data extends CI_Model
 		$res=$this->db->update($table, $data, $where);
 		return $res;
 	}
+
 	function get_lapangan($admin){
 		$this->db->select('*');
  		$this->db->from('lapangan');

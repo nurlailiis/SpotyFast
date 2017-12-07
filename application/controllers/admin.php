@@ -227,6 +227,97 @@ class admin extends CI_Controller {
         $this->load->view('admin/editDataLapangan', $data);
         $this->load->view('admin/footer');}
 
+    function doEditLapangan(){
+        $config['upload_path']          = './assets/lapangan/image/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 1000000;
+        $config['max_width']            = 1000000;
+        $config['max_height']           = 1000000;
+
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('gambar')) {
+            echo print_r(array('error' => $this->upload->display_errors()));    
+            //redirect(base_url());
+        }
+        else{
+            $id = $_POST['id'];
+            $where = array('id_lapangan' => $id);
+
+            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
+            $id = $this->input->post('id');
+            $nama = $this->input->post('nama');
+            $detail = $this->input->post('detail');
+            $type = $this->input->post('type');
+            $admin = $this->input->post('admin');
+            $tarifmhs = $this->input->post('tarifmhs');
+            $tarifnon = $this->input->post('tarifnon');
+            $data = array(
+                'id_lapangan' => $id,
+                'nama_lapangan' => $nama,
+                'detail_lapangan' => $detail,
+                'pemilik' => $admin,
+                'type'=> $type,
+                'tarif_student' => $tarifmhs,
+                'tarif_umum' => $tarifnon,
+                'gambar_lapangan' => $url, 
+                );
+            $this->data->updateData('lapangan', $data, $where);
+            redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
+
+    function editDataKompetisi($id){
+        $update = $this->data->getDataKompetisi("where id_kompetisi = '$id'");
+
+            $image= $update[0]['gambar_kompetisi'];
+            $id = $update[0]['id_kompetisi'];
+            $nama = $update[0]['nama_kompetisi'];
+            $tanggal = $update[0]['tanggal_kompetisi'];
+            $penyelenggara = $update[0]['penyelenggara'];
+            $lokasi = $update[0]['lokasi_kompetisi'];
+            $data = array(
+                'id_kompetisi' => $id,
+                'nama_kompetisi' => $nama,
+                'tanggal_kompetisi' => $tanggal,
+                'penyelenggara' => $penyelenggara,
+                'lokasi_kompetisi' => $lokasi,
+                'gambar_kompetisi' => $image, 
+                );
+        $this->load->view('admin/headermasuk');
+        $this->load->view('admin/editDataKompetisi', $data);
+        $this->load->view('admin/footer');}
+
+    function doEditKompetisi(){
+        $config['upload_path']          = './assets/lapangan/image/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 1000000;
+        $config['max_width']            = 1000000;
+        $config['max_height']           = 1000000;
+
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('gambar')) {
+            echo print_r(array('error' => $this->upload->display_errors()));    
+            //redirect(base_url());
+        }
+        else{
+            $id = $_POST['id'];
+            $where = array('id_kompetisi' => $id);
+
+            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
+            $id = $this->input->post('id');
+            $nama = $this->input->post('nama');
+            $tanggal = $this->input->post('tanggal');
+            $penyelenggara = $this->input->post('penyelenggara');
+            $lokasi = $this->input->post('lokasi');
+            $data = array(
+                'id_kompetisi' => $id,
+                'nama_kompetisi' => $nama,
+                'tanggal_kompetisi' => $tanggal,
+                'penyelenggara' => $penyelenggara,
+                'lokasi_kompetisi' => $lokasi,
+                'gambar_kompetisi' => $url, 
+                );
+            $this->data->updateData('kompetisi', $data, $where);
+            redirect($uri = base_url('index.php/admin/inputkompetisi'), $method = 'auto', $code = NULL);}}
+
     function deleteData($id){  
         $where = array('no' => $id ); 
         $res = $this->data->deleteData($where); 

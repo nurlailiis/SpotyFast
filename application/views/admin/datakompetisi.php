@@ -25,6 +25,7 @@
                                     <th style="width: 250px;">Penyelenggara</th>
                                     <th style="width: 250px;">Lokasi</th>
                                     <th style="width: 250px;">Gambar</th>
+                                    <th style="width: 250px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,6 +37,10 @@
                                     <td><?php echo $d['penyelenggara'] ?></td>
                                     <td><?php echo $d['lokasi_kompetisi'] ?></td>
                                     <td class="center"><img style="width: 200px" src="<?php echo $d['gambar_kompetisi'] ?>"></td>
+                                    <td class="center">
+                                        <a class="btn btn-primary btn-outline" href="<?php echo base_url()."index.php/admin/editDataKompetisi/".$d['id_kompetisi']?>">Update</a>
+                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."index.php/admin/deleteDataKompetisi/".$d['id_kompetisi']?>">Delete</a>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
