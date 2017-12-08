@@ -18,7 +18,7 @@ class admin extends CI_Controller {
     }
 
     public function dashboard(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $data = $this->data->read('admin')->result_array();
             $admin['admin'] = $data;
             $this->load->view('admin/headermasuk');
@@ -31,7 +31,7 @@ class admin extends CI_Controller {
     }
 
     function inputkompetisi(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/kompetisi');
             $this->load->view('admin/footer');
@@ -48,7 +48,7 @@ class admin extends CI_Controller {
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
-            $this->session->has_userdata('username');
+            $this->session->has_userdata('username_admin');
             echo print_r(array('error' => $this->upload->display_errors()));
         }
         else{
@@ -70,7 +70,7 @@ class admin extends CI_Controller {
             redirect($uri = base_url('index.php/admin/inputkompetisi'), $method = 'auto', $code = NULL);}}
 
     function datakompetisi(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $data = $this->data->selectKompetisi()->result_array();
             $tampil['datakompetisi'] = $data;
             $this->load->view('admin/headermasuk');
@@ -82,7 +82,7 @@ class admin extends CI_Controller {
 
     public function datapenyewaan(){
         if ($this->session->has_userdata('username')) {
-            $data = $this->data->selectJadwal($this->session->userdata('username'))->result_array();
+            $data = $this->data->selectJadwal($this->session->userdata('username_admin'))->result_array();
             $jadwal['jadwal'] = $data;
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/datapenyewaan', $jadwal);
@@ -107,7 +107,7 @@ class admin extends CI_Controller {
                 if ($pass1==$pass) {
                     $pass1 = $this->data->enkripsi($password);
                     $data = array(
-                        'username'=>$admin,
+                        'username_admin'=>$admin,
                         'type'=>$type
                     );
                     $this->session->set_userdata($data);
@@ -133,7 +133,7 @@ class admin extends CI_Controller {
         redirect($uri = base_url('index.php/admin/datalapangan'), $method = 'auto', $code = NULL);}
 
     function login(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/dashboard');
             $this->load->view('admin/footer');
@@ -149,7 +149,7 @@ class admin extends CI_Controller {
         redirect(base_url('index.php/admin'));}
 
     function inputlapangan(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/lapangan');
             $this->load->view('admin/footer');
@@ -166,7 +166,7 @@ class admin extends CI_Controller {
 
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('gambar')) {
-            $this->session->has_userdata('username');
+            $this->session->has_userdata('username_admin');
             echo print_r(array('error' => $this->upload->display_errors()));
         }
         else{
@@ -192,8 +192,8 @@ class admin extends CI_Controller {
             redirect($uri = base_url('index.php/admin/inputlapangan'), $method = 'auto', $code = NULL);}}
 
     function datalapangan(){
-        if ($this->session->has_userdata('username')) {
-            $data = $this->data->selectLapangan($this->session->userdata('username'))->result_array();
+        if ($this->session->has_userdata('username_admin')) {
+            $data = $this->data->selectLapangan($this->session->userdata('username_admin'))->result_array();
             $tampil['datalapangan'] = $data;
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/datalapangan', $tampil);
