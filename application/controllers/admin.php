@@ -81,7 +81,7 @@ class admin extends CI_Controller {
             redirect(base_url('index.php/admin/login'));}}
 
     public function datapenyewaan(){
-        if ($this->session->has_userdata('username')) {
+        if ($this->session->has_userdata('username_admin')) {
             $data = $this->data->selectJadwal($this->session->userdata('username_admin'))->result_array();
             $jadwal['jadwal'] = $data;
             $this->load->view('admin/headermasuk');
