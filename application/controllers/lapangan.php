@@ -16,11 +16,47 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');
 	}
 
-    public function homePil($type,$page = 'homePilihan'){
-        $lapangan['page'] = $page;
+    public function homePil($type, $page = 'homePilihan'){
+        
+        $data = $this->data->selectLapanganSewa($type)->result_array();
+        $tampil['lapangan'] = $data;
+        $tampil['page'] = $page;
+        
         if($type=='futsal'){
+
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/homeFutsal', $tampil);
+            $this->load->view('lapangan/footer');
+        }
+        else if($type=='basket'){
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/homeBasket', $tampil);
+            $this->load->view('lapangan/footer');
+        }
+        else if($type=='futsalKom'){
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/homeFutsalKom', $tampil);
+            $this->load->view('lapangan/footer');
+        }
+        else{
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/homeBasketKom', $tampil);
+            $this->load->view('lapangan/footer');
+        }
+    }
+
+    public function homePilKom($type,$page = 'homePilihan'){
+
+            
+        /*$lapangan['page'] = $page;
+        if($type=='futsal'){
+
+            $data = $this->data->selectKompetisi1($type)->result_array();
+            $lapangan['datalapangan'] = $data;
+            $lapangan['page'] = $page;
+
             $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/homeFutsal', $lapangan);
+            $this->load->view('lapangan/kompetisi', $lapangan);
             $this->load->view('lapangan/footer');
         }
         else if($type=='basket'){
@@ -37,7 +73,7 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/header', $lapangan);
             $this->load->view('lapangan/homeBasketKom', $lapangan);
             $this->load->view('lapangan/footer');
-        }
+        }*/
     }
 
     public function gambarLapangan($type, $page = 'gambarLapangan'){      
@@ -45,6 +81,9 @@ class Lapangan extends CI_Controller {
             $data = $data->result_array();
             $lapangan['lapangan'] = $data;
             $lapangan['page'] = $page;
+
+            
+
             if($type=='futsal'){
                 $this->load->view('lapangan/header', $lapangan);
                 $this->load->view('lapangan/lapFutsal', $lapangan);
@@ -66,9 +105,26 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');		
 	}
 
+    public function jadwal($id, $page="jadwal"){
+            //$data = $this->data->selectCekJadwal($nama)->result_array();
+
+            //$data = $this->data->readWhere('jadwal', $id, 'nama_lapangan')->result_array();
+            //$where = array('nama_lapangan' => $id);
+
+            $data = $this->data->selectJadwal1($id)->result_array();
+            $jadwal['jadwal'] = $data;
+            //$tampil['cekjadwal'] = $data;
+            $jadwal['page'] = $page;
+            $this->load->view('lapangan/header', $jadwal);
+            $this->load->view('lapangan/cekjadwal', $jadwal);
+            $this->load->view('lapangan/footer');       
+    }
+
 	public function detail($id, $page="detail"){
+            
             $data = $this->data->readWhere('lapangan', $id, 'id_lapangan')->result_array();
             $where = array('id_lapangan' => $id);
+            
             $lapangan['lapangan'] = $data;
             $lapangan['page'] = $page;
             $this->load->view('lapangan/header', $lapangan);

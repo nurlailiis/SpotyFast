@@ -37,25 +37,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('lapangan/index');?>">Home</a>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Sewa Jadwal</span></a>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Daftar Lapangan</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsal');?>">Futsal</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basket');?>">Basket</a></li>
                 <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Sewa</a></li>
               </ul>
-            </li> -->
-            <li class="nav-item dropdown">
+            </li> 
+            
+            <!--<li class="nav-item dropdown">
               <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Kompetisi</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsalKom');?>">Futsal</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basketKom');?>">Basket</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
+                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'futsal');?>">Futsal</a></li>
+                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'basket');?>">Basket</a></li>
+                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'badminton');?>">Badminton</a></li>
               </ul>
+            </li>-->
+
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('lapangan/Kompetisi');?>">Kompetisi</a>
             </li>
+            
             <li class="nav-item">
               <?php 
               if($this->session->has_userdata('username')){

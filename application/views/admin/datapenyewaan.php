@@ -17,6 +17,7 @@
                             <thead>
                                 <tr>
                                     <th>NO</th>
+                                    <th>TYPE</th>
                                     <th>NAMA</th>
                                     <th>KATEGORI</th>
                                     <th>NOMER IDENTITAS</th>
