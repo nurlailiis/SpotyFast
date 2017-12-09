@@ -40,8 +40,26 @@
                                        }
 
                                    ?></td>
-                                </tr>
+                                
+
                             <?php } ?>
+                            </tbody>
+                            <tbody>
+                              </tr>
+
+                                <tr class="odd gradeX">
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td>
+                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."lapangan/inputsewa/".$g['admin']?>">Sewa</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>                        
                         </div>
