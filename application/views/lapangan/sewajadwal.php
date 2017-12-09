@@ -20,6 +20,7 @@
                                     <th>Jam</th>
                                     <th>Lama Sewa</th>                                    
                                     <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,6 +41,7 @@
                                        }
 
                                    ?></td>
+                                   <td><a class="btn btn-danger btn-outline" href="<?php echo base_url()."lapangan/uploadnota/".$g['no']?>">Upload</a></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

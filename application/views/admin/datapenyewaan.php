@@ -34,6 +34,7 @@
                            <?php foreach ($jadwal as $g) { ?>
                                 <tr class="odd gradeX">
                                    <td><?php echo $g['no'] ?></td>
+                                   <td><?php echo $g['type'] ?></td>
                                    <td><?php echo $g['nama'] ?></td>
                                    <td><?php echo $g['kategori'] ?></td>
                                    <td><?php echo $g['nomer_identitas'] ?></td>

@@ -167,6 +167,23 @@ class Lapangan extends CI_Controller {
                     redirect(base_url('lapangan/login'));
             }
 	}
+
+    public function uploadnota($admin, $page = "uploadnota"){
+            if ($this->session->has_userdata('username')) {
+                    $data=array('nama_lapangan'=> $this->data->get_lapangan($admin));  
+                    $lapangan['kode'] = time();
+                    $tampil = $this->data->readWhere('lapangan', $admin, 'pemilik')->result_array();
+                    $lapangan['lapangan'] = $data;
+                    $lapangan['lapangan'] = $tampil;
+                    $lapangan['page'] = $page;
+                    $this->load->view('lapangan/header', $lapangan);
+                    $this->load->view('lapangan/uploadnota', $lapangan);
+                    $this->load->view('lapangan/footer');       
+            }
+            else{
+                    redirect(base_url('lapangan/login'));
+            }
+    }
         
         
  	public function signup($page = "signup"){
@@ -205,11 +222,48 @@ class Lapangan extends CI_Controller {
             $this->data->createJadwal($data, 'jadwal');
             redirect('lapangan/sewajadwal/'.$admin);}
 	
+
+        function upload(){
+            
+            $config['upload_path']          = './assets/nota/image/';
+            $config['allowed_types']        = 'gif|jpg|png';
+            $config['max_size']             = 1000000;
+            $config['max_width']            = 1000000;
+            $config['max_height']           = 1000000;
+
+        $this->load->library('upload', $config);
+        
+        if ( ! $this->upload->do_upload('gambar')) {
+            
+            $this->session->has_userdata('username');
+            echo print_r(array('error' => $this->upload->display_errors()));
+        }
+        
+        else{
+            
+            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
+            $no = $this->input->post('no');
+
+            $data = array(
+                'no' => $no,
+                'nota_pembayaran' => $url, 
+                );
+            
+            $this->data->insertData('jadwal', $data);
+            redirect($uri = base_url('lapangan.cekjadwal'), $method = 'auto', $code = NULL);
+
+        }
+    }
+
+
 	public function login($page = 'login'){
+            
             if($this->session->has_userdata('username')){
                 $this->load->view('lapangan/home');
                     //redirect('lapangan/index');
-            }else{
+            }
+
+            else{
                     $data = $this->data->read('user')->result_array();
                     $user['user'] = $data;
                     $user['page'] = $page;
