@@ -25,7 +25,7 @@
 			<tr>
 				<td>Nama</td>
 				<td>:</td>
-				<td><input type="text" name="nama" value="<?php echo $this->session->userdata('nama')?>" disabled ></td>
+				<td><input type="text" name="nama" value="<?php echo $this->session->userdata('nama')?>" enabled ></td>
 			</tr>
 			<tr>
 				<td>Kategori</td>
