@@ -16,16 +16,21 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');
 	}
 
-    public function homePil($type,$page = 'homePilihans'){
+    public function homePil($type,$page = 'homePilihan'){
         $lapangan['page'] = $page;
         if($type=='futsal'){
             $this->load->view('lapangan/header', $lapangan);
             $this->load->view('lapangan/homeFutsal', $lapangan);
             $this->load->view('lapangan/footer');
         }
-         else if($type=='basket'){
+        else if($type=='basket'){
             $this->load->view('lapangan/header', $lapangan);
             $this->load->view('lapangan/homeBasket', $lapangan);
+            $this->load->view('lapangan/footer');
+        }
+        else if($type=='futsalKom'){
+            $this->load->view('lapangan/header', $lapangan);
+            $this->load->view('lapangan/homeFutsalKom', $lapangan);
             $this->load->view('lapangan/footer');
         }
         else{
@@ -52,18 +57,13 @@ class Lapangan extends CI_Controller {
             }
     }
 
-	public function sewajadwal($admin, $page = 'sewajadwal'){
-            if ($this->session->has_userdata('username')) {
-                    $data = $this->data->selectJadwal($admin)->result_array();
-                    $tampil['sewajadwal'] = $data;
-                    $tampil['page'] = $page;
-                    $this->load->view('lapangan/header', $tampil);
-                    $this->load->view('lapangan/sewajadwal', $tampil);
-                    $this->load->view('lapangan/footer');		
-            }
-            else{
-                    redirect(base_url('lapangan/login'));
-            }
+	public function sewajadwal($page = 'sewajadwal'){
+            $data = $this->data->selectJadwal($this->session->userdata('nama'))->result_array();
+            $tampil['sewajadwal'] = $data;
+            $tampil['page'] = $page;
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/sewajadwal', $tampil);
+            $this->load->view('lapangan/footer');		
 	}
 
 	public function detail($id, $page="detail"){

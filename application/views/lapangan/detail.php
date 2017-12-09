@@ -14,7 +14,7 @@
 						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_student'], 2, ',', '.'); ?>/jam untuk Pelajar</p>
 						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_umum'], 2, ',', '.'); ?>/jam untuk Umum</p>
 						<br>
-						<a class="btn btn-primary" href="<?php echo base_url('lapangan/sewajadwal/'.$l['pemilik']); ?>">Cek Jadwal</a>						
+						<a class="btn btn-primary" href="#">Cek Jadwal</a>						
 					</div>
 					<?php } ?>
 				</div>

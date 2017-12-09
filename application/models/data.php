@@ -39,10 +39,10 @@ class data extends CI_Model
  		return $query->result();
     }
 
-	function selectJadwal($admin){
+	function selectJadwal($user){
         $this->db->select('*');
 		$this->db->from('jadwal');
-		$this->db->where('admin', $admin);
+		$this->db->where('nama', $user);
 		$query = $this->db->get();
 		return $query;
 	}

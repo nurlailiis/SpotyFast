@@ -3,7 +3,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          <h2>Tabel Sewa Jadwal</h2>
+                          <h2>History Booking</h2>
                         </div>
                         <hr>
                         <div class="panel-body">
@@ -43,10 +43,7 @@
                                 </tr>
                             <?php } ?>
                             </tbody>
-                        </table>
-                        <p class="col-md-12">
-                          <a class="btn btn-primary" href="<?php echo base_url('lapangan/inputsewa/'.$g['admin']); ?>">Sewa</a> 
-                        </p>                        
+                        </table>                        
                         </div>
                         </div>
                     </div>
