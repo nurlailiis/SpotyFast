@@ -37,10 +37,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <?php 
-                            if ($this->session->has_userdata('username')) {
+                            if ($this->session->has_userdata('username_admin')) {
                                 echo '
                                     <li>
-                                        <a href="'.base_url('index.php/admin').'">'.$this->session->userdata('username').'
+                                        <a>'.$this->session->userdata('username_admin').'
                                         </a>
                                     </li>
                                     <li>

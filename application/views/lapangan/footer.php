@@ -20,7 +20,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#">
+                <a href="https://github.com/nurlailiis/SpotyFast">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -28,7 +28,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; laili ara david</p>
+            <p class="copyright text-muted">Copyright &copy; laili qindi agung satrio</p>
           </div>
         </div>
       </div>

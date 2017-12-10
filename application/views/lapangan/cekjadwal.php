@@ -3,7 +3,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          <h2>History Booking</h2>
+                          <h2>Jadwal Booking</h2>
                         </div>
                         <hr>
                         <div class="panel-body">
@@ -20,11 +20,10 @@
                                     <th>Jam</th>
                                     <th>Lama Sewa</th>                                    
                                     <th>Status</th>
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                           <?php foreach ($sewajadwal as $g) { ?>
+                           <?php foreach ($jadwal as $g) { ?>
                                 <tr class="odd gradeX">
                                    <td><?php echo $g['no'] ?></td>
                                    <td><?php echo $g['nama'] ?></td>
@@ -41,9 +40,26 @@
                                        }
 
                                    ?></td>
-                                   <td><a class="btn btn-danger btn-outline" href="<?php echo base_url()."lapangan/uploadnota/".$g['no']?>">Upload</a></td>
-                                </tr>
+                                
+
                             <?php } ?>
+                            </tbody>
+                            <tbody>
+                              </tr>
+
+                                <tr class="odd gradeX">
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td></td>
+                                   <td>
+                                        <a class="btn btn-danger btn-outline" href="<?php echo base_url()."lapangan/inputsewa/".$g['admin']?>">Sewa</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>                        
                         </div>

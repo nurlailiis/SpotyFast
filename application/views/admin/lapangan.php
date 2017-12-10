@@ -22,9 +22,9 @@
                                 <p class="col-md-6"><input type="text" class="form-control" placeholder="Detail Lapangan" name="detail"></p>
                                 <input type="hidden" name="type" value = "<?php echo $this->session->userdata('type')?>">
                                 <input type="hidden" name="admin" value = "<?php echo $this->session->userdata('username')?>">
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Pelajar" name="tarifmhs"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Tarif Umum" name="tarifnon"></p>
-                                <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar"></p>
+                                <p class="col-md-6"><input type="number" class="form-control" placeholder="Tarif Pelajar" name="tarifmhs"></p>
+                                <p class="col-md-6"><input type="number" class="form-control" placeholder="Tarif Umum" name="tarifnon"></p>
+                                <p class="col-md-6"><input type="file" placeholder="gambar" name="gambar"></p>
                                 <br>
                                 <p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning" name=""></p>
                         <?php echo form_close(); ?>
