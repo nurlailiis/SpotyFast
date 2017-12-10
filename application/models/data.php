@@ -32,13 +32,6 @@ class data extends CI_Model
             );
 	}
 
-	function get_kompetisi(){
-		$this->db->select('*');
- 		$this->db->from('kompetisi');
- 		$query = $this->db->get();
- 		return $query->result();
-    }
-
 	function selectJadwal($admin){
         $this->db->select('*');
 		$this->db->from('jadwal');
