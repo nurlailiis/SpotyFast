@@ -33,6 +33,11 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/homeBasket', $tampil);
             $this->load->view('lapangan/footer');
         }
+        else if($type=='badminton'){
+            $this->load->view('lapangan/header', $tampil);
+            $this->load->view('lapangan/homeBadminton', $tampil);
+            $this->load->view('lapangan/footer');
+        }
         else if($type=='futsalKom'){
             $this->load->view('lapangan/header', $tampil);
             $this->load->view('lapangan/homeFutsalKom', $tampil);
@@ -45,39 +50,8 @@ class Lapangan extends CI_Controller {
         }
     }
 
-    public function homePilKom($type,$page = 'homePilihan'){
-
-            
-        /*$lapangan['page'] = $page;
-        if($type=='futsal'){
-
-            $data = $this->data->selectKompetisi1($type)->result_array();
-            $lapangan['datalapangan'] = $data;
-            $lapangan['page'] = $page;
-
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/kompetisi', $lapangan);
-            $this->load->view('lapangan/footer');
-        }
-        else if($type=='basket'){
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/homeBasket', $lapangan);
-            $this->load->view('lapangan/footer');
-        }
-        else if($type=='futsalKom'){
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/homeFutsalKom', $lapangan);
-            $this->load->view('lapangan/footer');
-        }
-        else{
-            $this->load->view('lapangan/header', $lapangan);
-            $this->load->view('lapangan/homeBasketKom', $lapangan);
-            $this->load->view('lapangan/footer');
-        }*/
-    }
-
-    public function gambarLapangan($type, $page = 'gambarLapangan'){      
-            $data = $this->db->get_where('lapangan',array('type' => $type));
+    public function gambarLapangan($type, $admin, $page = 'gambarLapangan'){      
+            $data = $this->data->readWhere2($type, $admin);
             $data = $data->result_array();
             $lapangan['lapangan'] = $data;
             $lapangan['page'] = $page;
@@ -106,18 +80,29 @@ class Lapangan extends CI_Controller {
 	}
 
     public function jadwal($id, $page="jadwal"){
-            //$data = $this->data->selectCekJadwal($nama)->result_array();
-
-            //$data = $this->data->readWhere('jadwal', $id, 'nama_lapangan')->result_array();
-            //$where = array('nama_lapangan' => $id);
-
-            $data = $this->data->selectJadwal1($id)->result_array();
+            $data = $this->data->selectJadwal1($this->session->userdata('lapangan'))->result_array();
             $jadwal['jadwal'] = $data;
-            //$tampil['cekjadwal'] = $data;
+            $jadwal['id'] = $id;
             $jadwal['page'] = $page;
             $this->load->view('lapangan/header', $jadwal);
             $this->load->view('lapangan/cekjadwal', $jadwal);
             $this->load->view('lapangan/footer');       
+    }
+
+    public function inputsewa($jam, $id, $page = "inputsewa"){
+            if ($this->session->has_userdata('username')) {
+                    $data = $this->data->selectData($id)->result_array();  
+                    $lapangan['kode'] = time();
+                    $lapangan['jam'] = $jam;
+                    $lapangan['lapangan'] = $data;
+                    $lapangan['page'] = $page;
+                    $this->load->view('lapangan/header', $lapangan);
+                    $this->load->view('lapangan/inputsewa', $lapangan);
+                    $this->load->view('lapangan/footer');       
+            }
+            else{
+                    redirect(base_url('lapangan/login'));
+            }
     }
 
 	public function detail($id, $page="detail"){
@@ -151,30 +136,12 @@ class Lapangan extends CI_Controller {
             $this->load->view('lapangan/footer');       
     }
 
-	public function inputsewa($admin, $page = "inputsewa"){
-            if ($this->session->has_userdata('username')) {
-                    $data=array('nama_lapangan'=> $this->data->get_lapangan($admin));  
-                    $lapangan['kode'] = time();
-                    $tampil = $this->data->readWhere('lapangan', $admin, 'pemilik')->result_array();
-                    $lapangan['lapangan'] = $data;
-                    $lapangan['lapangan'] = $tampil;
-                    $lapangan['page'] = $page;
-                    $this->load->view('lapangan/header', $lapangan);
-                    $this->load->view('lapangan/inputsewa', $lapangan);
-                    $this->load->view('lapangan/footer');		
-            }
-            else{
-                    redirect(base_url('lapangan/login'));
-            }
-	}
 
-    public function uploadnota($admin, $page = "uploadnota"){
+    public function uploadnota($no, $page = "uploadnota"){
             if ($this->session->has_userdata('username')) {
-                    $data=array('nama_lapangan'=> $this->data->get_lapangan($admin));  
-                    $lapangan['kode'] = time();
-                    $tampil = $this->data->readWhere('lapangan', $admin, 'pemilik')->result_array();
-                    $lapangan['lapangan'] = $data;
-                    $lapangan['lapangan'] = $tampil;
+                    $data= $this->data->get_jadwal($no);
+                    $id = $data[0]['no'];  
+                    $lapangan['jadwal'] = $id;
                     $lapangan['page'] = $page;
                     $this->load->view('lapangan/header', $lapangan);
                     $this->load->view('lapangan/uploadnota', $lapangan);
@@ -184,7 +151,7 @@ class Lapangan extends CI_Controller {
                     redirect(base_url('lapangan/login'));
             }
     }
-        
+    
         
  	public function signup($page = "signup"){
             $data = $this->data->read('user')->result_array();
@@ -201,11 +168,11 @@ class Lapangan extends CI_Controller {
             $kategori = $this->input->post('kategori');
             $type = $this->input->post('type');
             $admin = $this->input->post('admin');
-//            $nomer_identitas = $this->input->post('nomer_identitas');
+            $status = 1;
+            $nomer_identitas = $this->input->post('nomer_identitas');
             $nama_lapangan = $this->input->post('nama_lapangan');
             $tanggal = $this->input->post('tanggal');
             $jam = $this->input->post('jam');
-            $lama_sewa = $this->input->post('lama_sewa');
 
             $data = array(
                     'no' => $no,
@@ -213,48 +180,41 @@ class Lapangan extends CI_Controller {
                     'kategori' => $kategori,
                     'type' => $type,
                     'admin' => $admin,
-                    //'nomer_identitas' => $nomer_identitas,
+                    'nomer_identitas' => $nomer_identitas,
                     'nama_lapangan' => $nama_lapangan,
                     'tanggal' => $tanggal,
-                    'jam' => $jam,
-                    'lama_sewa' => $lama_sewa
+                    'jam' => $jam
             );
             $this->data->createJadwal($data, 'jadwal');
-            redirect('lapangan/sewajadwal/'.$admin);}
-	
-
-        function upload(){
-            
-            $config['upload_path']          = './assets/nota/image/';
-            $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 1000000;
-            $config['max_width']            = 1000000;
-            $config['max_height']           = 1000000;
-
-        $this->load->library('upload', $config);
-        
-        if ( ! $this->upload->do_upload('gambar')) {
-            
-            $this->session->has_userdata('username');
-            echo print_r(array('error' => $this->upload->display_errors()));
-        }
-        
-        else{
-            
-            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
-            $no = $this->input->post('no');
-
-            $data = array(
-                'no' => $no,
-                'nota_pembayaran' => $url, 
-                );
-            
-            $this->data->insertData('jadwal', $data);
-            redirect($uri = base_url('lapangan.cekjadwal'), $method = 'auto', $code = NULL);
-
-        }
+            $this->data->updateData1('waktu', $status, $jam, $this->session->userdata('lapangan'));
+            redirect('lapangan/sewajadwal');
     }
 
+    public function upnota(){
+        $config['upload_path']          = './assets/nota/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 1000000;
+        $config['max_width']            = 1000000;
+        $config['max_height']           = 1000000;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('gambar')) {
+            echo 'GAGAL NJIRR';
+        }
+        else{
+            $no = $_POST['no'];
+            $where = array('no' => $no);
+
+            $url = base_url().$config['upload_path'].$this->upload->data('file_name');
+            $no = $this->input->post('no');
+            $data = array(
+                    'nota_pembayaran'=>$url
+                    );
+            $this->data->updateData('jadwal', $data, $where);
+            redirect($uri = base_url('lapangan/sewajadwal'), $method = 'auto', $code = NULL);
+        }
+    }
 
 	public function login($page = 'login'){
             

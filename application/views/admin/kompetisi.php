@@ -17,12 +17,12 @@
                         </div>
                         <div class="panel-body">
                         <?php echo form_open_multipart(base_url('index.php/admin/tambahkompetisi')); ?>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Id Kompetisi" name="id"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Nama Kompetisi" name="nama"></p>
-                                <p class="col-md-6"><input type="date" class="form-control" placeholder="tanggal" name="tanggal"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="penyelenggara" name="penyelenggara"></p>
-                                <p class="col-md-6"><input type="text" class="form-control" placeholder="lokasi" name="lokasi"></p>
-                                <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar"></p>
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Id Kompetisi" name="id" required></p>
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="Nama Kompetisi" name="nama" required></p>
+                                <p class="col-md-6"><input type="date" class="form-control" placeholder="tanggal" name="tanggal" required></p>
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="penyelenggara" name="penyelenggara" required></p>
+                                <p class="col-md-6"><input type="text" class="form-control" placeholder="lokasi" name="lokasi" required></p>
+                                <p class="col-md-6"><input type="file" class="form-control" placeholder="Picture" name="gambar" required></p>
                                 <br>
                                 <p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning" name=""></p>
                         <?php echo form_close(); ?>

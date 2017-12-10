@@ -25,13 +25,13 @@
 			<tr>
 				<td>Nama</td>
 				<td>:</td>
-				<td><input type="text" name="nama" value="<?php echo $this->session->userdata('nama')?>" enabled ></td>
+				<td><input type="text" name="nama" value="<?php echo $this->session->userdata('nama')?>" readonly enabled ></td>
 			</tr>
 			<tr>
 				<td>Kategori</td>
 				<td>:</td>
 				<td>
-					<select name="kategori" class="form-control" required>				
+					<select name="kategori" class="form-control" readonly required>				
 						<option>Pelajar</option>
 						<option>Umum</option>
 					</select>
@@ -46,38 +46,23 @@
 				<td>Nama Lapangan</td>
 				<td>:</td>
 				<td>
-					<select name="nama_lapangan" class="form-control" required>
-						<option  value="">--Pilih Nama Lapangan--</option>                    
-            			<?php foreach($lapangan as $row) { ?>
-                		<option value="<?php echo $row['nama_lapangan'];?>"><?php echo $row['nama_lapangan'];?></option>
-            			<?php } ?>
-					</select>
+					<input type="text" name="nama_lapangan" value="<?php echo $lapangan[0]['nama_lapangan'];?>" readonly>
 				</td>
 			</tr>
-			<input type="hidden" name="type" value="<?php echo $row['type'];?>">
-			<input type="hidden" name="admin" value="<?php echo $row['pemilik'];?>">
+			<input type="hidden" name="type" value="<?php echo $lapangan[0]['type'];?>" readonly>
+			<input type="hidden" name="admin" value="<?php echo $lapangan[0]['pemilik'];?>" readonly>
 			<tr>
 				<td>Tanggal</td>
 				<td>:</td>
-				<td><input type="date" name="tanggal" required></td>
+				<td><input type="date" name="tanggal" value="<?php 
+                            $date = date_default_timezone_set('Asia/Jakarta');
+                              echo date('Y-m-d');
+                             ?>" readonly required></td>
 			</tr>
 			<tr>
 				<td>Jam</td>
 				<td>:</td>
-				<td><input type="time" name="jam" required></td>
-			</tr>
-			<tr>
-				<td>Lama Sewa</td>
-				<td>:</td>
-				<td>
-					<select name="lama_sewa" class="form-control" required>
-						<option>1 Jam</option>
-						<option>2 Jam</option>
-						<option>3 Jam</option>
-						<option>4 Jam</option>
-						<option>5 Jam</option>
-					</select>
-				</td>
+				<td><input type="text" name="jam" value="<?php echo $jam;?>" readonly required></td>
 			</tr>
 			<tr>
 				<td></td>

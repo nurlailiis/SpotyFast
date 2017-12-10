@@ -15,26 +15,29 @@
 	<center>
 		<h3><i>upload nota</i></h3>
 	</center>
-	<form action="<?php echo base_url('lapangan/upload'); ?>" method="post">
+	<?php echo form_open_multipart(base_url('lapangan/upnota'));?>
 		<table style="margin:20px auto;">
 			<tr>
 				<td>No</td>
 				<td>:</td>
-				<td><input type="text" value="<?php echo $kode ?>" readonly name="no" required></td>
+				<td><input type="text" value="<?php echo $jadwal ?>" readonly name="no" required></td>
 			</tr>
 			<tr>
-				<td>Nama</td>
+				<td>Gambar</td>
 				<td>:</td>
-				<td><p class="col-md-6"><input type="file" placeholder="gambar" name="gambar"></p></td>
+				<td><p class="col-md-6"><input type="file" name="gambar"></p></td>
 			</tr>
 
 			<tr>
 				<td></td>
-				<td><!--<input type="submit" value="Sewa" class="btn btn-primary">--></p></td>
-
-				<td><p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning" name=""></td>
+				<td></td>
+				<?php 
+				$date = date_default_timezone_set('Asia/Jakarta');
+    			echo date('Y-m-d H:i:s');
+				 ?>
+				<td><p class="col-lg-12"><input type="submit" value="Add" class="btn btn-warning"></td>
 			</tr>
 		</table>
-	</form>	
+	<?php echo form_close() ?>
 </body>
 </html>

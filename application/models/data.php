@@ -9,9 +9,13 @@ class data extends CI_Model
             return $this->db->get_where($table, array($where => $id));
 	}
 
-	function getDataLapangan($where="") {
-		$query = $this->db->query('select * from lapangan ' .$where);
-		return $query->result_array();
+	function readWhere2($type, $admin){
+        $this->db->select('*');
+		$this->db->from('lapangan');
+		$this->db->where('type', $type);
+		$this->db->where('pemilik', $admin);
+		$query = $this->db->get();
+		return $query;
 	}
 
 	function getDataKompetisi($where="") {
@@ -47,9 +51,6 @@ class data extends CI_Model
             );
 	}
 
-<<<<<<< HEAD
-	function selectJadwal($admin){
-=======
 	function selectKompetisi1($type){
         $this->db->select('*');
 		$this->db->from('kompetisi');
@@ -81,18 +82,26 @@ class data extends CI_Model
 		return $query;
 	}
 
-	function selectJadwal1($pemilik){
+	function selectData($id){
         $this->db->select('*');
-		$this->db->from('jadwal');
-		$this->db->where('admin', $pemilik);
+		$this->db->from('lapangan');
+		$this->db->where('id_lapangan', $id);
 		$query = $this->db->get();
 		return $query;
 	}
 
-	function selectCekJadwal($nama){
->>>>>>> 4e771cfc6601e1de14c4fafc4162aa2c2802427e
+
+	function selectJadwal2($user){
         $this->db->select('*');
 		$this->db->from('jadwal');
+		$this->db->where('admin', $user);
+		$query = $this->db->get();
+		return $query;
+	}
+
+	function selectJadwal1($nama){
+        $this->db->select('*');
+		$this->db->from('waktu');
 		$this->db->where('nama_lapangan', $nama);
 		$query = $this->db->get();
 		return $query;
@@ -139,13 +148,19 @@ class data extends CI_Model
 		return $res;
 	}
 
-	function get_lapangan($admin){
+	function updateData1($table, $data, $where,$where2){
+		$res=$this->db->query("UPDATE `waktu` SET `status`= 1 WHERE `jam`= '$where' AND `nama_lapangan`= '$where2'");
+		return $res;
+	}
+
+    function get_jadwal($no){
 		$this->db->select('*');
- 		$this->db->from('lapangan');
- 		$this->db->where('pemilik', $admin);
+ 		$this->db->from('jadwal');
+ 		$this->db->where('no', $no);
  		$query = $this->db->get();
- 		return $query->result();
+ 		return $query->result_array();
     }
+
     function getNumRow($no, $type, $nama, $kategori, $nomer_identitas, $nama_lapangan, $tanggal, $jam, $lama_sewa, $nota_pembayaran, $status){
         $this->db->where('no',$no);
         $this->db->where('type',$type);

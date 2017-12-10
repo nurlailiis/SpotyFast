@@ -14,7 +14,10 @@
 						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_student'], 2, ',', '.'); ?>/jam untuk Pelajar</p>
 						<p class="prc"><?php echo 'Rp. '.number_format($l['tarif_umum'], 2, ',', '.'); ?>/jam untuk Umum</p>
 						<br>
-						<a href="<?php echo base_url('lapangan/jadwal/'.$l['pemilik']) ?>" class="btn btn-primary">Cek jadwal</a>					
+						<?php
+							$this->session->set_userdata(array('lapangan' => $l['nama_lapangan'])); 
+						?>
+						<a href="<?php echo base_url('lapangan/jadwal/'.$l['id_lapangan'])?>" class="btn btn-primary">Cek jadwal</a>
 					</div>
 					<?php } ?>
 				</div>

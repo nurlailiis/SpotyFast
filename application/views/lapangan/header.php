@@ -17,6 +17,10 @@
     <link href="<?php echo base_url();?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
+    <script type="text/javascript" src="js/jquery.plugin.js"></script> 
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/clean-blog.min.css" rel="stylesheet">
@@ -43,32 +47,18 @@
             </li>
             
             <li class="nav-item dropdown">
-              <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Daftar Lapangan</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsal');?>">Futsal</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basket');?>">Basket</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Badminton</a></li>
-                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badminton');?>">Sewa</a></li>
-              </ul>
-            </li> 
-            
-            <!--<li class="nav-item dropdown">
               <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret">Kompetisi</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'futsal');?>">Futsal</a></li>
-                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'basket');?>">Basket</a></li>
-                <li><a class="nav-link" href="<?php //echo base_url('lapangan/homePilKom/'.'badminton');?>">Badminton</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'futsalKom');?>">Futsal</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'basketKom');?>">Basket</a></li>
+                <li><a class="nav-link" href="<?php echo base_url('lapangan/homePil/'.'badmintonKom');?>">Badminton</a></li>
               </ul>
-            </li>-->
-
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('lapangan/Kompetisi');?>">Kompetisi</a>
-            </li>
+            </li> 
             
             <li class="nav-item">
               <?php 
               if($this->session->has_userdata('username')){
-                echo '<a class="nav-link" href="'.base_url('lapangan/sewajadwal/'.$this->session->userdata('nama')).'">History booking</a>';
+                echo '<a class="nav-link" href="'.base_url('lapangan/sewajadwal').'">History booking</a>';
               }
             ?>
             </li>

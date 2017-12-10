@@ -1,9 +1,9 @@
 <?php echo $this->session->userdata('success') ?>
 <div class="col-md-12">
-  <h2 class="page-header" align="center">Mayasi Basketball Court</h2>
+  <h2 class="page-header" align="center">DBL Basketball Court</h2>
 </div>
 <div class="col-md-12">
-  <h3 class="page-header" align="center">Jl. Kenjeran no. 546 - Surabaya</h3>
+  <h3 class="page-header" align="center">Jl. Frontage Ahmad Yani Siwalankerto No.88, Surabaya.</h3>
 </div>
 <section class="lapangan">
 <div class="container">

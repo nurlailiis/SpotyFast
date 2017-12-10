@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2017 at 02:52 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: 10 Des 2017 pada 00.57
+-- Versi Server: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,27 +25,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
   `username_admin` varchar(256) NOT NULL,
   `password_admin` varchar(256) NOT NULL,
-  `type` enum('futsal','basket') NOT NULL
+  `type` enum('futsal','basket','badminton') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`username_admin`, `password_admin`, `type`) VALUES
 ('admin169', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'futsal'),
-('adminmayasi', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket');
+('admincahaya', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'badminton'),
+('admincls', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket'),
+('admindbl', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket'),
+('admindynasty', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'futsal'),
+('admingrand', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'badminton'),
+('adminhayamwuruk', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket'),
+('adminhiqua', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'badminton'),
+('adminits', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket'),
+('adminmayasi', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'basket'),
+('adminmikasa', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'badminton'),
+('adminoleole', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'futsal'),
+('adminpertamina', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'futsal'),
+('adminpln', '5663bec6b51338020c7ebc0d8d65b7689d19abed', 'futsal');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jadwal`
+-- Struktur dari tabel `jadwal`
 --
 
 CREATE TABLE `jadwal` (
@@ -62,7 +76,7 @@ CREATE TABLE `jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jadwal`
+-- Dumping data untuk tabel `jadwal`
 --
 
 INSERT INTO `jadwal` (`no`, `type`, `nama`, `admin`, `kategori`, `nomer_identitas`, `nama_lapangan`, `tanggal`, `jam`, `lama_sewa`, `nota_pembayaran`, `status`) VALUES
@@ -74,7 +88,7 @@ INSERT INTO `jadwal` (`no`, `type`, `nama`, `admin`, `kategori`, `nomer_identita
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kompetisi`
+-- Struktur dari tabel `kompetisi`
 --
 
 CREATE TABLE `kompetisi` (
@@ -87,7 +101,7 @@ CREATE TABLE `kompetisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kompetisi`
+-- Dumping data untuk tabel `kompetisi`
 --
 
 INSERT INTO `kompetisi` (`id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, `penyelenggara`, `lokasi_kompetisi`, `gambar_kompetisi`) VALUES
@@ -96,7 +110,7 @@ INSERT INTO `kompetisi` (`id_kompetisi`, `nama_kompetisi`, `tanggal_kompetisi`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lapangan`
+-- Struktur dari tabel `lapangan`
 --
 
 CREATE TABLE `lapangan` (
@@ -111,19 +125,32 @@ CREATE TABLE `lapangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `lapangan`
+-- Dumping data untuk tabel `lapangan`
 --
 
 INSERT INTO `lapangan` (`id_lapangan`, `type`, `pemilik`, `nama_lapangan`, `detail_lapangan`, `tarif_student`, `tarif_umum`, `gambar_lapangan`) VALUES
 (1001, 'futsal', 'admin169', 'Lapangan A', 'Lapangan Futsal 169 A', '70000', '120000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lap14.jpg'),
 (1002, 'futsal', 'admin169', 'Lapangan B', 'Lapangan Futsal 169 B', '70000', '120000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lapfutB.jpg'),
+(1003, 'basket', 'admindbl', 'DBL Arena', 'DBL Arena terletak di Jl. Frontage Ahmad Yani Siwalankerto No.88, Ketintang, Gayungan, Kota SBY, Jawa Timur 60231.  Lapangan berstandar internasional dengan kapasitasnya 5.000 penonton', 'per shift Rp. 600.000', 'per shift Rp. 600.000', 'http://localhost/SportyFast/./assets/lapangan/image/535898442.jpg'),
 (1004, 'futsal', 'nurlailiis', 'Lapangan A', 'Lapangan Futsal 169 B', 'Rp. 70.000,00/jam untuk Pelajar', 'Rp. 120.000,00/jam untuk Umum', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lap13.jpg'),
-(2001, 'basket', 'adminmayasi', 'Lapangan Bayasi', 'Mayasi Basketball', '200000', '300000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lapAbas.jpg');
+(1005, 'basket', 'admincls', 'GOR CLS KERTAJAYA', 'Berlokasi di Kertajaya Indah Timur I No.1, Manyar Sabrangan, Mulyorejo, Kota SBY, Jawa Timur 60116.', 'Rp. 500.000/jam', 'Rp. 500.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/009366500_1507886895-20838145_143872139532100_1750186219498635264_n.jpg'),
+(1006, 'basket', '', 'Lapangan ITS a', ' Campus ITS 60111, Jl. ITS Raya, Keputih, Sukolilo, Kota SBY, Jawa Timur 6011', 'Rp.60.000', 'Rp.80.000', 'http://localhost/SportyFast/./assets/lapangan/image/CXoK4c5UoAAJVn9.jpg'),
+(1007, 'basket', '', 'Lapangan ITS b', ' Campus ITS 60111, Jl. ITS Raya, Keputih, Sukolilo, Kota SBY, Jawa Timur 6011', 'Rp.60.000', 'Rp.80.000', 'http://localhost/SportyFast/./assets/lapangan/image/14073120_285681635139240_1975018378_n.jpg'),
+(1008, '', '', 'GOR Kodam Brawijaya', 'Terletak di Jalan Hayam Wuruk No.17-42, Sawunggaling, Wonokromo, Sawunggaling, Wonokromo, Kota SBY, Jawa Timur 60242', 'Rp. 200.000/jam', 'Rp. 200.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/59899168_R6ZLD1uPJ4YZiJOmKc5j-ZwSKEBDQn92Nx7gZR5CG7Q.jpg'),
+(1009, 'futsal', '', 'Lapangan Dynasty', 'Terletak Jl. Raya Ngagel No.75, Ngagel, Wonokromo, Kota SBY, Jawa Timur 60246', 'Rp. 200.000/jam', 'Rp. 200.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/unnamed2.jpg'),
+(1222, 'futsal', '', 'Ole Ole futsal Ngagel', 'Terletak di Jl. Upa Jiwa No.1, Ngagel, Wonokromo, Kota SBY, Jawa Timur 60246', 'Rp. 200.000/jam', 'Rp. 200.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/index.jpg'),
+(1234, 'futsal', '', 'Lapangan Futsal PLN ITS', 'Terletak di  Campus ITS 60111, Jalan ITS Raya, Sukolilo, Keputih, Sukolilo, Kota SBY, Jawa Timur 60111', 'Rp. 60.000', 'Rp. 60.000', 'http://localhost/SportyFast/./assets/lapangan/image/main-futsal.jpg'),
+(1456, 'futsal', '', 'Gor Pertamina ITS', 'Terletak di Jalan Raya ITS Campus ITS Sukolilo Surabaya Jawa Timur 60111, Keputih, Sukolilo, Kota SBY, Jawa Timur 60117', 'Rp. 280.000/jam', 'Rp. 300.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/fasor-its.jpg'),
+(2001, 'basket', 'adminmayasi', 'Lapangan Bayasi', 'Mayasi Basketball', '200000', '300000', 'http://localhost/GIT/SpotyFast/./assets/lapangan/image/lapAbas.jpg'),
+(2345, '', '', 'GOR Hi-Qua Wijaya', 'Terletak di Jalan Puri Lidah Kulon Indah (Depan perumahan Puri Lidah Kulon). Contact person : 081316041316 (Lina). Jumlah lapangan 17 lapangan dan tipenya full karpet. ', 'Rp. 60.000/jam', 'Rp. 60.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/1.jpg'),
+(4567, '', '', 'Gor mikasa', 'Terletak di Jalan Baratajaya XXI/3.A. Kriteria lapangan full karpet dan kayu. Contact person : 031-5010592/08179624828 (Elis)', 'Rp. 100.000/jam', 'Rp. 100.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/IMG_20170123_174538_HDR.jpg'),
+(5678, '', '', 'GOR CAHAYA', 'Terletak di Jl. Raya Tengger KAndangan Blok 59 G No. 92, Surabaya Barat/Sambikerep. Dengan Fasilitas fitness/kebugaran. Tempatnya cukup luas dan berlantai keramik. Maka dari itu lantainya keramik. Contact person : 7410850', 'Rp. 200.000/jam', 'Rp. 200.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/3.jpg'),
+(6789, '', '', 'GRAND Badminton HALL', 'Terletak di  Jl. Tandes Lor No. 17 B Surabaya Utara/Tandes. Lapangan Karpet. Fasilitas : Toko Perlengkapan Badminton, Lapangan parkir yang luas. Lokasinya 200 meter arah timur (Sebelah Kiri Jalan) dari pertigaan jalan (Tandes Lor-Margomulyo). Contact Person : 7481991', 'Rp. 200.000/jam', 'Rp. 200.000/jam', 'http://localhost/SportyFast/./assets/lapangan/image/2.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -134,7 +161,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `password_user`, `no_telp`) VALUES
@@ -179,6 +206,7 @@ ALTER TABLE `lapangan`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

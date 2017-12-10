@@ -8,7 +8,7 @@
       <div class="col-md-4">
         <div style="width: 20rem;">
           <a href="<?php echo base_url('lapangan/kompetisi/');?>">
-            <img style="max-height: 500px;" class="card-img-top" src="<?php echo base_url('/assets/lapangan/image/mayasi.jpg');?>" alt="Card image cap"> 
+            <img style="max-height: 500px;" class="card-img-top" src="<?php echo base_url('/assets/lapangan/image/dbl.jpg');?>" alt="Card image cap"> 
           </a>                 
         </div>           
       </div>

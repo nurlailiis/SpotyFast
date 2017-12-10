@@ -82,7 +82,7 @@ class admin extends CI_Controller {
 
     public function datapenyewaan(){
         if ($this->session->has_userdata('username_admin')) {
-            $data = $this->data->selectJadwal1($this->session->userdata('username_admin'))->result_array();
+            $data = $this->data->selectJadwal2($this->session->userdata('username_admin'))->result_array();
             $jadwal['jadwal'] = $data;
             $this->load->view('admin/headermasuk');
             $this->load->view('admin/datapenyewaan', $jadwal);
@@ -321,11 +321,7 @@ class admin extends CI_Controller {
     function deleteData($id){  
         $where = array('no' => $id ); 
         $res = $this->data->deleteData($where); 
-        $data = $this->data->read('jadwal')->result_array();
-        $jadwal['jadwal'] = $data;
-        $this->load->view('admin/headermasuk');
-        $this->load->view('admin/datapenyewaan', $jadwal);
-        $this->load->view('admin/footer');
+        redirect('admin/datapenyewaan');
     }
     
     public function validasi($id){

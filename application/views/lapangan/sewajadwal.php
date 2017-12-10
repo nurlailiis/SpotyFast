@@ -17,8 +17,7 @@
                                     <th>Nomer Identitas</th>
                                     <th>Nama Lapangan</th>
                                     <th>Tanggal Sewa</th>
-                                    <th>Jam</th>
-                                    <th>Lama Sewa</th>                                    
+                                    <th>Jam</th>                                   
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -33,11 +32,10 @@
                                    <td><?php echo $g['nama_lapangan'] ?></td>
                                    <td><?php echo $g['tanggal'] ?></td>
                                    <td><?php echo $g['jam'] ?></td>
-                                   <td><?php echo $g['lama_sewa'] ?> Jam</td>
                                    <td><?php if($g['status']==0) {
-                                           echo '<a class="btn btn-secondary btn-outline" >Ngutang</a>';
+                                           echo '<a class="btn btn-secondary btn-outline" >Belum Lunas</a>';
                                        }else{
-                                            echo '<a class="btn btn-success btn-outline" >Dibayar</a>';
+                                            echo '<a class="btn btn-success btn-outline" >Lunas</a>';
                                        }
 
                                    ?></td>
